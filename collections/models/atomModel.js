@@ -102,8 +102,6 @@ AtomModel = function( o, params ){
       self.parent && self.parent.changed();
     });
     
-    if( !atom ) return null;
-    computeNested();
     
     
     
@@ -124,17 +122,19 @@ AtomModel = function( o, params ){
     if( this.parent ) {
       delete atomModelMap[ this.parent.atom._id ];
     }
+    
+    return null;
   
     // throw new Error('no Atom '+_id+' found, maybe its not subscribed to it or is removed.');
   
   }
   
   // [TODO] - refactor nested to atomModelMap call
+  computeNested();
   
   
   
   // this.atom = Atoms.findOne({ _id: _id });
-  // 
   
   
   
@@ -266,6 +266,8 @@ AtomModel = function( o, params ){
     } );
     
     this.emit('add', { target: atomModel });
+    
+    computeNested();
     
     return atomModel;
     
