@@ -1,0 +1,16 @@
+<template name="defaultLayout">
+  <aside>
+    <!-- render to the sidebar yield -->
+  </aside>
+    {{> yield region="navbar"}}
+
+  
+  <div class="row mainWrapper">
+      {{> yield}}
+  </div>
+
+  <footer>
+    <!-- render to the footer yield -->
+  </footer>
+  
+</template>

@@ -2,48 +2,126 @@
   "meteor": {},
   "dependencies": {
     "basePackages": {
-      "velocity-quick-start": {}
+      "collection2": {},
+      "llmd": {
+        "path": "../liquid/src/packages/llmd"
+      },
+      "llmd-core": {
+        "path": "../liquid/src/packages/llmd-core"
+      },
+      "llmd-md": {
+        "path": "../liquid/src/packages/llmd-md"
+      },
+      "llmd-redisc": {
+        "path": "../liquid/src/packages/llmd-redisc"
+      },
+      "emitter": {},
+      "iron-router": {},
+      "tags": {
+        "git": "git@github.com:mhhf/meteor-tags.git",
+        "branch": "master"
+      },
+      "bootstrap3-less": {},
+      "spin": {},
+      "editor": {
+        "git": "git@bitbucket.org:liquidlearningdev/editor.git",
+        "branch": "master"
+      },
+      "module-loader": {},
+      "fontawesome4": {}
     },
     "packages": {
-      "velocity-quick-start": {
-        "git": "https://github.com/alanning/meteor-velocity-quick-start.git",
-        "tag": "v0.0.8",
-        "commit": "76975566981224c3440c4909e7b6a33bdfc294b2"
+      "collection2": {
+        "git": "https://github.com/aldeed/meteor-collection2.git",
+        "tag": "v0.4.2",
+        "commit": "4ff4b707bec8be434919730bf101325adb215444"
       },
-      "velocity-html-reporter": {
-        "git": "https://github.com/rdickert/velocity-html-reporter.git",
-        "tag": "v0.1.4",
-        "commit": "55f973519fb6db831678219057854b94a4cec846"
+      "llmd": {
+        "path": "../liquid/src/packages/llmd"
       },
-      "jasmine-unit": {
-        "git": "https://github.com/xolvio/jasmine-unit.git",
-        "tag": "v0.1.24",
-        "commit": "885dde77a96390d0fd31b03756f837f482db2ef1"
+      "llmd-core": {
+        "path": "../liquid/src/packages/llmd-core"
       },
-      "jasmine": {
-        "git": "https://github.com/Sanjo/meteor-jasmine.git",
-        "tag": "v0.1.15",
-        "commit": "45024d476f08366250b227ef2cb62aea1ce7b89f"
+      "llmd-md": {
+        "path": "../liquid/src/packages/llmd-md"
       },
-      "mocha-web-velocity": {
-        "git": "https://github.com/mad-eye/meteor-mocha-web.git",
-        "tag": "v0.3.4",
-        "commit": "5b68e18104c00687748b190b04a7752478472d17"
+      "llmd-redisc": {
+        "path": "../liquid/src/packages/llmd-redisc"
       },
-      "velocity": {
-        "git": "https://github.com/xolvio/velocity.git",
-        "tag": "v0.1.14",
-        "commit": "a79260e019e385dce09a67f1017f90d3143a12d9"
+      "emitter": {
+        "git": "https://github.com/Meteor-Reaction/meteor-emitter.git",
+        "tag": "v0.1.0",
+        "commit": "849a91bbe4e1e0636f49fa2e5141e74ed5137a27"
       },
-      "package-stubber": {
-        "git": "https://github.com/alanning/meteor-package-stubber.git",
-        "tag": "v0.0.15",
-        "commit": "62ad08f8486aacbbc5ec22ea6e2a31573748b7d7"
+      "iron-router": {
+        "git": "https://github.com/EventedMind/iron-router.git",
+        "tag": "v0.7.1",
+        "commit": "d1ffb3f06ea4c112132b030f2eb1a70b81675ecb"
       },
-      "mirror": {
-        "git": "https://github.com/xdissent/meteor-mirror.git",
-        "tag": "v0.0.2",
-        "commit": "03d965dcab2f976a1fdc6ce513edcd4c17b75746"
+      "tags": {
+        "git": "git@github.com:mhhf/meteor-tags.git",
+        "branch": "master",
+        "commit": "b7dedea98992a74279f52b4566e45f25e0652afb"
+      },
+      "bootstrap3-less": {
+        "git": "https://github.com/simison/bootstrap3-less",
+        "tag": "v0.2.1",
+        "commit": "dc94a51ed00d7de6d6f2b6d65107a876d849ad61"
+      },
+      "spin": {
+        "git": "https://github.com/SachaG/meteor-spin.git",
+        "tag": "v2.0.3",
+        "commit": "23c1145472a710d5c93fa4beaca4e576caeb2f24"
+      },
+      "editor": {
+        "git": "git@bitbucket.org:liquidlearningdev/editor.git",
+        "branch": "master",
+        "commit": "bbc8dc9cda70c601acb99ce5ef173570ac5212eb"
+      },
+      "module-loader": {
+        "git": "https://github.com/apendua/module-loader.git",
+        "tag": "v0.5.1",
+        "commit": "06c4f220272fb10dadec3ff431a47ce58e84cc8f"
+      },
+      "fontawesome4": {
+        "git": "https://github.com/chrismbeckett/meteor-fontawesome4.git",
+        "tag": "v1.1.0",
+        "commit": "7d2cb9119b7981b8f854b7051d302d4842311249"
+      },
+      "simple-schema": {
+        "git": "https://github.com/aldeed/meteor-simple-schema.git",
+        "tag": "v0.6.0",
+        "commit": "418ec496612fb2afc853e342f0d2269b6674a2fe"
+      },
+      "marked": {
+        "git": "https://github.com/chuangbo/meteor-marked.git",
+        "tag": "v0.3.2",
+        "commit": "850f63135cdeb05344c420bd586fd8af9cab75df"
+      },
+      "crypto-base": {
+        "git": "https://github.com/oortcloud/meteor-crypto-base.git",
+        "tag": "v3.1.2.1",
+        "commit": "5df8d82a0595553415bbfae2930c6ecbeece5794"
+      },
+      "crypto-sha1": {
+        "git": "https://github.com/dandv/meteor-crypto-sha1.git",
+        "tag": "v3.1.2.1",
+        "commit": "f5c87d44aa4bdda6b33c7e2c21ea396d9d0f436d"
+      },
+      "blaze-layout": {
+        "git": "https://github.com/EventedMind/blaze-layout.git",
+        "tag": "v0.2.4",
+        "commit": "b40e9b0612329288d75cf52ad14a7da64bb8618f"
+      },
+      "roles": {
+        "git": "https://github.com/alanning/meteor-roles.git",
+        "tag": "v1.2.10",
+        "commit": "7ccb35de0a6cb0c9a0c3666badd04757e39c09a6"
+      },
+      "selectize": {
+        "git": "https://github.com/andrewreedy/meteor-selectize.git",
+        "tag": "v0.0.1",
+        "commit": "2bf47922a6b964ca58ad58cfa0e92c9cf9ea8be3"
       }
     }
   }

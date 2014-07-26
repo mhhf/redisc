@@ -1,9 +1,29 @@
 {
   "packages": {
-    "velocity-quick-start": {},
-    "jasmine-unit": {},
-    "mocha-web-velocity": {},
-    "jasmine": {},
-    "velocity-html-reporter": {}
+    "collection2": {},
+    "llmd": {
+      "path": "/Users/mhhf/Documents/Arbeit/nukular/liquid/src/packages/llmd"
+    },
+    "llmd-core": {
+      "path": "/Users/mhhf/Documents/Arbeit/nukular/liquid/src/packages/llmd-core"
+    },
+    "llmd-md": {
+      "path": "/Users/mhhf/Documents/Arbeit/nukular/liquid/src/packages/llmd-md"
+    },
+    "llmd-redisc": {
+      "path": "/Users/mhhf/Documents/Arbeit/nukular/liquid/src/packages/llmd-redisc"
+    },
+    "emitter": {},
+    "iron-router": {},
+    "tags": {
+      "git": "git@github.com:mhhf/meteor-tags.git"
+    },
+    "bootstrap3-less": {},
+    "spin": {},
+    "editor": {
+      "git": "git@bitbucket.org:liquidlearningdev/editor.git"
+    },
+    "module-loader": {},
+    "fontawesome4": {}
   }
 }

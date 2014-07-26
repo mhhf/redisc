@@ -1,0 +1,76 @@
+<template name="navbar">
+<nav class="navbar navbar-glass">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="/" class="navbar-brand">
+        <small>
+          <i class="fa fa-flask"></i>
+          LiquidLearning
+        </small>
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="{{pathFor 'learn'}}">
+            Learn
+          </a>
+        </li>
+        <li>
+          <a href="{{pathFor 'teach'}}">
+            Teach
+          </a>
+        </li>
+      </ul>
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        <!-- {{#if currentUser }} -->
+        <!-- <li class="hidden&#45;phone"> -->
+        <!--   <a href="{{pathFor 'projectNew'}}"> -->
+        <!--     <i class="icon&#45;file&#45;alt"></i> -->
+        <!--     New Project -->
+        <!--   </a> -->
+        <!-- </li> -->
+        <!-- {{/if}} -->
+
+        <!-- <li> -->
+        <!--   <a href="{{pathFor 'projects'}}"> -->
+        <!--     <i class="fa fa&#45;search"></i> -->
+        <!--     Projects -->
+        <!--   </a> -->
+        <!-- </li> -->
+        <li>
+          <a href="{{pathFor 'feedback'}}">
+            <i class="fa fa-comment"></i>
+            Feedback
+          </a>
+        </li>
+        
+        <li>
+          <a href="{{pathFor 'dev'}}">
+            <i class="fa fa-code"></i>
+            Dev
+          </a>
+        </li>
+
+        
+        {{#if currentUser}}
+        
+        {{> showUser}}
+        
+        {{else}}
+        
+        <li class="hidden-phone">
+          <a href="{{pathFor 'login'}}">
+            <i class="fa fa-user"></i>
+            login
+          </a>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>
+</template>

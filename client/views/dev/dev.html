@@ -1,0 +1,114 @@
+<template name="dev">
+<a class="btn btn-primary newFeedbackBtn" href="{{pathFor 'devNew' params=this}}">new Post</a>
+
+    {{> rediscPosts}}
+</template>
+
+<template name="rediscPosts">
+<ul class="postList">
+  {{#each posts}}
+  <li>
+
+  {{#with atomModel}}
+    {{> Score }}
+  {{/with}}
+
+  <div class="contentContainer">
+    <a href="{{pathFor 'devPost'}}">
+      <span class="title"> {{title}} </span>
+    </a>
+    <div>
+      {{> Stats}}
+    </div>
+
+  </div>
+
+
+  </li>
+  {{/each}}
+</ul>
+</template>
+
+
+<template name="devPost">
+
+<a href="{{pathFor 'dev' params=this}}">... back To Dev</a>
+
+  <h2> {{title}} </h2>
+
+  {{> RediscPost root }}
+  
+</template>
+
+<template name="RediscPost">
+
+  {{#if isEdit}}
+    {{> EditorWrapper }}
+  {{else}}
+    {{> PostWrapper }}
+  {{/if}}
+  
+  {{#if hasChildren}}
+    {{> Comments }}
+  {{/if}}
+  
+</template>
+
+
+<template name="devNew">
+
+<a href="{{pathFor 'dev' params=this}}">... back To Dev</a>
+
+<div class="newRediscWrapper">
+  {{> llmd_redisc_edit }}
+  <button type="submit" class="btn btn-primary save-btn"> Save </button>
+  
+</div>
+
+</template>
+
+<template name="PostWrapper">
+<div class="contentWrapper">
+
+  <div class="dataWrapper">
+    {{> llmd_redisc_ast }}
+  </div>
+  <!-- <div class="codeWrapper"> </div> -->
+  <div class="interactions">
+    <a href="#" class="btn-comment" data-target="{{_id}}"> <i class="fa fa-reply"></i></a>
+    <a href="#" class="btn-edit" data-target="{{_id}}"> <i class="fa fa-pencil"></i></a>
+  </div>
+
+</div>
+
+{{> Stats atom}}
+
+{{#if isComment}}
+{{> EditorWrapper newCommentAtom }}
+{{/if}}
+
+</template>
+
+<template name="EditorWrapper">
+  <div class="contentWrapper">
+    {{> llmd_redisc_edit }}
+  </div>
+
+  <button type="submit" class="btn btn-primary save-btn"> Save </button>
+  <button class="btn btn-default cancel-btn"> Cancel </button>
+</template>
+
+
+<template name="Comments">
+<ul class="comments">
+  {{#each getComments}}
+  <li>
+  <div class="scoreWrapper">
+    {{> Score }}
+  </div>
+  {{> RediscPost}}
+  
+  </li>
+  {{/each}}
+</ul>
+</template>

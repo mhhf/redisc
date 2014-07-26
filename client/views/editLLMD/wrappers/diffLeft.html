@@ -1,0 +1,8 @@
+<template name="removeWrapper">
+<div class="diffAtom focusArea focus-danger">
+  <div class="diffLeft">{{> atomWrapper}}</div>
+  {{> conflictActions}}
+  <div class="diffRight">{{> ghostAtom }}</div>
+  {{getType}}
+</div>
+</template>

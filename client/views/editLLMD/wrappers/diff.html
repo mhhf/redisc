@@ -1,0 +1,20 @@
+<template name="diffWrapper">
+<div class="diffAtom focusArea focus-danger">
+  <div class="diffLeft">{{> atomWrapper this}}</div>
+  {{> conflictActions}}
+  <div class="diffRight">{{> atomWrapper getDiffedAtom}}  </div>
+  {{getType}}
+</div>
+</template>
+
+<template name="conflictActions">
+<div class="conflictActions">
+  <div class="btn-group">
+    <a class="btn btn-default left-btn"> <i class="fa fa-angle-left"></i> </a>
+    {{#if diff}}
+    <a class="btn btn-default diff-btn">diff</a>
+    {{/if}}
+    <a class="btn btn-default right-btn"> <i class="fa fa-angle-right"></i> </a>
+  </div>
+</div>
+</template>

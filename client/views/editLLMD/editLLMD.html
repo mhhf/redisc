@@ -1,0 +1,92 @@
+<template name="editLLMD">
+{{> editNavBar }}
+
+<div class="row clear">
+  {{> llmd_seq_edit getRoot}}
+</div>
+
+</template>
+
+
+
+<template name="selectLLMDTypes">
+<select id="newAtom" name="name">
+  <option value=""></option>
+  {{#each atomTypes}}
+  <option value="{{this}}">{{this}}</option>
+  {{/each}}
+</select>
+</template>
+
+
+<template name="branchSelector">
+  {{#if isAdding}}
+  <form id="#newBranch" action="#">
+    <div class="input-group newBranch">
+      <input name="name" type="text" class="form-control" autofocus>
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit"> <i class="fa fa-plus"></i> Add</button>
+        <button class="btn btn-default btn-dismiss" type="button"> <i class="fa fa-times"></i> Dismiss</button>
+      </span>
+    </div>
+  </form>
+  {{else}}
+    {{#if onBranch}}
+    <div class="branchSelectWrapper">
+      {{> selectBranch}}
+      {{updated}}
+    </div>
+    {{/if}}
+      <a class="btn btn-primary create-branch-btn" href="#"> <i class="fa fa-plus"></i> New Branch </a>
+      <a class="btn btn-default init-btn" href="#"> <i class="fa fa-cross"></i> Cancel </a>
+  {{/if}}
+</template>
+
+<template name="selectBranch">
+<select name="branch" class="branchSelect" placeholder="Branch...">
+  <option value=""></option>
+  {{#each branches}}
+  <option value="{{name}}" {{isSelected ..}}>{{name}}</option>
+  {{/each}}
+</select>
+</template>
+
+<template name="editNavBar">
+  <div class="commitInfo row {{getLevel}}">
+    <div class="contextName"> 
+      {{getContext}}
+    </div>
+    <div class="contextWrapper">
+      
+      {{#if state 'branch'}}
+        {{> branchSelector}}
+      {{/if}}
+      
+      {{#if state 'init'}}
+        <a href="#" class="branch-change">{{ branchName }}</a>
+      {{/if}}
+      
+      {{#if state 'merge'}}
+        <div class="branchSelectWrapper">
+          {{> selectBranch}}
+        </div>
+        <a class="btn btn-primary apply-merge-btn" href="#"> <i class="octicon octicon-git-merge"></i> merge </a>
+        <a class="btn btn-default init-btn" href="#"> <i class="fa fa-cross"></i> Cancel </a>
+      {{/if}}
+      
+      <span class="right actions">
+        <a href="{{pathFor 'commit.history' _commitId=head._id}}"> <i class="fa fa-history"></i> History</a>
+        <a href="#" class="commit-btn {{isChanged}}"> <i class="fa fa-save"></i> Commit</a>
+        <a href="#" class="branch-change"> <i class="octicon octicon-git-branch"></i> Change Branch</a>
+        <a href="#" class="merge-btn"> <i class="octicon octicon-git-merge"></i> Merge</a>
+      </span>
+    </div>
+  </div>
+</template>
+
+
+<template name="branchMerge">
+  <div class="branchSelectWrapper">
+    {{updated}}
+  </div>
+</template>

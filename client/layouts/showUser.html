@@ -1,0 +1,67 @@
+<template name="showUser">
+<li class="user-profile">
+<a data-toggle="dropdown" href="#" class="user-menu dropdown-toggle">
+  <i class="fa fa-user"></i>
+  <span class="hidden-phone" id="user_info">
+    {{ currentUser.username }}
+  </span>
+  <i class="fa fa-caret-down"></i>
+</a>
+  <ul class="dropdown-menu dropdown-navbar" id="user_menu">
+    <li>
+    <a href="#">
+      <i class="fa fa-cog"></i>
+      Account Settings
+    </a>
+    </li>
+
+    <li>
+    <a href="#">
+      <i class="fa fa-user"></i>
+      Edit Profile
+    </a>
+    </li>
+
+    <li>
+    <a href="#">
+      <i class="fa fa-question"></i>
+      Help
+    </a>
+    </li>
+
+    <li class="divider visible-phone"></li>
+
+    <li class="visible-phone">
+    <a href="#">
+      <i class="fa fa-tasks"></i>
+      Tasks
+      <span class="badge badge-warning">4</span>
+    </a>
+    </li>
+    <li class="visible-phone">
+    <a href="#">
+      <i class="fa fa-bell"></i>
+      Notifications
+      <span class="badge badge-important">8</span>
+    </a>
+    </li>
+    <li class="visible-phone">
+    <a href="#">
+      <i class="fa fa-envelope"></i>
+      Messages
+      <span class="badge badge-success">5</span>
+    </a>
+    </li>
+
+    <li class="divider"></li>
+
+    <li>
+    <a href="" class="logoutBtn">
+      <i class="fa fa-off"></i>
+      Logout
+    </a>
+    </li>
+  </ul>
+</li>
+
+</template>

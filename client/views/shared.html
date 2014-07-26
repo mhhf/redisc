@@ -1,0 +1,30 @@
+<template name="Score">
+  <span class="score">
+    {{getScore}} 
+  </span>
+  <div class="arrows"> 
+    <a name="up" href="#" data-target="{{_id}}" class="{{voted 'up'}}">
+      <i class="vote fa fa-arrow-up"></i>       
+    </a>
+    <a name="down" href="#" data-target="{{_id}}" class="{{voted 'down'}}">
+      <i class="vote fa fa-arrow-down"></i>       
+    </a>
+  </div>
+</template>
+
+<template name="Stats">
+<div class="stats">
+  <span class="stat"><i class="fa fa-comments"></i> {{comments}}</span>
+  <span class="stat"><i class="fa fa-clock-o"></i> {{since lastChange}}</span>
+  <span class="stat"><i class="fa fa-user"></i> {{userName}}</span>
+  <span class="stat">
+    {{#if hasTags}}
+    <i class="fa fa-tags"></i>
+    {{/if}}
+    {{#each tags}}
+    <a class="tag" href="{{pathFor 'Tag' name=this}}">{{this}}</a>
+    {{/each}}
+    
+  </span>
+</div>
+</template>

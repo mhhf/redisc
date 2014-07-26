@@ -1,0 +1,139 @@
+textarea {
+	width: 100%;
+}
+
+div.textContainer {
+	height: 2.7em;
+	overflow: hidden;
+	center {
+		transition: margin-top 0.5s;
+		-webkit-transition: margin-top 0.5s; /* Safari */ 
+		font-size: 1em;
+		span {
+			transition: color 0.3s;
+			-webkit-transition: color 0.3s; /* Safari */ 
+			color: rgba(200,200,200,0.5);
+			&.playing {
+				color: rgba(60,60,60,1);
+			}
+		}
+	}
+}
+
+.circleBtn {
+	background: #555;
+	border-radius: 11px;
+	width: 22px;
+	height: 22px;
+	border: none;
+	display: inline-block;
+	color: #fefefe;
+	&:hover {
+		background: #777;
+	}
+	i {
+		margin-left: -1px;
+	}
+}
+
+.processWrapper {
+	text-align: center;
+	margin: 0;
+
+	li{
+		display:inline-block;
+		div {
+			width: 8px;
+			height: 8px;
+			background: #eee;
+			border-radius: 4px;
+		}
+		&.loaded div{
+			background: #aaa;
+		}
+		&.playing div{
+			background: #ffa75d;
+		}
+	}
+	span {
+		width: 10px;
+		height: 10px;
+		border: 5px;
+	}
+}
+
+.loadingWrapper {
+	width: 100%;
+	padding: 182px 0;
+}
+
+.editContainer {
+	position: relative;
+}
+
+#stage {
+	height: 100%;
+	overflow: hidden;
+}
+
+#pageSelect {
+	height: 100%;
+	float: right;
+	overflow: scroll;
+}
+
+.minBorder {
+	border: 2px solid #bdc3c7;
+	border-radius: 6px;
+	color: #34495e;
+	padding: 8px 10px;
+	-webkit-appearance: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+
+	margin: 30px 0;
+
+	background-color: white;
+	border-collapse: separate;
+	box-sizing: content-box;
+	outline: none;
+}
+
+#newSlide {
+	background: green;
+}
+
+.previewSlideWrapper {
+	padding: 4px 4px;
+}
+#stageWrapper {
+	position: relative;
+	height: 100%;
+	width: 100%;
+
+	.staged{
+		position: absolute;
+		img {
+			width: 100%;
+		}
+	}
+}
+
+
+
+.ui-resizable { position: relative;}
+.ui-resizable-handle { position: absolute;font-size: 0.1px; display: block; }
+.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }
+.ui-resizable-se { 
+	cursor: se-resize;
+	width: 12px;
+	height: 12px;
+	right: 1px;
+	bottom: 1px;
+	background: #f00;
+}
+.ui-resizable-sw { cursor: sw-resize; width: 9px; height: 9px; left: -5px; bottom: -5px; }
+.ui-resizable-nw { cursor: nw-resize; width: 9px; height: 9px; left: -5px; top: -5px; }
+.ui-resizable-ne { cursor: ne-resize; width: 9px; height: 9px; right: -5px; top: -5px;}
+

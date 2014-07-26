@@ -1,0 +1,155 @@
+@textGray: #999;
+@black: #333;
+@grey: #f1f1f1;
+@darkblue: #194c68;
+@blue: #2879a6;
+@orange: #d58e50;
+
+
+@highlight: @orange;
+@neutral: @grey;
+@bg: @grey;
+@neutral: @grey;
+
+@border: 2px;
+@border2: 4px;
+@border3: 6px;
+@border4: 10px;
+@border5: 16px;
+@border6: 26px;
+
+
+select {
+  width: 100%;
+}
+
+ul.postList {
+  list-style: none;
+  
+  li {
+    margin: 15px 0;
+    position: relative;
+  }
+  
+  .title {
+    font-size: 2em;
+  }
+  .contentContainer {
+    display: inline-block;
+  }
+}
+
+.stats {
+  color: @textGray;
+  margin-left: 10px;
+  .stat {
+    display: inline-block;
+    margin: 0px 5px;
+    a.tag {
+      margin: 0px 2px;
+      color: #777;
+      text-decoration: underline;
+    }
+  }
+}
+
+
+.score {
+  color: #777;
+  font-size: 28px;
+  vertical-align: top;
+  position: absolute;
+  right: 100%;
+  text-align: right;
+  margin-right: 4px;
+}
+.arrows {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
+  a{
+    display: block;
+    color: #777;
+    &.active {
+      color: #f2a40d;
+    }
+  }
+}
+
+.contentWrapper {
+  background: #fff;
+  position: relative;
+  padding: @border5 @border2 @border2 @border2;
+  &.new {
+    border: 1px #f2a40d solid !important; 
+  }
+  .markdownWrapper {
+    padding: 0 0 0 @border4;
+  }
+  &.edit {
+    padding-bottom: @border6;
+  }
+}
+.codeWrapper {
+  background: #f1f1f1;
+  padding: @border2;
+}
+
+.commentWrapper {
+  background: #fff;
+  padding: @border2;
+  position: relative;
+  padding-bottom: @border6;
+}
+.codeWrapper {
+  margin-bottom: 4px;
+}
+
+
+.left-interactions {
+  position: absolute;
+  left: 0px;
+  bottom: 2px;
+}
+.interactions {
+  position: absolute;
+  right: 0px;
+  bottom: 2px;
+}
+.interactions,
+.left-interactions {
+  a {
+    font-size: 1.4em;
+    margin: 0 8px;
+    color: @textGray;
+    &:hover {
+      color: @black;
+    }
+  }
+}
+
+
+ul.comments {
+  margin: 0px;
+  margin-bottom: @border6;
+  border-left: 1px @textGray dotted !important;
+  list-style: none;
+  padding-left: 0px;
+  li {
+    padding: 0px 0px 0px 20px;
+    position: relative;
+    margin: 2px 0px 2px 40px;
+    
+    .contentWrapper {
+      background: #fff;
+    }
+    .scoreWrapper{
+      position: absolute;
+      left: 0px;
+    }
+    
+    ul.comment {
+      border-left: 2px #1a4c68 solid;
+    }
+  }
+}
