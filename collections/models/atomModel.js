@@ -102,6 +102,10 @@ AtomModel = function( o, params ){
       self.parent && self.parent.changed();
     });
     
+    this.atomWatcher.onInvalidate( function(a,b){ 
+      console.log('inv',a,b);
+    });
+    
     
     
     
@@ -252,24 +256,24 @@ AtomModel = function( o, params ){
       var _atomId = Atoms.insert( child );
     }
     
-    if( !( pos && pos >= 0 && pos in atom[key] ) ) {
-      pos = atom[key].length;
-    }
-    atom[key].splice( pos, 0, _atomId );
-    var o = {};
-    o[key] = atom[key];
+    // if( !( pos && pos >= 0 && pos in atom[key] ) ) {
+    //   pos = atom[key].length;
+    // }
+    // atom[key].splice( pos, 0, _atomId );
+    // var o = {};
+    // o[key] = atom[key];
     
-    this.update(o);
+    // this.update(o);
     
-    var atomModel = new AtomModel( _atomId, {
-      parent: this
-    } );
+    // var atomModel = new AtomModel( _atomId, {
+    //   parent: this
+    // } );
     
-    this.emit('add', { target: atomModel });
+    // this.emit('add', { target: atomModel });
     
-    computeNested();
+    // computeNested();
     
-    return atomModel;
+    // return atomModel;
     
   }
   
