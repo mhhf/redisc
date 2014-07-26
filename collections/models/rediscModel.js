@@ -37,7 +37,6 @@ RediscModel = function( o ) {
     if( this.val === 'COMMENT' ) {
       var root = this.data.atom.root || this.data.atom._id;
       var atom = _.extend( new LLMD.Atom('redisc'), newAtomO, {root: root} );
-      console.log('adding atom: ', atom);
       this.data.addAfter( 'nested', atom );
     } else if( this.val === 'EDIT' ) {
       this.data.update( newAtomO );

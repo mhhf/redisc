@@ -1,4 +1,5 @@
 var atomModelMap = {};
+AtomModelMap = atomModelMap;
 
 
 /**
@@ -9,12 +10,13 @@ var atomModelMap = {};
 Atoms = new Meteor.Collection( 'atoms' );
 AtomModel = function( o, params ){
   
-  _.extend( this, new EventEmitter() );
   
   var _id;
   var deps = new Deps.Dependency;
   var nested;
   var self = this;
+  
+  _.extend( this, new EventEmitter() );
   
   
   var computeNested = function() {
@@ -34,9 +36,20 @@ AtomModel = function( o, params ){
       });
     }
   }
+  this.computeNested = computeNested;
   
-  // inserting
-  if( typeof o == 'object' && o != null ) {
+  
+  
+  if( typeof o == 'string' ) {
+    _id = o;
+    
+    // singleton
+    if( atomModelMap[ _id ] ) {
+      return atomModelMap[ _id ];
+    }
+    atomModelMap[_id] = this;
+    
+  } else if( typeof o == 'object' && o != null ) {
     var insertAtoms = function( ast ){
       
       var n = {};
@@ -65,14 +78,9 @@ AtomModel = function( o, params ){
       _id = 'tmp';
     }
     
-  } else if( typeof o == 'string' ) {
-    _id = o;
-    
-    // singleton
-    if( atomModelMap[ _id ] ) return atomModelMap[ _id ];
-    atomModelMap[_id] = this;
-    
-  }
+  }   
+  
+  
   
   if( _id === 'tmp' ) {
     var atom = o;
@@ -82,23 +90,40 @@ AtomModel = function( o, params ){
     
     var self = this;
     
-    var atomWatcher = Deps.autorun( function(){
+    this.atomWatcher = Deps.autorun( function(){
+      console.log('ar', _id);
       atom = Atoms.findOne({ _id: _id });
-      if( !atom ) return null;
+      if( !atom ) {
+        // throw new Error('atom not found');
+        return null;
+      }
       self.atom = atom;
       deps.changed();
       self.parent && self.parent.changed();
-      computeNested();
     });
+    
+    if( !atom ) return null;
+    computeNested();
+    
+    
+    
+    // this.atomWatcher = atomWatcher;
     
   }
   
   
   if( params && params.parent ) this.parent = params.parent; 
   
+  // if a nested child cant be loaded
   if( _id && !atom ) {
     
+    // invalidate the child
     delete atomModelMap[_id];
+    
+    // invalidate the parent, which holds the invalid child
+    if( this.parent ) {
+      delete atomModelMap[ this.parent.atom._id ];
+    }
   
     // throw new Error('no Atom '+_id+' found, maybe its not subscribed to it or is removed.');
   
@@ -153,12 +178,12 @@ AtomModel = function( o, params ){
       atom.meta = _.extend( atom.meta, atomO.meta );
       var _atomId = Atoms.insert( _.omit( _.extend( atom, _.omit(atomO,'meta') ), '_id' ) );
       
-      atomWatcher && atomWatcher.stop();
-      atomWatcher = Deps.autorun( function(){
+      this.atomWatcher && this.atomWatcher.stop();
+      this.atomWatcher = Deps.autorun( function(){
         atom = Atoms.findOne({ _id: _atomId });
-        computeNested();
         deps.changed();
       });
+      computeNested();
       
       delete atomModelMap[ _oldId ];
       atomModelMap[ _atomId ] = this;

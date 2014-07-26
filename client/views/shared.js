@@ -32,6 +32,7 @@ Template.Score.helpers({
     }
   },
   getScore: function(){
+    // console.log( 'sc', this.get().data, this.get().score);
     return this.get().score;
   }
 });

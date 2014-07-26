@@ -63,7 +63,8 @@ Template.EditorWrapper.events = {
 Template.Comments.helpers({
   getComments: function(){
     var children = this.getNested('nested');
-    children.sort( function( a, b ){ return b.atom.score - a.atom.score; });
+    children.sort( function( a, b ){
+      return b.atom.score - a.atom.score; });
     return children;
   }
 });
