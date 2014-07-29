@@ -9,7 +9,19 @@
     "bootstrap3-less": {},
     "spin": {},
     "editor": {
-      "git": "ssh://git@bitbucket.org/liquidlearningdev/editor.git"
+      "git": ""
+    },
+    "llmd-core": {
+      "git": "https://github.com/mhhf/llmd-core.git"
+    },
+    "llmd": {
+      "git": "https://github.com/mhhf/llmd.git"
+    },
+    "llmd-md": {
+      "git": "https://github.com/mhhf/llmd-md.git"
+    },
+    "llmd-redisc": {
+      "git": "https://github.com/mhhf/llmd-redisc.git"
     },
     "module-loader": {},
     "fontawesome4": {},
