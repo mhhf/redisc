@@ -1,0 +1,11 @@
+{
+  "name": "llmd-markdown",
+  "description": "A llmd-flavored-markdown parser and compiler.",
+  "homepage": "",
+  "author": "Denis Erfurt",
+  "version": "0.1.0",
+  "git": "",
+  "packages": {
+    "marked": {}
+  }
+}

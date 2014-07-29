@@ -29,7 +29,8 @@
       },
       "module-loader": {},
       "fontawesome4": {},
-      "accounts-entry": {}
+      "accounts-entry": {},
+      "sendgrid": {}
     },
     "packages": {
       "collection2": {
@@ -93,6 +94,11 @@
         "git": "https://github.com/Differential/accounts-entry.git",
         "tag": "v0.8.0",
         "commit": "cf7f7d0ecc285824bc2748e305f5d693df99b4ae"
+      },
+      "sendgrid": {
+        "git": "https://github.com/DavidBrear/meteor-sendgrid.git",
+        "tag": "v0.9.0",
+        "commit": "302373c32b58b67dfe67de4dcdad065a33925fc2"
       },
       "simple-schema": {
         "git": "https://github.com/aldeed/meteor-simple-schema.git",

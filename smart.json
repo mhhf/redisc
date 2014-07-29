@@ -25,6 +25,7 @@
     },
     "module-loader": {},
     "fontawesome4": {},
-    "accounts-entry": {}
+    "accounts-entry": {},
+    "sendgrid": {}
   }
 }
