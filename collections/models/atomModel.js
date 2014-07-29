@@ -12,7 +12,7 @@ AtomModel = function( o, params ){
   
   
   var _id;
-  var deps = new Deps.Dependency;
+  // var deps = new Deps.Dependency;
   var nested;
   var self = this;
   
@@ -81,41 +81,25 @@ AtomModel = function( o, params ){
   }   
   
   
-  var self = this;
-  this.handleReactive = function(){
-    
-    this.atomWatcher = Deps.autorun( function(){
-      atom = Atoms.findOne({ _id: _id });
-      console.log(_id);
-      if( !atom ) {
-        // throw new Error('atom not found');
-        return null;
-      }
-      self.atom = atom;
-      computeNested();
-      deps.changed();
-      self.parent && self.parent.changed && self.parent.changed();
-    });
-    
-    this.atomWatcher.onInvalidate( function(a,b){ 
-      console.log( self, _id, atom );
-      if(a.stopped) {
-        self.handleReactive();
-      }
-    });
-    
-  }
   
   if( _id === 'tmp' ) {
     var atom = o;
-    this.atom = atom;
   } else {
     var atom;
     
-    this.handleReactive();
+    atom = Atoms.findOne({ _id: _id });
+    if( _id && !atom ) {
+      // invalidate the child
+      delete atomModelMap[_id];
+      // invalidate the parent, which holds the invalid child
+      if( this.parent ) {
+        delete atomModelMap[ this.parent.atom._id ];
+      }
+      return null;
+    }
     
-    
-    // this.atomWatcher = atomWatcher;
+    computeNested();
+    // deps.changed();
     
   }
   
@@ -123,21 +107,6 @@ AtomModel = function( o, params ){
   if( params && params.parent ) this.parent = params.parent; 
   
   // if a nested child cant be loaded
-  if( _id && !atom ) {
-    
-    // invalidate the child
-    delete atomModelMap[_id];
-    
-    // invalidate the parent, which holds the invalid child
-    if( this.parent ) {
-      delete atomModelMap[ this.parent.atom._id ];
-    }
-    
-    return null;
-  
-    // throw new Error('no Atom '+_id+' found, maybe its not subscribed to it or is removed.');
-  
-  }
   
   // [TODO] - refactor nested to atomModelMap call
   
@@ -148,13 +117,14 @@ AtomModel = function( o, params ){
   
   
   this.get = function(){
-    deps.depend();
+    atom = Atoms.findOne( _id );
     return atom;
   }
   
   // [TODO] - refactor getChildren
   this.getNested = function( k ){
-    deps.depend();
+    atom = Atoms.findOne(_id);
+    computeNested();
     return nested && nested[k];
   }
   
@@ -187,11 +157,6 @@ AtomModel = function( o, params ){
       atom.meta = _.extend( atom.meta, atomO.meta );
       var _atomId = Atoms.insert( _.omit( _.extend( atom, _.omit(atomO,'meta') ), '_id' ) );
       
-      this.atomWatcher && this.atomWatcher.stop();
-      this.atomWatcher = Deps.autorun( function(){
-        atom = Atoms.findOne({ _id: _atomId });
-        deps.changed();
-      });
       computeNested();
       
       delete atomModelMap[ _oldId ];
@@ -439,7 +404,6 @@ AtomModel = function( o, params ){
     while ( ast1.length + ast2.length > 0 ) {
       
       var indexes = findFirstMatched( ast1, ast2 );
-      // console.log( 'intexes:', indexes.i, indexes.j, ast1.length, ast2.length );
       
       // take all elements < indexes.i from ast1 and push them to ds with changes
       if( indexes.i > 0 )
@@ -451,7 +415,6 @@ AtomModel = function( o, params ){
       var a1 = ast1.splice(0, 1)[0];
       var a2 = ast2.splice(0, 1)[0];
       
-      // console.log('a',a1,a2);
       if( a1 && a2 ) {
         a1.diff(a2);
         ds = ds.concat([a1.getId()]);
@@ -500,7 +463,7 @@ AtomModel = function( o, params ){
   }
   
   this.changed = function(){
-    deps.changed();
+    // deps.changed();
   }
   
   

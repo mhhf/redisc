@@ -45,11 +45,12 @@ Template.PostWrapper.helpers({
   newCommentAtom: function(){
     var atom = new LLMD.Atom('redisc');
     // [TODO] - refactor _atomId to _seedId
-    atom.root = this.atom.root != ''? this.atom.root : this.atom._seedId;
-    atom.parent = this.atom._seedId;
+    var parent = this.get();
+    atom.root = parent.root != ''? parent.root : parent._seedId;
+    atom.parent = parent._seedId;
     return {
       atom: atom,
-      parents: [this.atom._id]
+      parents: [parent._id]
     };
   }
 });
@@ -67,7 +68,7 @@ Template.Comments.helpers({
   getComments: function(){
     var children = this.getNested('nested');
     children.sort( function( a, b ){
-      return b.atom.score - a.atom.score; });
+      return b.get().score - a.get().score; });
     return children;
   }
 });
