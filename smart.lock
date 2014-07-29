@@ -3,28 +3,32 @@
   "dependencies": {
     "basePackages": {
       "collection2": {},
-      "llmd": {
-        "path": "../liquid/src/packages/llmd"
-      },
-      "llmd-core": {
-        "path": "../liquid/src/packages/llmd-core"
-      },
-      "llmd-md": {
-        "path": "../liquid/src/packages/llmd-md"
-      },
-      "llmd-redisc": {
-        "path": "../liquid/src/packages/llmd-redisc"
-      },
       "emitter": {},
       "iron-router": {},
       "tags": {
-        "git": "git@github.com:mhhf/meteor-tags.git",
+        "git": "git://github.com/mhhf/meteor-tags.git",
         "branch": "master"
       },
       "bootstrap3-less": {},
       "spin": {},
       "editor": {
-        "git": "git@bitbucket.org:liquidlearningdev/editor.git",
+        "git": "https://github.com/mhhf/editor.git",
+        "branch": "master"
+      },
+      "llmd-core": {
+        "git": "https://github.com/mhhf/llmd-core.git",
+        "branch": "master"
+      },
+      "llmd": {
+        "git": "https://github.com/mhhf/llmd.git",
+        "branch": "master"
+      },
+      "llmd-md": {
+        "git": "https://github.com/mhhf/llmd-md.git",
+        "branch": "master"
+      },
+      "llmd-redisc": {
+        "git": "https://github.com/mhhf/llmd-redisc.git",
         "branch": "master"
       },
       "module-loader": {},
@@ -38,18 +42,6 @@
         "tag": "v0.4.3",
         "commit": "cb470de2cfeebeccbf76d4cc0a39ad4afc76d553"
       },
-      "llmd": {
-        "path": "../liquid/src/packages/llmd"
-      },
-      "llmd-core": {
-        "path": "../liquid/src/packages/llmd-core"
-      },
-      "llmd-md": {
-        "path": "../liquid/src/packages/llmd-md"
-      },
-      "llmd-redisc": {
-        "path": "../liquid/src/packages/llmd-redisc"
-      },
       "emitter": {
         "git": "https://github.com/Meteor-Reaction/meteor-emitter.git",
         "tag": "v0.1.0",
@@ -61,7 +53,7 @@
         "commit": "d1ffb3f06ea4c112132b030f2eb1a70b81675ecb"
       },
       "tags": {
-        "git": "git@github.com:mhhf/meteor-tags.git",
+        "git": "git://github.com/mhhf/meteor-tags.git",
         "branch": "master",
         "commit": "b7dedea98992a74279f52b4566e45f25e0652afb"
       },
@@ -76,9 +68,29 @@
         "commit": "23c1145472a710d5c93fa4beaca4e576caeb2f24"
       },
       "editor": {
-        "git": "git@bitbucket.org:liquidlearningdev/editor.git",
+        "git": "https://github.com/mhhf/editor.git",
         "branch": "master",
-        "commit": "bbc8dc9cda70c601acb99ce5ef173570ac5212eb"
+        "commit": "2e1ff54038f78813c2383f10ecab49b2df68f182"
+      },
+      "llmd-core": {
+        "git": "https://github.com/mhhf/llmd-core.git",
+        "branch": "master",
+        "commit": "d42af64ee699184b0734cdf3dee52118bcd4e236"
+      },
+      "llmd": {
+        "git": "https://github.com/mhhf/llmd.git",
+        "branch": "master",
+        "commit": "ff2333e2a4209c10828b1f391f7553050dec26ba"
+      },
+      "llmd-md": {
+        "git": "https://github.com/mhhf/llmd-md.git",
+        "branch": "master",
+        "commit": "4f2b7a42f6c3161542f37596776b13f42ece8d29"
+      },
+      "llmd-redisc": {
+        "git": "https://github.com/mhhf/llmd-redisc.git",
+        "branch": "master",
+        "commit": "9917319e2e56c92596650cfad11d339d4c7b6356"
       },
       "module-loader": {
         "git": "https://github.com/apendua/module-loader.git",
@@ -105,21 +117,6 @@
         "tag": "v0.6.0",
         "commit": "418ec496612fb2afc853e342f0d2269b6674a2fe"
       },
-      "marked": {
-        "git": "https://github.com/chuangbo/meteor-marked.git",
-        "tag": "v0.3.2",
-        "commit": "850f63135cdeb05344c420bd586fd8af9cab75df"
-      },
-      "crypto-base": {
-        "git": "https://github.com/oortcloud/meteor-crypto-base.git",
-        "tag": "v3.1.2.1",
-        "commit": "5df8d82a0595553415bbfae2930c6ecbeece5794"
-      },
-      "crypto-sha1": {
-        "git": "https://github.com/dandv/meteor-crypto-sha1.git",
-        "tag": "v3.1.2.1",
-        "commit": "f5c87d44aa4bdda6b33c7e2c21ea396d9d0f436d"
-      },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
         "tag": "v0.2.4",
@@ -134,6 +131,21 @@
         "git": "https://github.com/andrewreedy/meteor-selectize.git",
         "tag": "v0.0.1",
         "commit": "2bf47922a6b964ca58ad58cfa0e92c9cf9ea8be3"
+      },
+      "marked": {
+        "git": "https://github.com/chuangbo/meteor-marked.git",
+        "tag": "v0.3.2",
+        "commit": "850f63135cdeb05344c420bd586fd8af9cab75df"
+      },
+      "crypto-base": {
+        "git": "https://github.com/oortcloud/meteor-crypto-base.git",
+        "tag": "v3.1.2.1",
+        "commit": "5df8d82a0595553415bbfae2930c6ecbeece5794"
+      },
+      "crypto-sha1": {
+        "git": "https://github.com/dandv/meteor-crypto-sha1.git",
+        "tag": "v3.1.2.1",
+        "commit": "f5c87d44aa4bdda6b33c7e2c21ea396d9d0f436d"
       },
       "accounts-t9n": {
         "git": "https://github.com/softwarerero/meteor-accounts-t9n.git",
