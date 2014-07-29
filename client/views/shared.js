@@ -2,6 +2,18 @@ Template.Stats.hasTags = function(){
   return this.tags.length > 0;
 }
 
+Template.Stats.helpers({
+  
+  comments: function(){
+    console.log(this.comments);
+    return this.comments;
+  },
+  userName: function(){
+    return this.user && this.user.name;
+  }
+  
+});
+
 Template.Stats.lastChange = function(){
   return moment(this.updatedOn).fromNow() || moment(this.createdOn).fromNow();
 }

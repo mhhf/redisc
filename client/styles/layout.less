@@ -35,6 +35,7 @@ input, input:focus {
 
 
 .navbar-glass {
+  min-height: 30px;
   border: none;
   background: #4b8cdc;
 }
@@ -44,12 +45,22 @@ input, input:focus {
   color: #fff;
   &:hover {
     color: rgba(255,255,255,0.8);
+    background: inherit;
   }
+}
+.navbar-nav > li > a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.navbar-brand {
+  padding: 5px 15px;
+  height: 30px;
 }
 
 .nav li a {
   color: #fff;
   &:hover {
+    background: inherit;
     color: rgba(255,255,255,0.8);
   }
 }
