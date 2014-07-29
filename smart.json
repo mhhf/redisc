@@ -9,7 +9,7 @@
     "bootstrap3-less": {},
     "spin": {},
     "editor": {
-      "git": "git://github.com/liquidlearningdev/editor.git"
+      "git": "https://denis_erfurt@bitbucket.org/liquidlearningdev/editor.git"
     },
     "module-loader": {},
     "fontawesome4": {},
