@@ -81,6 +81,28 @@ AtomModel = function( o, params ){
   }   
   
   
+  var self = this;
+  this.handleReactive = function(){
+    
+    this.atomWatcher = Deps.autorun( function(){
+      atom = Atoms.findOne({ _id: _id });
+      if( !atom ) {
+        // throw new Error('atom not found');
+        return null;
+      }
+      self.atom = atom;
+      computeNested();
+      deps.changed();
+      self.parent && self.parent.changed && self.parent.changed();
+    });
+    
+    this.atomWatcher.onInvalidate( function(a,b){ 
+      if(a.stopped) {
+        self.handleReactive();
+      }
+    });
+    
+  }
   
   if( _id === 'tmp' ) {
     var atom = o;
@@ -88,25 +110,7 @@ AtomModel = function( o, params ){
   } else {
     var atom;
     
-    var self = this;
-    
-    this.atomWatcher = Deps.autorun( function(){
-      console.log('ar', _id);
-      atom = Atoms.findOne({ _id: _id });
-      if( !atom ) {
-        // throw new Error('atom not found');
-        return null;
-      }
-      self.atom = atom;
-      deps.changed();
-      self.parent && self.parent.changed();
-    });
-    
-    this.atomWatcher.onInvalidate( function(a,b){ 
-      console.log('inv',a,b);
-    });
-    
-    
+    this.handleReactive();
     
     
     // this.atomWatcher = atomWatcher;
@@ -134,7 +138,6 @@ AtomModel = function( o, params ){
   }
   
   // [TODO] - refactor nested to atomModelMap call
-  computeNested();
   
   
   
@@ -256,24 +259,24 @@ AtomModel = function( o, params ){
       var _atomId = Atoms.insert( child );
     }
     
-    // if( !( pos && pos >= 0 && pos in atom[key] ) ) {
-    //   pos = atom[key].length;
-    // }
-    // atom[key].splice( pos, 0, _atomId );
-    // var o = {};
-    // o[key] = atom[key];
+    if( !( pos && pos >= 0 && pos in atom[key] ) ) {
+      pos = atom[key].length;
+    }
+    atom[key].splice( pos, 0, _atomId );
+    var o = {};
+    o[key] = atom[key];
     
-    // this.update(o);
+    this.update(o);
     
-    // var atomModel = new AtomModel( _atomId, {
-    //   parent: this
-    // } );
+    var atomModel = new AtomModel( _atomId, {
+      parent: this
+    } );
     
-    // this.emit('add', { target: atomModel });
+    this.emit('add', { target: atomModel });
     
     // computeNested();
     
-    // return atomModel;
+    return atomModel;
     
   }
   

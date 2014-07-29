@@ -38,5 +38,4 @@ Template.Score.helpers({
 });
 
 Template.Comments.rendered = function(){
-  console.log( this.data );
 }

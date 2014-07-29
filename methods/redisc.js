@@ -1,6 +1,5 @@
 Meteor.methods({
   'post.vote': function(o){
-    console.log('vote',o);
     var p = Atoms.findOne({_id: o._id});
     var b = 0;
     if(p.upvotes.indexOf(this.userId)>-1) b = -1;

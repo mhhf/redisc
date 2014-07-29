@@ -1,1 +1,479 @@
 @import "/packages/bootstrap3-less/bootstrap.import.less";
+
+@textGray: #999;
+@black: #333;
+@grey: #f1f1f1;
+@grey2: #e5e5e5;
+@darkblue: #194c68;
+@blue: #4b8cdc;
+@lightblue: #d3dfed;
+@orange: #fdb756;
+@lightorange: #f6dcb9;
+
+
+@highlight: @orange;
+@neutral: @grey;
+@bg: @grey;
+@neutral: @grey;
+
+@border: 2px;
+@border2: 4px;
+@border3: 6px;
+@border4: 10px;
+@border5: 16px;
+@border6: 26px;
+
+textarea {
+  background: @neutral;
+  width: 100%;
+  padding: 10px;
+  
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  border-radius: 0px !important;
+}
+
+a {
+  color: @black;
+  &:hover {
+    color: @blue;
+  }
+}
+
+.CodeMirror {
+  // min-height: 100px;
+}
+
+.right {
+  float: right;
+}
+.left {
+  float: left;
+}
+
+.clear {
+  clear: both;
+}
+
+
+.btn-default {
+}
+.btn.active {
+  background: @orange !important;
+  box-shadow: none; 
+  -webkit-box-shadow: none !important;
+}
+
+#dropzone {
+  height: 100px;
+  width: 100%;
+  display: table;
+  border-radius: 20px;
+  border: 4px #fff dashed;
+  &:before{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    content: 'Drop file here!';
+  }
+  &.hover {
+    border: 4px @blue dashed;
+    background: @lightblue;
+    &:before {
+      content: 'Good!';
+    }
+  }
+}
+
+.thumbnail {
+  width: 250px;
+  height: 250px;
+  background: url('loading.gif') center center no-repeat;
+}
+
+.courseWrapper {
+  background: #fff;
+  display: inline-block;
+  padding: 4px;
+  margin: 2px;
+  border: 1px solid @grey2;
+  &:hover {
+    border: 1px solid #fdb756;
+  }
+  
+  
+  .imgWrapper {
+    img {
+      background: #e5e5e5;
+      width: 200px;
+      height: 200px;
+    }
+  }
+}
+.sections {
+  padding: 0px;
+  list-style: none;
+  border: 1px solid #d6d6d6;
+}
+
+.sortable-ghost{
+  background: #e5e5e5 !important;
+  border: 2px #f5f5f5 dashed !important;
+  * {
+    visibility: hidden;
+  }
+}
+
+.nav-pills {
+  background: #fff;
+  li.section > a {
+    text-transform: uppercase;
+    &:hover, &.active {
+      color: #fff!important;
+      background: @blue;
+    }
+  }
+  a {
+    margin: 0px;
+    color: @black !important;
+  }
+  li + li {
+    margin-top: 0px !important;
+  }
+}
+.unitsContainer {
+  border-left: 2px solid @blue;
+  background: #f7f7f7;
+  padding: 10px 15px;
+}
+
+.units {
+  background: #f7f7f7;
+  list-style: none;
+  padding: 0px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  li {
+    margin: 5px 0;
+    a:hover {
+      background: inherit;
+    }
+    a.active {
+      font-weight: bold;
+    }
+  }
+}
+.list-group-item:hover {
+  color: #fff !important;
+  background: @blue !important;
+}
+
+.newCoursePanel {
+  border-top: 2px solid;
+  border-right: 2px solid;
+  border-radius: 0px;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-color: #666;
+}
+
+.save-btn.changed {
+  background: #fdb756;
+}
+
+.functions {
+  margin: 0 10px;
+}
+
+.courseTitle {
+  text-align: center;
+  font-size: 24px;
+  text-transform: uppercase; 
+  a, a:hover {
+    color: @black;
+  }
+}
+
+.toolbar {
+  padding: 10px 5% 0 0;
+  text-align: right; 
+}
+
+.descriptionWrapper {
+  background: #fff;
+  padding: 5px 20px;
+}
+
+.btn-up, .btn-down {
+  font-size: 20px;
+  &:hover {
+    color: @blue !important;
+  }
+  i {
+    margin: 0 2px;
+  }
+}
+
+#editorContainer > div {
+  margin: 15px 0;
+}
+
+.multipleChoice {
+  background: #fff;
+  padding: 15px;
+}
+
+.editorContainerWrapper {
+  position: relative;
+}
+
+ul#editorContainer {
+  margin: 0px;
+  list-style: none;
+  padding-left: 0px;
+  padding-bottom: 34px;
+  width: 100%;
+  
+  // > li {
+  //   min-height: 42px;
+  // }
+  
+  // > li.ifWrapper {
+  //   background: #fff;
+  //   margin: 4px 0;
+  //   > .head {
+  //     background: #fff;
+  //     width: 100%;
+  //     padding: 12px 4px 2px 2px;
+  //   }
+  // }
+  
+  > li {
+    margin: @border2 0;
+  }
+  
+  
+  
+  
+} // ul
+
+
+.atomContainer{
+  background: #fff;
+  position: relative;
+  min-height: 20px;
+  -webkit-box-shadow: -4px 4px 5px -5px #aaa; 
+  box-shadow: -4px 4px 5px -5px #aaa; 
+
+
+  > label {
+    text-transform: uppercase;
+    padding: 0 5px;
+    background: @blue;
+    color: #fff;
+    letter-spacing: 0.09em;
+    font-weight: normal;
+  }
+
+  -webkit-transition: margin 0.6s; /* For Safari 3.1 to 6.0 */
+  transition: margin 0.6s; 
+
+  .atomWrapper {
+    margin-right: 45px;
+    padding: @border5 @border @border @border5;
+  }
+
+  .actions{
+    position: absolute;
+    top: 0px;
+    right: 4px;
+    text-align: right;
+    color: @grey2;
+
+    a {
+      margin: 0px 2px;
+    }
+
+  }
+
+  .editActions {
+    text-align: right;
+    position: absolute;
+    bottom: -39px;
+    right: -1px;
+
+    a {
+      margin: 0px;
+    }
+
+  }
+
+  &.edit {
+    border: 1px dotted @blue;
+    margin-top: 55px;
+    margin-bottom: 89px;
+
+    .atomWrapper {
+      padding-left: @border;
+    }
+  }
+
+  &.changed {
+    &:after {
+      content: '';
+      border-right: 2px solid #fdb756;
+      position: absolute;
+      height: 100%;
+      top: 0px;
+      right: -2px;
+    }
+  }
+
+  &.inactive {
+    background: #f7f7f7;
+    border-left: 6px solid #ccc;
+
+    > label {
+      background: #ccc;
+      color: #333;
+    }
+
+    .fa-square-o:before{
+      content: "\f046";
+    }
+  }
+
+  &.ifWrapper {
+    .atomWrapper {
+      margin-right: 0px;
+      padding-right: 0px;
+      padding-left: 6px;
+    }
+  }
+} // li
+
+
+.addNewAtomWrapper {
+ > a.add-btn {
+   text-align: right;
+   position: absolute;
+   bottom: -4px;
+   right: 0px;
+  color: #333;
+ }
+}
+
+.btn-glass {
+  border: 0px;
+  margin: 0px 4px;
+  background: #fff;
+  &:hover {
+    background: @blue;
+    color: #fff !important;
+  }
+}
+
+.btn-primary {
+  border: 0px;
+  background: @blue;
+  color: #fff !important;
+}
+
+.btn-lg {
+  font-size: 18px;
+  line-height: 24px;
+  padding: 8px 12px;
+}
+
+.hatched{
+  margin: 2px 0px;
+}
+
+
+.stateWrapper {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  height: 25px;
+  width: 25px;
+}
+
+ul.history {
+  border-left: 4px #333 solid;
+  padding-left: 0px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  > li {
+    margin-left: -16px;
+    list-style: none;
+    .fa-circle{
+      &.front{
+        color: #333;
+        font-size: 0.6em;
+      }
+      &.back{
+        color: #f1f1f1;
+      }
+    }
+    .fa-stack {
+      height: 1.5em;
+      line-height: 1.5em;
+      font-size: 1em;
+    }
+  }
+}
+
+@transparency: 1;
+.focusArea {
+  background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(241, 241, 241, @transparency)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(241, 241, 241, @transparency)), color-stop(.75, rgba(241, 241, 241, @transparency)), color-stop(.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(-45deg, rgba(241, 241, 241, @transparency) 25%, transparent 25%, transparent 50%, rgba(241, 241, 241, @transparency) 50%, rgba(241, 241, 241, @transparency) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(241, 241, 241, @transparency) 25%, transparent 25%, transparent 50%, rgba(241, 241, 241, @transparency) 50%, rgba(241, 241, 241, @transparency) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(241, 241, 241, @transparency) 25%, transparent 25%, transparent 50%, rgba(241, 241, 241, @transparency) 50%, rgba(241, 241, 241, @transparency) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(241, 241, 241, @transparency) 25%, transparent 25%, transparent 50%, rgba(241, 241, 241, @transparency) 50%, rgba(241, 241, 241, @transparency) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(241, 241, 241, @transparency) 25%, transparent 25%, transparent 50%, rgba(241, 241, 241, @transparency) 50%, rgba(241, 241, 241, @transparency) 75%, transparent 75%, transparent);
+  -webkit-background-size: 10px 10px;
+  -moz-background-size: 10px 10px;
+  -ms-background-size: 10px 10px;
+  -o-background-size: 10px 10px;
+  background-size: 10px 10px;
+  &.focus-danger {
+    background-color: #f2e8da;
+  }
+}
+.newRediscWrapper {
+  margin: 20px 0;
+}
+
+.mochaTestReport #mocha-stats {
+  top: 50px;
+}
+
+
+
+.selectize-input {
+  border: none;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  border-radius: 0px;
+  background: #f6f6f6;
+}
+
+.selectize-control.multi .selectize-input > div {
+  background: @blue;
+  color: #fff;
+}
+.selectize-dropdown {
+  border: none;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  border-radius: 0px;
+}
+.selectize-dropdown .active {
+  background-color: @blue;
+  color: #fff;
+}
+
+.selectize-dropdown .active.create {
+  color: #fff;
+}

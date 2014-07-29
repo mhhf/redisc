@@ -1,11 +1,11 @@
 <template name="navbar">
-<nav class="navbar navbar-glass">
+<nav class="navbar navbar-glass navbar-static-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <a href="/" class="navbar-brand">
         <small>
           <i class="fa fa-flask"></i>
-          LiquidLearning
+          Redisc
         </small>
       </a>
     </div>
@@ -13,15 +13,15 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li>
-          <a href="{{pathFor 'learn'}}">
-            Learn
+          <a href="/">
+            All
           </a>
         </li>
-        <li>
-          <a href="{{pathFor 'teach'}}">
-            Teach
-          </a>
-        </li>
+        <!-- <li> -->
+        <!--   <a href="#"> -->
+        <!--     Teach -->
+        <!--   </a> -->
+        <!-- </li> -->
       </ul>
       
       
@@ -41,12 +41,6 @@
         <!--     Projects -->
         <!--   </a> -->
         <!-- </li> -->
-        <li>
-          <a href="{{pathFor 'feedback'}}">
-            <i class="fa fa-comment"></i>
-            Feedback
-          </a>
-        </li>
         
         <li>
           <a href="{{pathFor 'dev'}}">
