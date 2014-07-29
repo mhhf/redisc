@@ -1,0 +1,57 @@
+<template name="llmd_redisc_edit">
+<form>
+  {{#if isRoot}}
+  <div class="form-group">
+    <label class="control-label" for="title">Title</label>
+    <input type="text" name="title" class="form-control" value="{{atom.title}}" placeholder="Title...">
+    <span class="help-block"></span>
+  </div>
+  {{/if}}
+  
+  <div class="form-group">
+    <label class="control-label" for="data">Content</label>
+    
+    <div class="btn-group">
+      <button type="button" data-target="editor" class="btn editorView btn-default {{isActive 'editor'}}"><i class="fa fa-list-alt"></i></button>
+      {{#unless llmdEngine}}
+      <button type="button" data-target="split" class="btn editorView btn-default {{isActive 'split'}}"><i class="fa fa-columns"></i></button>
+      {{/unless}}
+      <button type="button" data-target="preview" class="btn editorView btn-default {{isActive 'preview'}}"><i class="fa fa-eye"></i></button>
+    </div>
+    
+    <div class="editorWrapper">
+      <div id="editor" class="{{getEditorClass}}"></div>
+      <div id="preview-md" class="{{getViewClass}}"></div>
+    </div>
+
+    <span class="help-block"></span>
+  </div>
+  
+  <!-- <div class="form&#45;group"> -->
+  <!--   <label class="control&#45;label" for="data">Code</label> -->
+  <!--   <div class="codeEditor"></div> -->
+  <!--   <span class="help&#45;block"></span> -->
+  <!-- </div> -->
+  
+  <div class="form-group">
+    <label class="control-label" for="data">Tags</label>
+    <select id="tags" name="tags" multiple>
+      {{#each atom.tags}}
+      <option value="{{this}}" selected>{{this}}</option>
+      {{/each}}
+    </select>
+    <span class="help-block"></span>
+  </div>
+</form>
+
+</template>
+
+<template name="llmd_redisc_ast">
+{{#llmd}}
+{{atom.data}}
+{{/llmd}}
+
+<!-- {{#markdown}} -->
+<!-- {{getData}} -->
+<!-- {{/markdown}} -->
+</template>

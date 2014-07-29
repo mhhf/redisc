@@ -8,10 +8,6 @@
 /mirror
 /collection2
 /simple-schema
-/llmd
-/llmd-core
-/llmd-md
-/llmd-redisc
 /marked
 /crypto-base
 /crypto-sha1
@@ -31,3 +27,4 @@
 /accounts-t9n
 /simple-form
 /underscore-string-latest
+/sendgrid
