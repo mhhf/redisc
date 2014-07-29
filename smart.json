@@ -9,7 +9,7 @@
     "bootstrap3-less": {},
     "spin": {},
     "editor": {
-      "git": ""
+      "git": "https://github.com/mhhf/editor.git"
     },
     "llmd-core": {
       "git": "https://github.com/mhhf/llmd-core.git"
