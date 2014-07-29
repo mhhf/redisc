@@ -13,3 +13,9 @@ Router.configure({
 });
 
 Router.onBeforeAction('loading');
+
+Router.map( function(){
+  
+  this.route( 'profile' );
+  
+});

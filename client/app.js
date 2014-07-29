@@ -3,6 +3,8 @@ App = {
 }
 
 Meteor.startup( function(){
+  
+  
   ModuleLoader.define('mathjax', {
     source: "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML",
     verify: function () {
@@ -18,6 +20,15 @@ Meteor.startup( function(){
   }); 
   
   ModuleLoader.load('mathjax');
+  
+  AccountsEntry.config({
+    homeRoute: '/',
+    dashboardRoute: '/',
+    profileRoute: '/profile',
+    passwordSignupFields: 'EMAIL_ONLY',
+    showSignupCode: true,
+    showOtherLoginServices: true
+  }); 
   
   
   

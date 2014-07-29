@@ -28,13 +28,14 @@
         "branch": "master"
       },
       "module-loader": {},
-      "fontawesome4": {}
+      "fontawesome4": {},
+      "accounts-entry": {}
     },
     "packages": {
       "collection2": {
         "git": "https://github.com/aldeed/meteor-collection2.git",
-        "tag": "v0.4.2",
-        "commit": "4ff4b707bec8be434919730bf101325adb215444"
+        "tag": "v0.4.3",
+        "commit": "cb470de2cfeebeccbf76d4cc0a39ad4afc76d553"
       },
       "llmd": {
         "path": "../liquid/src/packages/llmd"
@@ -88,6 +89,11 @@
         "tag": "v1.1.0",
         "commit": "7d2cb9119b7981b8f854b7051d302d4842311249"
       },
+      "accounts-entry": {
+        "git": "https://github.com/Differential/accounts-entry.git",
+        "tag": "v0.8.0",
+        "commit": "cf7f7d0ecc285824bc2748e305f5d693df99b4ae"
+      },
       "simple-schema": {
         "git": "https://github.com/aldeed/meteor-simple-schema.git",
         "tag": "v0.6.0",
@@ -122,6 +128,21 @@
         "git": "https://github.com/andrewreedy/meteor-selectize.git",
         "tag": "v0.0.1",
         "commit": "2bf47922a6b964ca58ad58cfa0e92c9cf9ea8be3"
+      },
+      "accounts-t9n": {
+        "git": "https://github.com/softwarerero/meteor-accounts-t9n.git",
+        "tag": "v0.0.5",
+        "commit": "ad9539a8818049d5d9fa050d8b2a1f62706483b1"
+      },
+      "simple-form": {
+        "git": "https://github.com/Differential/simple-form.git",
+        "tag": "v0.1.8",
+        "commit": "1ea0d3621b333e6f24f37e0e93efd3c081068716"
+      },
+      "underscore-string-latest": {
+        "git": "https://github.com/TimHeckel/meteor-underscore-string.git",
+        "tag": "v2.3.3",
+        "commit": "4a5d70eee48fbd90a6e6fc78747250d704a0b3bb"
       }
     }
   }

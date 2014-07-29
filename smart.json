@@ -24,6 +24,7 @@
       "git": "git@bitbucket.org:liquidlearningdev/editor.git"
     },
     "module-loader": {},
-    "fontawesome4": {}
+    "fontawesome4": {},
+    "accounts-entry": {}
   }
 }

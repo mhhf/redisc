@@ -22,3 +22,6 @@ selectize
 module-loader
 accounts-password
 fontawesome4
+accounts-entry
+accounts-google
+accounts-ui

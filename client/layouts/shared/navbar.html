@@ -48,21 +48,10 @@
             Dev
           </a>
         </li>
-
         
-        {{#if currentUser}}
         
-        {{> showUser}}
+        {{> accountButtons}} 
         
-        {{else}}
-        
-        <li class="hidden-phone">
-          <a href="{{pathFor 'login'}}">
-            <i class="fa fa-user"></i>
-            login
-          </a>
-        </li>
-        {{/if}}
       </ul>
     </div>
   </div>
