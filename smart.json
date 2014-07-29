@@ -26,6 +26,7 @@
     "module-loader": {},
     "fontawesome4": {},
     "accounts-entry": {},
-    "sendgrid": {}
+    "sendgrid": {},
+    "moment": {}
   }
 }

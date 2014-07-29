@@ -34,7 +34,8 @@
       "module-loader": {},
       "fontawesome4": {},
       "accounts-entry": {},
-      "sendgrid": {}
+      "sendgrid": {},
+      "moment": {}
     },
     "packages": {
       "collection2": {
@@ -111,6 +112,11 @@
         "git": "https://github.com/DavidBrear/meteor-sendgrid.git",
         "tag": "v0.9.0",
         "commit": "302373c32b58b67dfe67de4dcdad065a33925fc2"
+      },
+      "moment": {
+        "git": "https://github.com/acreeger/meteor-moment.git",
+        "tag": "v2.6.0",
+        "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
       },
       "simple-schema": {
         "git": "https://github.com/aldeed/meteor-simple-schema.git",

@@ -36,6 +36,9 @@ Template.PostWrapper.events = {
 }
 
 Template.PostWrapper.helpers({
+  getAtom: function(){
+    return this.get();
+  },
   isComment: function(){
     return rediscModel.get('COMMENT') === this;
   },

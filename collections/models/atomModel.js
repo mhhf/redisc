@@ -86,6 +86,7 @@ AtomModel = function( o, params ){
     
     this.atomWatcher = Deps.autorun( function(){
       atom = Atoms.findOne({ _id: _id });
+      console.log(_id);
       if( !atom ) {
         // throw new Error('atom not found');
         return null;
@@ -97,6 +98,7 @@ AtomModel = function( o, params ){
     });
     
     this.atomWatcher.onInvalidate( function(a,b){ 
+      console.log( self, _id, atom );
       if(a.stopped) {
         self.handleReactive();
       }

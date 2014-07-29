@@ -3,7 +3,7 @@ Template.Stats.hasTags = function(){
 }
 
 Template.Stats.lastChange = function(){
-  return this.updatedOn || this.createdOn;
+  return moment(this.updatedOn).fromNow() || moment(this.createdOn).fromNow();
 }
 
 Template.Score.events({
