@@ -50,8 +50,8 @@
       },
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
-        "tag": "v0.8.1",
-        "commit": "74e867557fd9cb81173e048e5f81cf4a0a1160a8"
+        "tag": "v0.8.2",
+        "commit": "05415a8891ea87a00fb1e2388585f2ca5a38e0da"
       },
       "tags": {
         "git": "git://github.com/mhhf/meteor-tags.git",
@@ -91,7 +91,7 @@
       "llmd-redisc": {
         "git": "https://github.com/mhhf/llmd-redisc.git",
         "branch": "master",
-        "commit": "0e88d1584fcaa1c87736b8d1014d8b8b10cbab1e"
+        "commit": "b45baf86c88450e1f03a304f5ac2b9b3473b15b5"
       },
       "module-loader": {
         "git": "https://github.com/apendua/module-loader.git",
