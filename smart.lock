@@ -81,7 +81,7 @@
       "llmd": {
         "git": "https://github.com/mhhf/llmd.git",
         "branch": "master",
-        "commit": "fba71d1a80b07dd6965841133cb777fd56a81e63"
+        "commit": "3e0213339a5b218ac86aabb0fea601bed858d8b2"
       },
       "llmd-md": {
         "git": "https://github.com/mhhf/llmd-md.git",
@@ -91,7 +91,7 @@
       "llmd-redisc": {
         "git": "https://github.com/mhhf/llmd-redisc.git",
         "branch": "master",
-        "commit": "0388b7277b90c61f633ea395f37942610cd3c7de"
+        "commit": "0e88d1584fcaa1c87736b8d1014d8b8b10cbab1e"
       },
       "module-loader": {
         "git": "https://github.com/apendua/module-loader.git",

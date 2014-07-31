@@ -79,6 +79,6 @@ Template.Comments.helpers({
   }
 });
 
-Template.rediscPosts.atomModel = function(){
+Template.RediscPosts.atomModel = function(){
   return new AtomModel( this._id );
 }
