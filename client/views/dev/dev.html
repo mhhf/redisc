@@ -32,7 +32,11 @@
 
 <template name="RediscPostView">
 
-<a href="{{pathFor 'RediscTags' tags=getTags}}">... back</a>
+{{#if getTags}}
+  <a href="{{pathFor 'RediscTags' tags=getTags}}">... back</a>
+{{else}}
+ <a href="{{pathFor 'RediscAll'}}">... back</a>
+{{/if}}
 
   <h2> {{title}} </h2>
 

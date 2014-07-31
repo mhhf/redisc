@@ -9,6 +9,7 @@ Router.map( function(){
       return Meteor.subscribe( 'Redisc.Posts', [] );
     },
     data: function(){
+      Session.set( 'tags', null );
       return {
         posts: Atoms.find({ name: 'redisc', root: '' })
       };
