@@ -5,7 +5,6 @@ Template.Stats.hasTags = function(){
 Template.Stats.helpers({
   
   comments: function(){
-    console.log(this.comments);
     return this.comments;
   },
   userName: function(){

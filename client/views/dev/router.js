@@ -1,41 +1,60 @@
 Router.onBeforeAction('loading');
 
 Router.map( function(){
-  this.route('dev', {
+  
+  this.route('RediscAll', {
+    path:'/',
+    template: 'RediscPosts', 
     waitOn: function(){
-      return Meteor.subscribe('Redisc.Posts',['dev']);
+      return Meteor.subscribe( 'Redisc.Posts', [] );
     },
     data: function(){
-      console.log('c', Atoms.find().count());
+      Session.set( 'tags', null );
       return {
         posts: Atoms.find({ name: 'redisc', root: '' })
       };
     }
-  
-    
   });
   
-  this.route('devNew', {
-    path: '/dev/new',
+  this.route('RediscTags', {
+    path:'/tags/:tags',
+    waitOn: function(){
+      var tagsA = this.params.tags.split(',');
+      return Meteor.subscribe( 'Redisc.Posts', tagsA );
+    },
+    data: function(){
+      Session.set( 'tags', this.params.tags );
+      
+      return {
+        posts: Atoms.find({ name: 'redisc', root: '' })
+      };
+    }
+  });
+  
+  this.route('RediscPostNew', {
+    path: '/post/new/:tags?',
+    template: 'RediscPostNew',
     waitOn: function(){
       return Meteor.subscribe('tags');
     },
-    data: {
-      ctx: 'dev',
-      tags: Tags.find(),
-      onSuccess: function(){
-        Router.go('dev');
-      }
-    }
+    data: function(){
+      var tags = this.params.tags;
+      return {
+        ctx: tags && tags.split(','),
+        tags: Tags.find(),
+        onSuccess: function(){
+          Router.go('dev');
+        }
+      };
+    } 
   });
 
-  this.route('devPost', {
+  this.route('RediscPostView', {
     path: '/dev/:_id',
     waitOn: function(){
       return Meteor.subscribe('Redisc.Post',this.params._id);
     },
     data: function(){
-      console.log('d', Atoms.find().count());
       return new RediscModel({ rootId: this.params._id });
     }
   });

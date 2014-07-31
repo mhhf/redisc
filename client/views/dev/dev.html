@@ -1,7 +1,7 @@
-<template name="dev">
-<a class="btn btn-primary right" href="{{pathFor 'devNew' params=this}}">new Post</a>
+<template name="RediscTags">
+  <a class="btn btn-primary right" href="{{pathFor 'RediscPostNew' tags=getTags}}">new Post</a>
 
-    {{> rediscPosts}}
+  {{> rediscPosts}}
 </template>
 
 <template name="rediscPosts">
@@ -14,7 +14,7 @@
   {{/with}}
 
   <div class="contentContainer">
-    <a href="{{pathFor 'devPost'}}">
+    <a href="{{pathFor 'RediscPostView'}}">
       <span class="title"> {{title}} </span>
     </a>
     <div>
@@ -30,9 +30,9 @@
 </template>
 
 
-<template name="devPost">
+<template name="RediscPostView">
 
-<a href="{{pathFor 'dev' params=this}}">... back To Dev</a>
+{{> RediscBackButton}}
 
   <h2> {{title}} </h2>
 
@@ -54,10 +54,17 @@
   
 </template>
 
+<template name="RediscBackButton">
+  {{#if getTags}}
+    <a href="{{pathFor 'RediscTags' tags=getTags}}">... back</a>
+  {{else}}
+    <a href="{{pathFor 'RediscAll'}}">... back</a>
+  {{/if}}
+</template>
 
-<template name="devNew">
+<template name="RediscPostNew">
 
-<a href="{{pathFor 'dev' params=this}}">... back To Dev</a>
+{{> RediscBackButton}}
 
 <div class="newRediscWrapper">
   {{> llmd_redisc_edit }}

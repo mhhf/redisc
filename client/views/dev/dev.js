@@ -1,8 +1,8 @@
-Template.devNew.events = {
+Template.RediscPostNew.events = {
   "click .save-btn": function(e,t){
     var atom = _.extend( new LLMD.Atom('redisc'), this.buildAtom() );
     var _atomId = Atoms.insert(atom);
-    Router.go('devPost', {
+    Router.go('RediscPostView', {
       _id: _atomId
     });
   }
@@ -10,10 +10,16 @@ Template.devNew.events = {
 
 var rediscModel;
 
-Template.devPost.created = function(){
+Template.RediscPostView.created = function(){
   rediscModel = this.data;
 }
 
+
+Template.RediscBackButton.helpers({
+  getTags: function(){
+    return Session.get('tags');
+  }
+});
 
 
 Template.RediscPost.helpers({

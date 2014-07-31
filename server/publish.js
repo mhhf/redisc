@@ -68,8 +68,13 @@ Meteor.publish('diffedAtom', function( _c1, _c2 ){
   
 });
 
-Meteor.publish('Redisc.Posts', function(){
-  return Atoms.find({ name: 'redisc', root: '' });
+Meteor.publish('Redisc.Posts', function( tags ){
+  console.log(tags);
+  
+  var qry = { name: 'redisc', root: '' };
+  if( tags.length > 0 ) qry.tags= { $in: tags };
+  
+  return Atoms.find( qry );
 });
 
 Meteor.publish('Redisc.Post', function(_id){
