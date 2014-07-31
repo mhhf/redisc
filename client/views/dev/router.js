@@ -37,13 +37,16 @@ Router.map( function(){
     waitOn: function(){
       return Meteor.subscribe('tags');
     },
-    data: {
-      ctx: 'dev',
-      tags: Tags.find(),
-      onSuccess: function(){
-        Router.go('dev');
-      }
-    }
+    data: function(){
+      var tags = this.params.tags;
+      return {
+        ctx: tags && tags.split(','),
+        tags: Tags.find(),
+        onSuccess: function(){
+          Router.go('dev');
+        }
+      };
+    } 
   });
 
   this.route('RediscPostView', {

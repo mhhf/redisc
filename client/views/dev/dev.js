@@ -14,11 +14,10 @@ Template.RediscPostView.created = function(){
   rediscModel = this.data;
 }
 
-Template.RediscPostView.helpers({
+
+Template.RediscBackButton.helpers({
   getTags: function(){
-    
     return Session.get('tags');
-    
   }
 });
 
