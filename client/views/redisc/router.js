@@ -5,6 +5,9 @@ Router.map( function(){
   this.route('RediscAll', {
     path:'/',
     template: 'RediscPosts', 
+    onBeforeAction: function (pause) {
+      AccountsEntry.signInRequired( this, pause );
+    },
     waitOn: function(){
       return Meteor.subscribe( 'Redisc.Posts', [] );
     },
@@ -22,6 +25,9 @@ Router.map( function(){
       var tagsA = this.params.tags.split(',');
       return Meteor.subscribe( 'Redisc.Posts', tagsA );
     },
+    onBeforeAction: function ( pause ) {
+      AccountsEntry.signInRequired( this, pause );
+    },
     data: function(){
       Session.set( 'tags', this.params.tags );
       
@@ -36,6 +42,9 @@ Router.map( function(){
     template: 'RediscPostNew',
     waitOn: function(){
       return Meteor.subscribe('tags');
+    },
+    onBeforeAction: function ( pause ) {
+      AccountsEntry.signInRequired( this, pause );
     },
     data: function(){
       var tags = this.params.tags;
@@ -53,6 +62,9 @@ Router.map( function(){
     path: '/dev/:_id',
     waitOn: function(){
       return Meteor.subscribe('Redisc.Post',this.params._id);
+    },
+    onBeforeAction: function () {
+      AccountsEntry.signInRequired(this);
     },
     data: function(){
       return new RediscModel({ rootId: this.params._id });
