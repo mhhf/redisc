@@ -3,11 +3,33 @@ var rediscModel;
 Template.RediscPostView.helpers({
   getTitle: function(){
     return this.root.get().title;
+  },
+  isWatching: function(){
+    var watch = Meteor.user().profile.watch;
+    return watch && watch[rediscModel.root.getId()];
   }
 });
 
 Template.RediscPostView.created = function(){
   rediscModel = this.data;
+}
+Template.RediscPostView.rendered = function(){
+  var watch = Meteor.user().profile.watch;
+  if( watch && watch[rediscModel.root.getId()] ) 
+    Meteor.call('user.seen', rediscModel.root.getId() );
+}
+
+Template.RediscPostView.events = {
+  "click .watch-btn": function(e,t){
+    e.preventDefault();
+    
+    Meteor.call('user.watchAtom', rediscModel.root.getId() );
+  },
+  "click .unwatch-btn": function(e,t){
+    e.preventDefault();
+    
+    Meteor.call('user.unwatchAtom', rediscModel.root.getId() );
+  }
 }
 
 

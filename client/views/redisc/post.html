@@ -2,6 +2,14 @@
 
 {{> RediscBackButton}}
 
+<span class="right">
+  {{#if isWatching}}
+    <a href="#" class="highlight unwatch-btn"> <i class="fa fa-eye-slash"></i> unwatch </a>
+  {{else}}
+    <a href="#" class="watch-btn"> <i class="fa fa-eye "></i> watch </a>
+  {{/if}}
+</span>
+
   <h2> {{getTitle}} </h2>
 
   {{> RediscPost root }}

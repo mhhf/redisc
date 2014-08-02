@@ -45,5 +45,40 @@ Meteor.methods({
     if( tags.length > 0 ) qry.tags= { $in: tags };
     
     return Atoms.find( qry ).count();
+  },
+  "user.watchAtom": function( _id ){
+    
+    var o= {};
+    o[ "profile.watch."+_id ] = new Date();
+    
+    Meteor.users.update(
+        {_id: this.userId},
+        { $set: o }
+    ); // Meteor.users.update
+  },
+  "user.seen": function( _id ){
+    
+    var userId = this.userId;
+    
+    var o= {};
+    o[ "profile.watch."+_id ] = new Date();
+
+    Meteor.users.update(
+        {_id: userId},
+        { $set: o }
+      ); // Meteor.users.update
+  },
+  "user.unwatchAtom": function( _id ){
+    
+    var o= {};
+    o[ "profile.watch."+_id ] = "";
+    
+    Meteor.users.update(
+        {_id: this.userId},
+        { $unset: o }
+    ); // Meteor.users.update
+  },
+  "clear": function(){
+    Meteor.users.remove({});
   }
 });

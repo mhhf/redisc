@@ -5,6 +5,9 @@ Meteor.startup(function(){
   });
   
   AccountsEntry.config({
-    signupCode: 'momentum2020'
+    signupCode: 'momentum2020',
+    defaultProfile: {
+      watch: {} 
+    }
   });
 });
