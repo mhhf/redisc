@@ -12,6 +12,12 @@ Template.RediscPostNew.events = {
 
 var rediscModel;
 
+Template.RediscPostView.helpers({
+  getTitle: function(){
+    return this.root.get().title;
+  }
+});
+
 Template.RediscPostView.created = function(){
   rediscModel = this.data;
 }
