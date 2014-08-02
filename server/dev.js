@@ -8,5 +8,35 @@ Meteor.methods({
       text: 'omgomgomg'
     });
     
+  },
+  'mail.fire': function(){
+    
+      Meteor.users.find().forEach( function(user){
+        if( !user.emails || !user.emails[0].address ) {
+          //cant notify
+          return null;
+        }
+        var w = user.profile.watch;
+        var notify = [];
+        var text = "";
+        
+        _.each(w, function( lastSeen, _id ){
+          var atom = Atoms.findOne(_id);
+          if( atom.updatedOn > lastSeen ) {
+            notify.push(atom);
+            text += "  * <a href=\"http://redisc.herokuapp.com/post/"+atom._id+"\"> "+atom.title+" </a>\n";
+          }
+        });
+        
+        console.log( text );
+        
+        // Meteor.Sendgrid.send({
+        //   to: user.emails[0].address,
+        //   from: 'info@momentum.me',
+        //   subject: '[Redisc] There are Updates!',
+        //   text: 'Hey!\n\nThere new updates on youre subscribed posts:\n\n'+text
+        // });
+        
+      });
   }
 });

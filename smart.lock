@@ -35,7 +35,8 @@
       "fontawesome4": {},
       "accounts-entry": {},
       "sendgrid": {},
-      "moment": {}
+      "moment": {},
+      "synced-cron": {}
     },
     "packages": {
       "collection2": {
@@ -117,6 +118,11 @@
         "git": "https://github.com/acreeger/meteor-moment.git",
         "tag": "v2.6.0",
         "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
+      },
+      "synced-cron": {
+        "git": "https://github.com/percolatestudio/meteor-synced-cron.git",
+        "tag": "v0.1.1",
+        "commit": "c731ab04e7bf2b0aa7a7e3c4f4750c8c648b791d"
       },
       "simple-schema": {
         "git": "https://github.com/aldeed/meteor-simple-schema.git",

@@ -57,6 +57,9 @@ Meteor.methods({
     ); // Meteor.users.update
   },
   "user.seen": function( _id ){
+    var watch =  Meteor.user().profile.watch ;
+    
+    if( !(watch && watch[_id]) ) return null;
     
     var userId = this.userId;
     

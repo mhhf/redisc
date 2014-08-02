@@ -37,5 +37,9 @@ Template.RediscPosts.helpers({
   },
   hasPages: function(){
     return this.pages.length > 1
+  },
+  isHighlighted: function(){
+    var watch = Meteor.user().profile.watch;
+    return (watch && watch[this._id] < this.updatedOn )?'highlight':'';
   }
 });
