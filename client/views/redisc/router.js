@@ -36,7 +36,8 @@ Router.map( function(){
       return {
         posts: Atoms.find({ name: 'redisc', root: '' }, {sort: { score: -1, updatedOn: -1 }}),
         pages: pages,
-        page: page
+        page: page,
+        tags:[]
       };
     }
   });
@@ -92,14 +93,14 @@ Router.map( function(){
         ctx: tags && tags.split(','),
         tags: GlobalTags.find(),
         onSuccess: function(){
-          Router.go('dev');
+          Router.go('RediscPosts');
         }
       };
     } 
   });
 
   this.route('RediscPostView', {
-    path: '/dev/:_id',
+    path: '/post/:_id',
     waitOn: function(){
       return Meteor.subscribe('Redisc.Post',this.params._id);
     },

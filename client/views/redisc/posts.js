@@ -3,7 +3,7 @@ Template.RediscPosts.helpers({
     return new AtomModel( this._id );
   },
   getTags: function(){
-    return Session.get('tags');
+    return Session.get('tags') || '';
   },
   getPageUrl: function( ctx ){
     if(ctx.tags && ctx.tags.length > 0) {
