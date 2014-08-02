@@ -14,7 +14,7 @@ Router.map( function(){
     data: function(){
       Session.set( 'tags', null );
       return {
-        posts: Atoms.find({ name: 'redisc', root: '' })
+        posts: Atoms.find({ name: 'redisc', root: '' }, {sort: { score: -1 }})
       };
     }
   });
@@ -32,7 +32,7 @@ Router.map( function(){
       Session.set( 'tags', this.params.tags );
       
       return {
-        posts: Atoms.find({ name: 'redisc', root: '' })
+        posts: Atoms.find({ name: 'redisc', root: '' }, {sort: { score: -1 }})
       };
     }
   });
