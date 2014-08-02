@@ -17,6 +17,14 @@
             All
           </a>
         </li>
+        
+        {{#each popularTags}}
+        <li>
+          <a href="/tags/{{this}}">
+            {{this}}
+          </a>
+        </li>
+        {{/each}}
         <!-- <li> -->
         <!--   <a href="#"> -->
         <!--     Teach -->
