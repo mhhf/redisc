@@ -9,5 +9,9 @@ Template.PostWrapper.helpers({
     var atom = this.get();
     return (this._tmp.watch && this._tmp.watch[atom.root] < atom.updatedOn)?'highlight':'';
     
+  },
+  owner: function(){
+    console.log(this.get().user._id);
+    return this.get().user._id == Meteor.userId();
   }
 });
