@@ -28,3 +28,6 @@ accounts-ui
 sendgrid
 email
 moment
+accounts-facebook
+accounts-github
+accounts-twitter

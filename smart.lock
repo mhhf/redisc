@@ -35,8 +35,7 @@
       "fontawesome4": {},
       "accounts-entry": {},
       "sendgrid": {},
-      "moment": {},
-      "pages": {}
+      "moment": {}
     },
     "packages": {
       "collection2": {
@@ -118,11 +117,6 @@
         "git": "https://github.com/acreeger/meteor-moment.git",
         "tag": "v2.6.0",
         "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
-      },
-      "pages": {
-        "git": "https://github.com/alethes/meteor-pages.git",
-        "tag": "v1.0.20",
-        "commit": "717cbac89f02d2f1bb160b24c997050ce2dee45e"
       },
       "simple-schema": {
         "git": "https://github.com/aldeed/meteor-simple-schema.git",

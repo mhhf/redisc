@@ -30,9 +30,9 @@ Meteor.publish('Redisc.Post', function(_id){
 });
 
 Meteor.publish('GlobalTags', function(){
-  return GlobalTags.find();
+  return GlobalTags.find({}, {fields: { _remoteIds:0 }, limit: 50, sort: {rate:-1}});
 });
 
 Meteor.publish('popularTags', function(){
-  return GlobalTags.find({},{sort:{rate:-1}, limit: 5 });
+  return GlobalTags.find({},{sort:{rate:-1}, limit: 5, fields: { _remoteIds:0 } });
 });
