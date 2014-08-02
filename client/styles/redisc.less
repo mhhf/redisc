@@ -158,3 +158,30 @@ ul.comments {
 #editor {
   border: 1px dotted #ddd;
 }
+
+.pagination {
+  width: 100%;
+  text-align: center;
+  .fa {
+    color: #666;
+    margin: 0 5px;
+    font-size: 10px;
+    vertical-align: middle;
+  }
+  ul {
+    display: inline;
+    padding: 0;
+  }
+  li {
+    list-style: none;
+    display: inline;
+    margin: 0 3px;
+    a {
+      color: #666;
+    }
+    &.active a{
+      color: #333;
+      font-weight: bold;
+    }
+  }
+}

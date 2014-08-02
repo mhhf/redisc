@@ -35,13 +35,14 @@
       "fontawesome4": {},
       "accounts-entry": {},
       "sendgrid": {},
-      "moment": {}
+      "moment": {},
+      "pages": {}
     },
     "packages": {
       "collection2": {
         "git": "https://github.com/aldeed/meteor-collection2.git",
-        "tag": "v0.4.3",
-        "commit": "cb470de2cfeebeccbf76d4cc0a39ad4afc76d553"
+        "tag": "v0.4.4",
+        "commit": "c70deb36e10f63238b884529eea1e38cf0789903"
       },
       "emitter": {
         "git": "https://github.com/Meteor-Reaction/meteor-emitter.git",
@@ -65,8 +66,8 @@
       },
       "spin": {
         "git": "https://github.com/SachaG/meteor-spin.git",
-        "tag": "v2.0.3",
-        "commit": "23c1145472a710d5c93fa4beaca4e576caeb2f24"
+        "tag": "v2.0.4",
+        "commit": "f7b1e12a7caff1283cdb3671a393c182d0ae9862"
       },
       "editor": {
         "git": "https://github.com/mhhf/editor.git",
@@ -91,7 +92,7 @@
       "llmd-redisc": {
         "git": "https://github.com/mhhf/llmd-redisc.git",
         "branch": "master",
-        "commit": "b45baf86c88450e1f03a304f5ac2b9b3473b15b5"
+        "commit": "81d71afc635f035b3387909f36c066ddc4df993f"
       },
       "module-loader": {
         "git": "https://github.com/apendua/module-loader.git",
@@ -117,6 +118,11 @@
         "git": "https://github.com/acreeger/meteor-moment.git",
         "tag": "v2.6.0",
         "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
+      },
+      "pages": {
+        "git": "https://github.com/alethes/meteor-pages.git",
+        "tag": "v1.0.20",
+        "commit": "717cbac89f02d2f1bb160b24c997050ce2dee45e"
       },
       "simple-schema": {
         "git": "https://github.com/aldeed/meteor-simple-schema.git",

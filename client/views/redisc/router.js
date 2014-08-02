@@ -2,37 +2,77 @@ Router.onBeforeAction('loading');
 
 Router.map( function(){
   
-  this.route('RediscAll', {
+  this.route('Home', {
     path:'/',
+    action: function(){
+      this.redirect('RediscAll');
+    }
+  });
+  
+  this.route('RediscAll', {
+    path:'/all/:page?',
     template: 'RediscPosts', 
     onBeforeAction: function (pause) {
       AccountsEntry.signInRequired( this, pause );
     },
     waitOn: function(){
-      return Meteor.subscribe( 'Redisc.Posts', [] );
+      var page = this.params.page || 0;
+      return [
+        Meteor.subscribe( 'Redisc.Posts', [], page ),
+        new SyncLoader( 'Redisc.Posts.count', [] )
+      ];
     },
     data: function(){
+      var postsCount = syncValue['Redisc.Posts.count'];
+      var pages = [];
+      var page = -(-this.params.page) || 0;
+      
+      for(var i=0; i<Math.floor(postsCount/20); i++ ) {
+        pages.push(i);
+      }
+      if(postsCount/20 - Math.floor(postsCount/20) > 0) pages.push(i)
+      
       Session.set( 'tags', null );
       return {
-        posts: Atoms.find({ name: 'redisc', root: '' }, {sort: { score: -1, updatedOn: -1 }})
+        posts: Atoms.find({ name: 'redisc', root: '' }, {sort: { score: -1, updatedOn: -1 }}),
+        pages: pages,
+        page: page
       };
     }
   });
   
   this.route('RediscTags', {
-    path:'/tags/:tags',
+    path:'/tags/:tags/:page?',
     waitOn: function(){
       var tagsA = this.params.tags.split(',');
-      return Meteor.subscribe( 'Redisc.Posts', tagsA );
+      var page = this.params.page || 0;
+      return [
+        Meteor.subscribe( 'Redisc.Posts', tagsA, page ),
+        new SyncLoader( 'Redisc.Posts.count', tagsA )
+      ];
     },
     onBeforeAction: function ( pause ) {
       AccountsEntry.signInRequired( this, pause );
     },
     data: function(){
+      
+      var postsCount = syncValue['Redisc.Posts.count'];
+      var pages = [];
+      var page = -(-this.params.page) || 0;
+      
+      for(var i=0; i<Math.floor(postsCount/20); i++ ) {
+        pages.push(i);
+      }
+      if(postsCount/20 - Math.floor(postsCount/20) > 0) pages.push(i)
+      
+      
       Session.set( 'tags', this.params.tags );
       var tagsA = this.params.tags.split(',');
       return {
-        posts: Atoms.find({ name: 'redisc', root: '', tags: { $in: tagsA  }  }, {sort: { score: -1, updatedOn: -1 }})
+        posts: Atoms.find({ name: 'redisc', root: '', tags: { $in: tagsA  }  }, {sort: { score: -1, updatedOn: -1 }}),
+        pages: pages,
+        page: page,
+        tags: tagsA
       };
     }
   });
@@ -73,4 +113,35 @@ Router.map( function(){
   
 });
 
+
+
+var syncValue = {};
+SyncLoader = function( name, data ){
+
+  
+  var readyFlag = false ;
+  var readyFlagDep = new Deps.Dependency;
+  var value = null;
+
+  var ready = function(){
+    readyFlagDep.depend();
+    
+    return readyFlag;
+  }
+  
+  var setReady = function( val ){
+    readyFlag = val;
+    readyFlagDep.changed();
+  }
+  
+  Meteor.call( name, data, function(err, data){
+    syncValue[ name ] = data;
+    setReady(true);
+  });
+  
+  retObj = {
+    ready: ready
+  };
+  return retObj;
+};
 

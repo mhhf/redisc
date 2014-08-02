@@ -39,4 +39,11 @@ Meteor.methods({
     //   Meteor.call('post.compile', {_id: p.parent});
     
   },
+  'Redisc.Posts.count': function( tags ){
+    
+    var qry = { name: 'redisc', root: '' };
+    if( tags.length > 0 ) qry.tags= { $in: tags };
+    
+    return Atoms.find( qry ).count();
+  }
 });

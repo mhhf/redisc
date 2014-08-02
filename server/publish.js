@@ -7,7 +7,7 @@ Meteor.publish('atom', function( _id ){
   return Atoms.find({ _id: _id });
 });
 
-Meteor.publish('Redisc.Posts', function( tags ){
+Meteor.publish('Redisc.Posts', function( tags, page ){
   
   // make shure user is logged in
   // replace with an scl and later with share model
@@ -16,7 +16,7 @@ Meteor.publish('Redisc.Posts', function( tags ){
   var qry = { name: 'redisc', root: '' };
   if( tags.length > 0 ) qry.tags= { $in: tags };
   
-  return Atoms.find( qry );
+  return Atoms.find( qry, { sort:{ score: -1, updatedOn: -1 }, limit: 20, skip: 20*page } );
 });
 
 Meteor.publish('Redisc.Post', function(_id){
