@@ -1,0 +1,7 @@
+<template name="RediscBackButton">
+  {{#if getTags}}
+    <a href="{{pathFor 'RediscTags' tags=getTags}}">... back</a>
+  {{else}}
+    <a href="{{pathFor 'RediscAll'}}">... back</a>
+  {{/if}}
+</template>

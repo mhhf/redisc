@@ -28,6 +28,9 @@ ul.postList {
   margin-top: 32px;
   
   li {
+    &.highlight span.title {
+      color: @highlight;
+    }
     margin: 15px 0;
     position: relative;
   }
@@ -78,6 +81,9 @@ ul.postList {
 }
 
 .contentWrapper {
+  &.highlight {
+    border: 1px solid @highlight;
+  }
   background: #fff;
   position: relative;
   padding: @border5 @border2 @border2 @border2;

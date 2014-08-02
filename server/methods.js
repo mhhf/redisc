@@ -55,8 +55,9 @@ Meteor.methods({
     obj.meta.state = 'ready';
     
     Atoms.update({ _id: atom._id },{ $set: obj });
+    Meteor.call( 'user.seen', atom.root || atom._id );
     
     return atom;
-  }
+  },
   
 });

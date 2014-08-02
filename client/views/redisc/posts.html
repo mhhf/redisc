@@ -1,0 +1,49 @@
+<template name="RediscPosts">
+
+  <a class="btn btn-primary right" href="{{pathFor 'RediscPostNew' tags=getTags}}">new Post</a>
+
+
+<ul class="postList">
+  {{#each posts}}
+  <li class="{{isHighlighted}}">
+
+  {{#with atomModel}}
+    {{> Score }}
+  {{/with}}
+
+  <div class="contentContainer">
+    <a href="{{pathFor 'RediscPostView'}}">
+      <span class="title"> {{title}} </span>
+    </a>
+    <div>
+      {{> Stats}}
+    </div>
+
+  </div>
+
+
+  </li>
+  {{/each}}
+</ul>
+
+{{#if hasPages}}
+<span class="pagination">
+  {{#if hasPrevious}}
+  <a href="{{getPrevUrl}}"><i class="fa fa-chevron-left"></i></a>
+  {{/if}}
+  <ul>
+    {{#each pages}}
+    <li class="{{isActive ..}}"> <a href="{{getPageUrl ..}}">{{this}}</a> </li>
+    {{/each}}
+  </ul>
+  {{#if hasNext}}
+  <a href="{{getNextUrl}}"><i class="fa fa-chevron-right"></i></a>
+  {{/if}}
+</span>
+{{/if}}
+
+</template>
+
+<template name="RediscTags">
+  {{> RediscPosts}}
+</template>

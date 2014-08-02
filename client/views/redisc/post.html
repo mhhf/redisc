@@ -1,0 +1,45 @@
+<template name="RediscPostView">
+
+{{> RediscBackButton}}
+
+<span class="right">
+  {{#if isWatching}}
+    <a href="#" class="highlight unwatch-btn"> <i class="fa fa-eye-slash"></i> unwatch </a>
+  {{else}}
+    <a href="#" class="watch-btn"> <i class="fa fa-eye "></i> watch </a>
+  {{/if}}
+</span>
+
+  <h2> {{getTitle}} </h2>
+
+  {{> RediscPost root }}
+  
+</template>
+
+<template name="RediscPost">
+
+  {{#if isEdit}}
+    {{> EditorWrapper }}
+  {{else}}
+    {{> PostWrapper }}
+  {{/if}}
+  
+  {{#if hasChildren}}
+    {{> Comments }}
+  {{/if}}
+  
+</template>
+
+<template name="Comments">
+<ul class="comments">
+  {{#each getComments}}
+  <li>
+  <div class="scoreWrapper">
+    {{> Score }}
+  </div>
+  {{> RediscPost}}
+  
+  </li>
+  {{/each}}
+</ul>
+</template>

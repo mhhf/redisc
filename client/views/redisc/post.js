@@ -1,19 +1,35 @@
-
-Template.RediscPostNew.events = {
-  "click .save-btn": function(e,t){
-    var atom = _.extend( new LLMD.Atom('redisc'), this.buildAtom() );
-    var _atomId = Atoms.insert(atom);
-    Meteor.call('atom.compile', _atomId);
-    Router.go('RediscPostView', {
-      _id: _atomId
-    });
-  }
-}
-
 var rediscModel;
+
+Template.RediscPostView.helpers({
+  getTitle: function(){
+    return this.root.get().title;
+  },
+  isWatching: function(){
+    var watch = Meteor.user().profile.watch;
+    return watch && watch[rediscModel.root.getId()];
+  }
+});
 
 Template.RediscPostView.created = function(){
   rediscModel = this.data;
+}
+Template.RediscPostView.rendered = function(){
+  var watch = Meteor.user().profile.watch;
+  if( watch && watch[rediscModel.root.getId()] ) 
+    Meteor.call('user.seen', rediscModel.root.getId() );
+}
+
+Template.RediscPostView.events = {
+  "click .watch-btn": function(e,t){
+    e.preventDefault();
+    
+    Meteor.call('user.watchAtom', rediscModel.root.getId() );
+  },
+  "click .unwatch-btn": function(e,t){
+    e.preventDefault();
+    
+    Meteor.call('user.unwatchAtom', rediscModel.root.getId() );
+  }
 }
 
 
@@ -78,48 +94,5 @@ Template.Comments.helpers({
     children.sort( function( a, b ){
       return b.get().score - a.get().score; });
     return children;
-  }
-});
-
-
-Template.RediscPosts.helpers({
-  atomModel: function(){
-    return new AtomModel( this._id );
-  },
-  getTags: function(){
-    return Session.get('tags');
-  },
-  getPageUrl: function( ctx ){
-    if(ctx.tags && ctx.tags.length > 0) {
-      return '/tags/'+ctx.tags.join(',')+'/'+this;
-    } else {
-      return '/all/'+this;
-    }
-  },
-  getNextUrl: function(){
-    if(this.tags && this.tags.length > 0) {
-      return '/tags/'+this.tags.join(',')+'/'+(this.page+1);
-    } else {
-      return '/all/'+(this.page+1);
-    }
-  },
-  getPrevUrl: function(){
-    if(this.tags && this.tags.length > 0) {
-      return '/tags/'+this.tags.join(',')+'/'+(this.page-1);
-    } else {
-      return '/all/'+(this.page-1);
-    }
-  },
-  hasPrevious: function(){
-    return this.page>0;
-  },
-  hasNext: function(){
-    return this.pages.length-1 > this.page;
-  },
-  isActive: function( ctx ){
-    return ctx.page == this?'active':'';
-  },
-  hasPages: function(){
-    return this.pages.length > 1
   }
 });
