@@ -14,7 +14,7 @@ Router.map( function(){
     data: function(){
       Session.set( 'tags', null );
       return {
-        posts: Atoms.find({ name: 'redisc', root: '' }, {sort: { score: -1 }})
+        posts: Atoms.find({ name: 'redisc', root: '' }, {sort: { score: -1, updatedOn: -1 }})
       };
     }
   });
@@ -30,9 +30,9 @@ Router.map( function(){
     },
     data: function(){
       Session.set( 'tags', this.params.tags );
-      
+      var tagsA = this.params.tags.split(',');
       return {
-        posts: Atoms.find({ name: 'redisc', root: '' }, {sort: { score: -1 }})
+        posts: Atoms.find({ name: 'redisc', root: '', tags: { $in: tagsA  }  }, {sort: { score: -1, updatedOn: -1 }})
       };
     }
   });
@@ -41,7 +41,7 @@ Router.map( function(){
     path: '/post/new/:tags?',
     template: 'RediscPostNew',
     waitOn: function(){
-      return Meteor.subscribe('tags');
+      return Meteor.subscribe('GlobalTags');
     },
     onBeforeAction: function ( pause ) {
       AccountsEntry.signInRequired( this, pause );
@@ -50,7 +50,7 @@ Router.map( function(){
       var tags = this.params.tags;
       return {
         ctx: tags && tags.split(','),
-        tags: Tags.find(),
+        tags: GlobalTags.find(),
         onSuccess: function(){
           Router.go('dev');
         }

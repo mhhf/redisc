@@ -28,3 +28,11 @@ Meteor.publish('Redisc.Post', function(_id){
   return Atoms.find({$or: [{_id: _id}, { name: 'redisc', root: _id }]});
   
 });
+
+Meteor.publish('GlobalTags', function(){
+  return GlobalTags.find();
+});
+
+Meteor.publish('popularTags', function(){
+  return GlobalTags.find({},{sort:{rate:-1}, limit: 5 });
+});
