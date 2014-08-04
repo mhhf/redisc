@@ -30,6 +30,6 @@
     "moment": {},
     "synced-cron": {},
     "cfs-s3": {},
-    "sharejs": { }
+    "sharejs": {}
   }
 }
