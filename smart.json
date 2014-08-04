@@ -28,6 +28,8 @@
     "accounts-entry": {},
     "sendgrid": {},
     "moment": {},
-    "synced-cron": {}
+    "synced-cron": {},
+    "cfs-s3": {},
+    "changesets": {}
   }
 }

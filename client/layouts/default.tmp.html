@@ -1,14 +1,13 @@
 <template name="defaultLayout">
-{{> yield region="navbar"}}
+<div class="bodyWrapper">
+  {{> yield region="navbar"}}
 
-<div class="container">
-  <div class="row mainWrapper">
-    {{> yield}}
+  <div class="container">
+    <div class="row mainWrapper">
+      {{> yield}}
+    </div>
   </div>
 </div>
 
-  <footer>
-    <!-- render to the footer yield -->
-  </footer>
   
 </template>

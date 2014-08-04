@@ -36,3 +36,4 @@ Meteor.publish('GlobalTags', function(){
 Meteor.publish('popularTags', function(){
   return GlobalTags.find({},{sort:{rate:-1}, limit: 5, fields: { _remoteIds:0 } });
 });
+
