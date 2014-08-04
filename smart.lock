@@ -28,8 +28,7 @@
         "branch": "master"
       },
       "llmd-redisc": {
-        "git": "https://github.com/mhhf/llmd-redisc.git",
-        "branch": "master"
+        "path": "../../../../work/meteor/packages/llmd-redisc"
       },
       "module-loader": {},
       "fontawesome4": {},
@@ -38,13 +37,13 @@
       "moment": {},
       "synced-cron": {},
       "cfs-s3": {},
-      "changesets": {}
+      "sharejs": {}
     },
     "packages": {
       "collection2": {
         "git": "https://github.com/aldeed/meteor-collection2.git",
-        "tag": "v0.4.4",
-        "commit": "c70deb36e10f63238b884529eea1e38cf0789903"
+        "tag": "v0.4.5",
+        "commit": "336903730249197b3358dac31b1bd5ed64fecc50"
       },
       "emitter": {
         "git": "https://github.com/Meteor-Reaction/meteor-emitter.git",
@@ -92,9 +91,7 @@
         "commit": "4f2b7a42f6c3161542f37596776b13f42ece8d29"
       },
       "llmd-redisc": {
-        "git": "https://github.com/mhhf/llmd-redisc.git",
-        "branch": "master",
-        "commit": "81d71afc635f035b3387909f36c066ddc4df993f"
+        "path": "../../../../work/meteor/packages/llmd-redisc"
       },
       "module-loader": {
         "git": "https://github.com/apendua/module-loader.git",
@@ -131,10 +128,10 @@
         "tag": "v0.0.29",
         "commit": "97d3c544165c766115f2b91a6aaca54a7438a558"
       },
-      "changesets": {
-        "git": "https://github.com/logankoester/meteor-changesets.git",
-        "tag": "v0.2.7",
-        "commit": "7f2c8422992036db68fbf58ec3f42cff5d38d8af"
+      "sharejs": {
+        "git": "https://github.com/mizzao/meteor-sharejs.git",
+        "tag": "v0.6.0",
+        "commit": "5b601e2435248466f50e80fc235afb30f06b835f"
       },
       "simple-schema": {
         "git": "https://github.com/aldeed/meteor-simple-schema.git",

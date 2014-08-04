@@ -21,7 +21,7 @@
       "git": "https://github.com/mhhf/llmd-md.git"
     },
     "llmd-redisc": {
-      "git": "https://github.com/mhhf/llmd-redisc.git"
+      "path":"/Users/mhhf/work/meteor/packages/llmd-redisc"
     },
     "module-loader": {},
     "fontawesome4": {},
@@ -30,6 +30,6 @@
     "moment": {},
     "synced-cron": {},
     "cfs-s3": {},
-    "changesets": {}
+    "sharejs": { }
   }
 }
