@@ -43,10 +43,4 @@ Meteor.startup(function(){
     password: 'qx1youit'
   });
   
-  AccountsEntry.config({
-    signupCode: 'momentum2020',
-    defaultProfile: {
-      watch: {} 
-    }
-  });
 });
