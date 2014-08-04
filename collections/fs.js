@@ -1,20 +1,10 @@
-S3Store = new FS.Store.S3("images", {
+FS.debug = false;
+
+S3Store = new FS.Store.S3("files", {
     region: "us-west-2", 
     bucket: "ll-poc",
-    folder: 'img',
-    ACL: 'public-read',
-    transformWrite: function(f,r,w){
-      var size = {width: 200, height: 200};
-      
-      gm(r,f.name())
-      .resize(size.width * 2, (size.height * 2) + '')
-      .thumbnail(size.width, size.height + '^')
-      .gravity('Center')
-      .extent(size.width, size.height)
-      .profile('*')
-      .stream()
-      .pipe(w);
-    }
+    folder: 'f',
+    ACL: 'public-read'
   });
 
 Files = new FS.Collection("files", {
@@ -35,4 +25,8 @@ Files.allow({
     return true;
   },
   fetch: []
+});
+
+Meteor.publish('file', function(_id){
+  return Files.find({ _id: _id });
 });
