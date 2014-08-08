@@ -12,16 +12,16 @@
       "git": "https://github.com/mhhf/editor.git"
     },
     "llmd-core": {
-      "git": "https://github.com/mhhf/llmd-core.git"
+      "path": "/Users/mhhf/work/meteor/packages/llmd-core"
     },
     "llmd": {
-      "git": "https://github.com/mhhf/llmd.git"
+      "path": "/Users/mhhf/work/meteor/packages/llmd"
     },
     "llmd-md": {
-      "git": "https://github.com/mhhf/llmd-md.git"
+      "path": "/Users/mhhf/work/meteor/packages/llmd-md"
     },
     "llmd-redisc": {
-      "git": "https://github.com/mhhf/llmd-redisc.git"
+      "path": "/Users/mhhf/work/meteor/packages/llmd-redisc"
     },
     "module-loader": {},
     "fontawesome4": {},
