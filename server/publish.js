@@ -37,3 +37,6 @@ Meteor.publish('popularTags', function(){
   return GlobalTags.find({},{sort:{rate:-1}, limit: 5, fields: { _remoteIds:0 } });
 });
 
+Meteor.publish('file', function(_id){
+  return Files.find({ _id: _id });
+});
