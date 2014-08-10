@@ -16,20 +16,16 @@
         "branch": "master"
       },
       "llmd-core": {
-        "git": "https://github.com/mhhf/llmd-core.git",
-        "branch": "master"
+        "path": "../../../../work/meteor/packages/llmd-core"
       },
       "llmd": {
-        "git": "https://github.com/mhhf/llmd.git",
-        "branch": "master"
+        "path": "../../../../work/meteor/packages/llmd"
       },
       "llmd-md": {
-        "git": "https://github.com/mhhf/llmd-md.git",
-        "branch": "master"
+        "path": "../../../../work/meteor/packages/llmd-md"
       },
       "llmd-redisc": {
-        "git": "https://github.com/mhhf/llmd-redisc.git",
-        "branch": "master"
+        "path": "../../../../work/meteor/packages/llmd-redisc"
       },
       "module-loader": {},
       "fontawesome4": {},
@@ -43,8 +39,8 @@
     "packages": {
       "collection2": {
         "git": "https://github.com/aldeed/meteor-collection2.git",
-        "tag": "v0.4.4",
-        "commit": "c70deb36e10f63238b884529eea1e38cf0789903"
+        "tag": "v0.4.5",
+        "commit": "336903730249197b3358dac31b1bd5ed64fecc50"
       },
       "emitter": {
         "git": "https://github.com/Meteor-Reaction/meteor-emitter.git",
@@ -77,24 +73,16 @@
         "commit": "2e1ff54038f78813c2383f10ecab49b2df68f182"
       },
       "llmd-core": {
-        "git": "https://github.com/mhhf/llmd-core.git",
-        "branch": "master",
-        "commit": "d42af64ee699184b0734cdf3dee52118bcd4e236"
+        "path": "../../../../work/meteor/packages/llmd-core"
       },
       "llmd": {
-        "git": "https://github.com/mhhf/llmd.git",
-        "branch": "master",
-        "commit": "3e0213339a5b218ac86aabb0fea601bed858d8b2"
+        "path": "../../../../work/meteor/packages/llmd"
       },
       "llmd-md": {
-        "git": "https://github.com/mhhf/llmd-md.git",
-        "branch": "master",
-        "commit": "4f2b7a42f6c3161542f37596776b13f42ece8d29"
+        "path": "../../../../work/meteor/packages/llmd-md"
       },
       "llmd-redisc": {
-        "git": "https://github.com/mhhf/llmd-redisc.git",
-        "branch": "master",
-        "commit": "81d71afc635f035b3387909f36c066ddc4df993f"
+        "path": "../../../../work/meteor/packages/llmd-redisc"
       },
       "module-loader": {
         "git": "https://github.com/apendua/module-loader.git",
@@ -278,8 +266,8 @@
       },
       "cfs-access-point": {
         "git": "https://github.com/CollectionFS/Meteor-cfs-access-point.git",
-        "tag": "v0.0.33",
-        "commit": "9c0660e42b494ac3c8eb811942fa9fb04c4adec7"
+        "tag": "v0.0.36",
+        "commit": "faf45b12b0e68a8e95d040898c4dbca32c3b515a"
       },
       "cfs-filesystem": {
         "git": "https://github.com/CollectionFS/Meteor-cfs-filesystem.git",
