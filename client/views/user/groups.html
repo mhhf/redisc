@@ -1,0 +1,42 @@
+<template name="userGroups">
+
+<form action="">
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th>name</th>
+    <th>members</th>
+    <th>total shares</th>
+    <th>owned shares</th>
+    <th>owned percent</th>
+    <th>actions</th>
+  </tr>
+</thead>
+<tbody>
+{{#each groups}}
+  <tr>
+    <td>{{_id}}</td>
+    <td>{{distribution.length}}</td>
+    <td>{{sum}}</td>
+    <td>{{getOwnedShares}}</td>
+    <td>{{getOwnedPercent}}</td>
+    <td> 
+      <a href="#">transact</a>
+      <a href="#">movement</a>
+    </td>
+  </tr>
+{{/each}}
+  <tr>
+    <td colspan="3">
+      <input type="text" name="name" placeholder="name...">
+    </td>
+    <td colspan="2">
+      <input type="text" name="shares" placeholder="shares..." value="1">
+    </td>
+    <td> <input class="btn btn-primary" type="submit" value="Create Group"> </td>
+  </tr>
+</tbody>
+</table>
+</form>
+
+</template>

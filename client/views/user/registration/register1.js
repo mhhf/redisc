@@ -39,7 +39,7 @@ Template.register1.events ={
     }, function( err, succ ){
       // [TODO] - check if username && email is taken
       
-      Router.go('dashboard');
+      Router.go('profile');
       
     });
     
