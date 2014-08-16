@@ -1,3 +1,4 @@
+// [TODO] - not atomic/ not secure (crypto)
 Meteor.methods({
   
   "groups.create": function(o){
@@ -15,7 +16,39 @@ Meteor.methods({
     
   },
   "groups.transact": function(o){
-    // { balance: <Number>, to: <_userId> }
+    // { amount: <Number>, to: <_userId> }
+    
+    // check user
+    var usr = Meteor.users.findOne({ _id: o.to });
+    if (!usr) return 410;
+    
+    // check group
+    var g = Shares.findOne({ _id: o.group });
+    if( !g ) return 411;
+    
+    // check amount
+    var own = _.find( g.distribution, function(e){ return e._userId === this.userId; } );
+    
+    if( !own || o.amount > own.balance ) return 412;
+    
+    var toSharesO = _.find( g.distribution, function(e){ return e._userId === o.to });
+    
+    own.shares -= o.amount;
+    if( toSharesO ) {
+      toSharesO.shares += o.amount;
+    } else {
+      g.distribution.push( { _userId: o.to, shares: o.amount } );
+    }
+    
+    
+    console.log(g.distribution);
+    
+    // Shares.update({ _id: o.group },{$set: { distribution: g.distribution }})
+    
+    
+   
+    
+    
     
   }
   
@@ -25,4 +58,8 @@ Meteor.methods({
 Meteor.publish('user.groups', function( ids ){
   var usr = Meteor.users.findOne({ _id: this.userId })
   return Shares.find({ _id: { $in: usr.profile.groups }});
+});
+
+Meteor.publish('group', function( _id ){
+  return Shares.find({ _id: _id});
 });
