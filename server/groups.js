@@ -18,16 +18,20 @@ Meteor.methods({
   "groups.transact": function(o){
     // { amount: <Number>, to: <_userId> }
     
+    console.log(o);
+    
     // check user
     var usr = Meteor.users.findOne({ _id: o.to });
     if (!usr) return 410;
     
     // check group
-    var g = Shares.findOne({ _id: o.group });
+    var g = Shares.findOne({ _id: o._groupId });
     if( !g ) return 411;
     
+    var _senderId = this.userId;
+    
     // check amount
-    var own = _.find( g.distribution, function(e){ return e._userId === this.userId; } );
+    var own = _.find( g.distribution, function(e){ return e._userId === _senderId; } );
     
     if( !own || o.amount > own.balance ) return 412;
     
@@ -35,16 +39,14 @@ Meteor.methods({
     
     own.shares -= o.amount;
     if( toSharesO ) {
-      toSharesO.shares += o.amount;
+      toSharesO.shares -=- o.amount;
     } else {
       g.distribution.push( { _userId: o.to, shares: o.amount } );
     }
     
     
-    console.log(g.distribution);
-    
-    // Shares.update({ _id: o.group },{$set: { distribution: g.distribution }})
-    
+    Shares.update({ _id: o._groupId },{$set: { distribution: g.distribution }})
+    Meteor.users.update({_id: o.to},{$addToSet: { "profile.groups": o._groupId }})
     
    
     
@@ -57,7 +59,7 @@ Meteor.methods({
 
 Meteor.publish('user.groups', function( ids ){
   var usr = Meteor.users.findOne({ _id: this.userId })
-  return Shares.find({ _id: { $in: usr.profile.groups }});
+  return Shares.find({ _id: { $in: usr.profile.groups || [] }});
 });
 
 Meteor.publish('group', function( _id ){
