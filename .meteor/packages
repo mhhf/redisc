@@ -35,3 +35,4 @@ cfs-s3
 collectionFS
 cfs-filesystem
 changesets
+parser

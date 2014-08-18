@@ -7,8 +7,10 @@ Template.lab.events = {
     
     var val = t.data._tmp.editor.getValue();
     
-    var parser = Jison.Parser( val );
-    window.parser = parser;
+    Meteor.call( 'lang.parse', val );
+    
+    // var parser = Jison.Parser( val );
+    // window.parser = parser;
 
   }
 }
