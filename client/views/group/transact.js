@@ -11,7 +11,7 @@ Template.groupTransact.events = {
     var amount = t.find('input[name=amount]').value;
     var _userId = t.find('input[name=user]').value;
     
-    Meteor.call( 'groups.transact', {
+    Meteor.call( 'owner.transact', {
       _groupId: this.group._id,
       amount: amount,
       to: _userId

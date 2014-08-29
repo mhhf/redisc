@@ -26,6 +26,14 @@ Meteor.methods({
     
     var user = _.omit(Meteor.users.findOne({_id: this.userId}),'_id');
     
+    if( !user.profile.id ) {
+      user.profile.id = o.id;
+      Meteor.call( 'owner.create', {
+        shares: 1,
+        name: o.id
+      });
+    }
+    
     user.profile.name = o.name;
     user.emails = [{
       address: o.email,

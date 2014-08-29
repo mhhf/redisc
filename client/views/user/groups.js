@@ -19,7 +19,7 @@ Template.userGroups.events = {
     var name = t.find('input[name=name]').value;
     var shares = -(-t.find('input[name=shares]').value);
     
-    Meteor.call( 'groups.create', {
+    Meteor.call( 'owner.create', {
       name: name,
       shares: shares
     }, function( e, r ){

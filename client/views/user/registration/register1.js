@@ -6,6 +6,10 @@ Template.register1.helpers({
 
   getUsername: function(){
     return Meteor.user() && Meteor.user().profile && Meteor.user().profile.name;
+  },
+  
+  getIdentification: function(){
+    return Meteor.user() && Meteor.user().profile && Meteor.user().profile.id;
   }
   
 });
@@ -19,6 +23,7 @@ Template.register1.events ={
     var valide = true;
     var email = t.find('input#email').value;
     var name = t.find('input#username').value;
+    var id = t.find('input#id').value;
     
     if( !email || email.indexOf('@') == -1 ) {
       $('input#email').addClass('required');
@@ -31,15 +36,22 @@ Template.register1.events ={
       valide = false;
     } 
     
+    if( !id) {
+      $('input#id').addClass('required');
+      
+      valide = false;
+    } 
+    
     if(!valide) return null;
     
     Meteor.call('user.register1',{
       name: name,
-      email: email
+      email: email,
+      id: id
     }, function( err, succ ){
       // [TODO] - check if username && email is taken
       
-      Router.go('profile');
+      Router.go('Home');
       
     });
     
