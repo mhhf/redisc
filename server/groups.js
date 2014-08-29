@@ -4,12 +4,12 @@ Meteor.methods({
   "groups.create": function(o){
     // { name: <name> [, shares: <Number> ] }
     
-    var group = Shares.findOne({ _id: o.name });
+    var group = Owners.findOne({ _id: o.name });
     if( group ) return false;
     
     var g = { _id: o.name };
     if( typeof o.shares == "number" ) g.distribution = [{ shares: o.shares, _userId: Meteor.userId() }];
-    Shares.insert( g );
+    Owners.insert( g );
     Meteor.users.update({_id: this.userId}, {$push: {"profile.groups": o.name }});
     
     return true;
@@ -25,7 +25,7 @@ Meteor.methods({
     if (!usr) return 410;
     
     // check group
-    var g = Shares.findOne({ _id: o._groupId });
+    var g = Owners.findOne({ _id: o._groupId });
     if( !g ) return 411;
     
     var _senderId = this.userId;
@@ -45,7 +45,7 @@ Meteor.methods({
     }
     
     
-    Shares.update({ _id: o._groupId },{$set: { distribution: g.distribution }})
+    Owners.update({ _id: o._groupId },{$set: { distribution: g.distribution }})
     Meteor.users.update({_id: o.to},{$addToSet: { "profile.groups": o._groupId }})
     
    
@@ -59,9 +59,9 @@ Meteor.methods({
 
 Meteor.publish('user.groups', function( ids ){
   var usr = Meteor.users.findOne({ _id: this.userId })
-  return Shares.find({ _id: { $in: usr.profile.groups || [] }});
+  return Owners.find({ _id: { $in: usr.profile.groups || [] }});
 });
 
 Meteor.publish('group', function( _id ){
-  return Shares.find({ _id: _id});
+  return Owners.find({ _id: _id});
 });

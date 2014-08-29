@@ -8,7 +8,7 @@ Template.Stats.helpers({
     return this.comments;
   },
   userName: function(){
-    return this.user && this.user.name;
+    return this.owner && this.owner.name;
   }
   
 });

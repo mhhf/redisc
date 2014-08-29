@@ -41,7 +41,7 @@ Meteor.methods({
   },
   'reset': function(){
     Atoms.remove({});
+    Meteor.users.remove({});
     GlobalTags.remove({});
-    
   }
 });

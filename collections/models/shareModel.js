@@ -9,7 +9,7 @@
  */
 
 
-Shares = new Meteor.Collection('shares', {
+Owners = new Meteor.Collection('shares', {
   schema: new SimpleSchema({
     distribution: {
       type: [Object],

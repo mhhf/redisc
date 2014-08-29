@@ -7,7 +7,7 @@ Router.map( function(){
     },
     data: function(){
       return { 
-        group: Shares.findOne({ _id: this.params._id })
+        group: Owners.findOne({ _id: this.params._id })
       }
     }
   });

@@ -1,6 +1,6 @@
 Template.userGroups.helpers({
   groups: function(){
-    return Shares.find();
+    return Owners.find();
   },
   getOwnedShares: function(){
     return _.find(this.distribution, function(e){ return e._userId == Meteor.userId(); }).shares;
