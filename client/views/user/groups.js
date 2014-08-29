@@ -8,6 +8,9 @@ Template.userGroups.helpers({
   getOwnedPercent: function(){
     var own = _.find(this.distribution, function(e){ return e._userId == Meteor.userId(); }).shares;
     return Math.floor( (own/this.sum)*10000 )/100 + "%";
+  },
+  userIsGroup: function(){
+    return Meteor.user().profile.id == this._id;
   }
 
 });

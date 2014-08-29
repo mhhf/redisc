@@ -43,5 +43,6 @@ Meteor.methods({
     Atoms.remove({});
     Meteor.users.remove({});
     GlobalTags.remove({});
+    Owners.remove({});
   }
 });

@@ -25,13 +25,12 @@ Meteor.methods({
     // 
     
     var user = _.omit(Meteor.users.findOne({_id: this.userId}),'_id');
+    var createGroup;
     
     if( !user.profile.id ) {
+      console.log('creating user group');
       user.profile.id = o.id;
-      Meteor.call( 'owner.create', {
-        shares: 1,
-        name: o.id
-      });
+      createGroup = true;
     }
     
     user.profile.name = o.name;
@@ -42,7 +41,15 @@ Meteor.methods({
     user.profile.state = 'rdy';
     
     
-    Meteor.users.update({_id: this.userId},{$set: user});
+    Meteor.users.update({_id: this.userId},{$set: user}, function(){
+      if (createGroup ) {
+        Meteor.call( 'owner.create', {
+          shares: 1,
+          name: o.id
+        });
+      }
+    });
+    
     
     
   }

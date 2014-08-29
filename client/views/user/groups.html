@@ -21,8 +21,10 @@
     <td>{{getOwnedShares}}</td>
     <td>{{getOwnedPercent}}</td>
     <td> 
+      {{#unless userIsGroup}}
       <a href="{{pathFor 'groupTransact'}}">transact</a>
       <a href="#">history</a>
+      {{/unless}}
     </td>
   </tr>
 {{/each}}

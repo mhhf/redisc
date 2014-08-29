@@ -17,7 +17,7 @@ Accounts.onCreateUser(function(options, user) {
   
   if( 
     user.emails && typeof user.emails[0].address == 'string' &&
-    user.profile.name
+    user.profile.name && user.profile.id
     ) user.profile.state = 'rdy';
   
   

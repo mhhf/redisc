@@ -1,10 +1,12 @@
 // [TODO] - not atomic/ not secure (crypto)
 Meteor.methods({
   
-  "groups.create": function(o){
+  "owner.create": function(o){
     // { name: <name> [, shares: <Number> ] }
+    console.log('creating group', this.userId );
     
     var group = Owners.findOne({ _id: o.name });
+    console.log(group);
     if( group ) return false;
     
     var g = { _id: o.name };
@@ -15,7 +17,7 @@ Meteor.methods({
     return true;
     
   },
-  "groups.transact": function(o){
+  "owner.transact": function(o){
     // { amount: <Number>, to: <_userId> }
     
     console.log(o);
