@@ -11,7 +11,6 @@ Template.PostWrapper.helpers({
     
   },
   owner: function(){
-    console.log(this.get().user._id);
     return this.get().user._id == Meteor.userId();
   }
 });

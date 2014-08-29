@@ -38,5 +38,10 @@ Meteor.methods({
         // });
         
       });
+  },
+  'reset': function(){
+    Atoms.remove({});
+    GlobalTags.remove({});
+    
   }
 });
