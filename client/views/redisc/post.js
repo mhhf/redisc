@@ -95,7 +95,6 @@ Template.EditorWrapper.events = {
 Template.Comments.helpers({
   getComments: function(){
     var children = this.getNested('nested');
-    console.log(children);
     children.sort( function( a, b ){
       return b.get().score - a.get().score; });
     return children;
