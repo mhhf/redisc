@@ -30,7 +30,8 @@ AtomModel = function( o, params ){
           var child = new AtomModel(seq[i], {
             parent: self
           });
-          nested[key][i] = child;
+          if( typeof child.get == 'function' )
+            nested[key][i] = child;
         }
         
       });
@@ -42,6 +43,7 @@ AtomModel = function( o, params ){
   
   if( typeof o == 'string' ) {
     _id = o;
+    if( !Atoms.findOne({ _id: _id }) ) return null;
     
     // singleton
     if( atomModelMap[ _id ] ) {
@@ -118,7 +120,7 @@ AtomModel = function( o, params ){
   
   this.get = function(){
     atom = Atoms.findOne( _id );
-    return atom;
+    return atom || o;
   }
   
   // [TODO] - refactor getChildren
