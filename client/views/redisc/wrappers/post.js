@@ -11,6 +11,9 @@ Template.PostWrapper.helpers({
     
   },
   owner: function(){
-    return this.get().owner._id == Meteor.userId();
+    var gs = Meteor.user().profile.groups;
+    var o = this.get().owner;
+    
+    return gs.indexOf(o) > -1;
   }
 });
