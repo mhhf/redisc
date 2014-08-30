@@ -67,15 +67,19 @@ Template.PostWrapper.helpers({
     return rediscModel.get('COMMENT') === this;
   },
   newCommentAtom: function(){
-    var atom = new LLMD.Atom('redisc');
-    // [TODO] - refactor _atomId to _seedId
-    var parent = this.get();
+    
+    // [TODO] - export to rediscModel
+    var parent = this.get()
+    var atom = new LLMD.Atom('redisc', parent);
+        
     atom.root = parent.root != ''? parent.root : parent._seedId;
     atom.parent = parent._seedId;
-    return {
-      atom: atom,
-      parents: [parent._id]
-    };
+    atom.owner = parent.owner;
+    
+    atom.meta.state = 'tmp';
+    var atomModel = new AtomModel( atom, {parent:parent} );
+    
+    return atomModel;
   }
 });
 
@@ -91,6 +95,7 @@ Template.EditorWrapper.events = {
 Template.Comments.helpers({
   getComments: function(){
     var children = this.getNested('nested');
+    console.log(children);
     children.sort( function( a, b ){
       return b.get().score - a.get().score; });
     return children;
