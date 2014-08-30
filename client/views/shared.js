@@ -37,9 +37,9 @@ var vote = function(_id, value){
 Template.Score.helpers({
   voted: function(c){
     if(c === 'up') {
-      return this.get().upvotes.indexOf(Meteor.userId())>-1?'active':'';
+      return this.get().pro.indexOf(Meteor.userId())>-1?'active':'';
     } else if (c === 'down') {
-      return this.get().downvotes.indexOf(Meteor.userId())>-1?'active':'';
+      return this.get().con.indexOf(Meteor.userId())>-1?'active':'';
     }
   },
   getScore: function(){

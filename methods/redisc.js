@@ -8,34 +8,34 @@ Meteor.methods({
     var b = 0;
      
     if( o.value == -1) { // DOWNVOTE
-      if( p.upvotes.indexOf(this.userId)>-1 ) { // UPVOTED
+      if( p.pro.indexOf(this.userId)>-1 ) { // UPVOTED
         // 
         // RESET
         Atoms.update( {_id: o._id}, {
-          $pull: { upvotes: this.userId },
+          $pull: { pro: this.userId },
           $set: {score: p.score - 1} 
         }); 
-      } else if( p.downvotes.indexOf(this.userId) == -1 ){ // NOT VOTED
+      } else if( p.con.indexOf(this.userId) == -1 ){ // NOT VOTED
         //
         // DOWNVOTE
         Atoms.update( {_id: o._id}, {
-          $addToSet: { downvotes: this.userId },
+          $addToSet: { con: this.userId },
           $set: {score: p.score - 1} 
         }); 
       }
     } else if( o.value == 1 ) { // UPVOTE
-      if( p.downvotes.indexOf(this.userId)>-1 ) { // DOWNVOTED
+      if( p.con.indexOf(this.userId)>-1 ) { // DOWNVOTED
         // 
         // RESET
         Atoms.update( {_id: o._id}, {
-          $pull: { downvotes: this.userId },
+          $pull: { con: this.userId },
           $set: {score: p.score + 1} 
         }); 
-      } else if( p.upvotes.indexOf(this.userId) == -1 ){ // NOT VOTED
+      } else if( p.pro.indexOf(this.userId) == -1 ){ // NOT VOTED
         //
         // UPVOTE
         Atoms.update( {_id: o._id}, {
-          $addToSet: { upvotes: this.userId },
+          $addToSet: { pro: this.userId },
           $set: {score: p.score + 1} 
         }); 
       }
