@@ -7,13 +7,6 @@ standard-app-packages
 insecure
 
 kestanous:emitter@0.1.0
-napsy:llmd@0.2.0
-napsy:llmd-core@0.2.0
-napsy:llmd-md@0.2.0
-napsy:llmd-redisc@0.2.0
-napsy:tags@0.2.0
-napsy:editor@0.2.0
-cmather:iron-router@0.8.2
 less
 sacha:spin@2.0.4
 mrt:module-loader@0.5.1
@@ -21,9 +14,19 @@ accounts-password
 chrismbeckett:fontawesome4@1.1.0
 accounts-google
 accounts-ui
-mrt:sendgrid@0.9.0
 email
 mrt:moment@2.8.1
 accounts-github
 accounts-twitter
 ldk:changesets@0.2.7
+llmd-core
+llmd
+llmd-redisc
+aldeed:collection2
+raix:collectionfs
+raix:cfs-s3
+cunneen:sendgrid
+joshowens:accounts-entry
+iron:router
+chuangbo:marked
+

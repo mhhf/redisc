@@ -1,0 +1,38 @@
+<template name="llmd_if_ast">
+<strong>if</strong> ( {{atom.c}} )
+{{> llmd_if_body }}
+</template>
+
+<template name="llmd_if_edit">
+<strong>if</strong> ( <input name="condition" class="form-control" type="text" value="{{atom.c}}" /> )
+{{> llmd_if_body }}
+</template>
+
+<template name="llmd_if_body">
+<div class="iftrue hatched">
+  {{> llmd_nested atom=this key='t' }}
+</div>
+<div class="iffalse hatched">
+  {{> llmd_nested atom=this key='f' }}
+</div>
+</template>
+
+
+<template name="llmd_seq_edit">
+<div class="editorContainerWrapper">
+  {{> llmd_nested key='data' atom=this}}
+  {{> addNewAtomBtn key='data' atom=this editorModel=.. }}
+</div>
+</template>
+
+<template name="llmd_nested">
+  <ul id="editorContainer">
+    {{#each atoms}}
+
+    <li>
+      {{> getWrapper }}
+    </li>
+
+    {{/each}}
+  </ul>
+</template>
