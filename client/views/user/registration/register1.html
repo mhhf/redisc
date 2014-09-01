@@ -1,7 +1,4 @@
 <template name="register1">
-{{#markdown}}
-## Your registration is nearly complete
-{{/markdown}}
 
 <form action="#">
 
@@ -15,6 +12,14 @@
     <label for="username">Username</label>
     <input type="username" class="form-control" id="username" placeholder="Username..." value="{{getUsername}}">
   </div>
+  
+
+  {{#unless getIdentification}}
+    <div class="form-group">
+      <label for="id">Identification</label>
+      <input type="id" class="form-control" id="id" placeholder="Identification..." >
+    </div>
+  {{/unless}}
   
   
   <div class="form-group">

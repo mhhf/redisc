@@ -64,4 +64,8 @@
 /cfs-collection-filters
 /cfs-worker
 /changesets
+<<<<<<< HEAD
 /sharejs
+=======
+/collectionfs
+>>>>>>> develop

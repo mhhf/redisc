@@ -27,6 +27,3 @@ Files.allow({
   fetch: []
 });
 
-Meteor.publish('file', function(_id){
-  return Files.find({ _id: _id });
-});
