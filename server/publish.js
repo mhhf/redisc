@@ -19,7 +19,7 @@ Meteor.publish('Redisc.Posts', function( tags, page ){
     root: '',
     $or: [
       { _rights: 'public' },
-      { owner: { $in: usr.profile.groups } }
+      { owner: { $in: usr.profile.groups || [] } }
     ] };
   if( tags.length > 0 ) qry.tags= { $in: tags };
   
@@ -41,7 +41,7 @@ Meteor.publish('Redisc.Post', function(_id){
     ], 
     $or: [
       { _rights: 'public' },
-      { owner: { $in: usr.profile.groups } }
+      { owner: { $in: usr.profile.groups || [] } }
     ]
   });
   
