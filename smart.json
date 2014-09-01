@@ -29,6 +29,7 @@
     "sendgrid": {},
     "moment": {},
     "synced-cron": {},
+    "collectionFS":{},
     "cfs-s3": {},
     "sharejs": {}
   }
