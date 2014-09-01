@@ -8,12 +8,3 @@ Template.RediscPostNew.events = {
     });
   }
 }
-
-Template.RediscPostNew.helpers({
-  newAtom: function(){
-    var atom = new LLMD.Atom('redisc');
-    atom.meta.state = 'tmp';
-    var atomModel = new AtomModel(atom);
-    return atomModel;
-  }
-});
