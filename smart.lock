@@ -4,7 +4,10 @@
     "basePackages": {
       "collectionfs": {},
       "cfs-filesystem": {},
-      "cfs-s3": {}
+      "cfs-s3": {},
+      "bootstrap-less": {},
+      "bourbon": {},
+      "neat": {}
     },
     "packages": {
       "collectionfs": {
@@ -21,6 +24,21 @@
         "git": "https://github.com/CollectionFS/Meteor-cfs-s3.git",
         "tag": "v0.0.30",
         "commit": "fb12f6749762e7ec1a4fd4ffa859ac866ec87b3b"
+      },
+      "bootstrap-less": {
+        "git": "https://github.com/inhji/meteor-bootstrap-less",
+        "tag": "v0.0.2",
+        "commit": "a04086b7f86f1d3e8f58ab801b37d08c40688693"
+      },
+      "bourbon": {
+        "git": "https://github.com/chicagogrooves/meteor-bourbon.git",
+        "tag": "v3.1.8.1",
+        "commit": "b55f0968fe7d4a2886898cd8e81394de066a3ae1"
+      },
+      "neat": {
+        "git": "https://github.com/chicagogrooves/meteor-neat.git",
+        "tag": "v1.5.0",
+        "commit": "6c318cce1c02e822d6a340c547273b29b6379197"
       },
       "cfs-base-package": {
         "git": "https://github.com/CollectionFS/Meteor-cfs-base-package.git",

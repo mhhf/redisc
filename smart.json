@@ -1,7 +1,10 @@
 {
   "packages": {
-    "collectionfs": {}, 
+    "collectionfs": {},
     "cfs-filesystem": {},
-    "cfs-s3": {}
+    "cfs-s3": {},
+    "bootstrap-less": {},
+    "bourbon": {},
+    "neat": {}
   }
 }

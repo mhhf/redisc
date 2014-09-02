@@ -13,7 +13,6 @@ autoupdate@1.0.5
 binary-heap@1.0.0
 blaze-tools@1.0.0
 blaze@1.0.3
-bootstrap@1.0.0
 callback-hook@1.0.0
 check@1.0.0
 chrismbeckett:fontawesome4@1.1.0
@@ -26,6 +25,7 @@ deps@1.0.1
 ejson@1.0.0
 email@1.0.2
 follower-livedata@1.0.0
+fourseven:scss@0.9.5
 geojson-utils@1.0.0
 github@1.0.0
 google@1.0.0
@@ -55,6 +55,7 @@ logging@1.0.2
 meteor@1.0.2
 minifiers@1.0.2
 minimongo@1.0.1
+mizzao:bootstrap-3@3.2.0
 mongo-livedata@1.0.3
 mrt:accounts-t9n@0.0.13
 mrt:module-loader@0.5.1
