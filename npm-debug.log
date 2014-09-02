@@ -1,0 +1,2078 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'update', 'npm', '-g' ]
+2 info using npm@2.0.0-alpha-5
+3 info using node@v0.10.17
+4 verbose mapToRegistry name npm
+5 verbose mapToRegistry uri https://registry.npmjs.org/npm
+6 verbose request where is /npm
+7 verbose request registry https://registry.npmjs.org/
+8 verbose request id 7e9f89efaf300454
+9 verbose request url raw /npm
+10 verbose request url resolving [ 'https://registry.npmjs.org/', './npm' ]
+11 verbose request url resolved https://registry.npmjs.org/npm
+12 verbose request where is https://registry.npmjs.org/npm
+13 verbose request no basic auth needed
+14 info trying registry request attempt 1 at 17:53:06
+15 http GET https://registry.npmjs.org/npm
+16 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+17 info trying registry request attempt 2 at 17:53:16
+18 http GET https://registry.npmjs.org/npm
+19 http 200 https://registry.npmjs.org/npm
+20 silly registry.get cb [ 200,
+20 silly registry.get   { date: 'Mon, 01 Sep 2014 15:53:16 GMT',
+20 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+20 silly registry.get     etag: '"87F7T6QBG0KVNR84S15XAR9ZK"',
+20 silly registry.get     'content-type': 'application/json',
+20 silly registry.get     'cache-control': 'max-age=60',
+20 silly registry.get     'content-length': '1352780',
+20 silly registry.get     'accept-ranges': 'bytes',
+20 silly registry.get     via: '1.1 varnish',
+20 silly registry.get     age: '159',
+20 silly registry.get     'x-served-by': 'cache-ams4120-AMS',
+20 silly registry.get     'x-cache': 'HIT',
+20 silly registry.get     'x-cache-hits': '1',
+20 silly registry.get     'x-timer': 'S1409586796.833989,VS0,VE109',
+20 silly registry.get     vary: 'Accept',
+20 silly registry.get     'keep-alive': 'timeout=10, max=50',
+20 silly registry.get     connection: 'Keep-Alive' } ]
+21 info outdated updating [ [ '/usr/local/lib',
+21 info outdated     'npm',
+21 info outdated     '2.0.0-alpha-5',
+21 info outdated     '2.0.0-beta.0',
+21 info outdated     '2.0.0-beta.0',
+21 info outdated     'latest' ] ]
+22 verbose install where,what [ '/usr/local/lib', [ 'npm@2.0.0-beta.0' ] ]
+23 verbose cache add [ 'npm@2.0.0-beta.0', null ]
+24 verbose cache add spec="npm@2.0.0-beta.0" args=["npm@2.0.0-beta.0",null]
+25 verbose parsed spec { raw: 'npm@2.0.0-beta.0',
+25 verbose parsed spec   scope: null,
+25 verbose parsed spec   name: 'npm',
+25 verbose parsed spec   rawSpec: '2.0.0-beta.0',
+25 verbose parsed spec   spec: '2.0.0-beta.0',
+25 verbose parsed spec   type: 'version' }
+26 verbose addNamed [ 'npm', '2.0.0-beta.0' ]
+27 verbose addNamed [ '2.0.0-beta.0', '2.0.0-beta.0' ]
+28 silly lockFile 7b8aad32-npm-2-0-0-beta-0 npm@2.0.0-beta.0
+29 verbose lock npm@2.0.0-beta.0 /Users/mhhf/.npm/7b8aad32-npm-2-0-0-beta-0.lock
+30 verbose mapToRegistry name npm
+31 verbose mapToRegistry uri https://registry.npmjs.org/npm
+32 verbose registry.get https://registry.npmjs.org/npm not expired, no request
+33 silly lockFile 3656f3d4-mjs-org-npm-npm-2-0-0-beta-0-tgz https://registry.npmjs.org/npm/-/npm-2.0.0-beta.0.tgz
+34 verbose lock https://registry.npmjs.org/npm/-/npm-2.0.0-beta.0.tgz /Users/mhhf/.npm/3656f3d4-mjs-org-npm-npm-2-0-0-beta-0-tgz.lock
+35 verbose addRemoteTarball [ 'https://registry.npmjs.org/npm/-/npm-2.0.0-beta.0.tgz',
+35 verbose addRemoteTarball   '750381429e602908a1b10f5935619694dd60cdf1' ]
+36 info retry fetch attempt 1 at 17:53:18
+37 verbose fetch to= /var/folders/gt/35y_4f9j3cb2fy5qj547r46r0000gn/T/npm-53961-pCaQXTOG/registry.npmjs.org/npm/-/npm-2.0.0-beta.0.tgz
+38 http GET https://registry.npmjs.org/npm/-/npm-2.0.0-beta.0.tgz
+39 http 200 https://registry.npmjs.org/npm/-/npm-2.0.0-beta.0.tgz
+40 silly lockFile 3656f3d4-mjs-org-npm-npm-2-0-0-beta-0-tgz https://registry.npmjs.org/npm/-/npm-2.0.0-beta.0.tgz
+41 silly lockFile 3656f3d4-mjs-org-npm-npm-2-0-0-beta-0-tgz https://registry.npmjs.org/npm/-/npm-2.0.0-beta.0.tgz
+42 silly lockFile 7b8aad32-npm-2-0-0-beta-0 npm@2.0.0-beta.0
+43 silly lockFile 7b8aad32-npm-2-0-0-beta-0 npm@2.0.0-beta.0
+44 silly resolved [ { version: '2.0.0-beta.0',
+44 silly resolved     name: 'npm',
+44 silly resolved     description: 'A package manager for node',
+44 silly resolved     keywords: [ 'package manager', 'modules', 'install', 'package.json' ],
+44 silly resolved     preferGlobal: true,
+44 silly resolved     config: { publishtest: false },
+44 silly resolved     publishConfig: { tag: 'v1.5rc' },
+44 silly resolved     homepage: 'https://npmjs.org/doc/',
+44 silly resolved     author:
+44 silly resolved      { name: 'Isaac Z. Schlueter',
+44 silly resolved        email: 'i@izs.me',
+44 silly resolved        url: 'http://blog.izs.me' },
+44 silly resolved     repository: { type: 'git', url: 'https://github.com/npm/npm' },
+44 silly resolved     bugs:
+44 silly resolved      { url: 'http://github.com/npm/npm/issues',
+44 silly resolved        email: 'npm-@googlegroups.com' },
+44 silly resolved     directories: { doc: './doc', man: './man', lib: './lib', bin: './bin' },
+44 silly resolved     main: './lib/npm.js',
+44 silly resolved     bin: { npm: './bin/npm-cli.js' },
+44 silly resolved     dependencies:
+44 silly resolved      { abbrev: '~1.0.5',
+44 silly resolved        ansi: '~0.3.0',
+44 silly resolved        ansicolors: '~0.3.2',
+44 silly resolved        ansistyles: '~0.1.3',
+44 silly resolved        archy: '0',
+44 silly resolved        'async-some': '~1.0.0',
+44 silly resolved        'block-stream': '0.0.7',
+44 silly resolved        'char-spinner': '~1.0.1',
+44 silly resolved        'child-process-close': '~0.1.1',
+44 silly resolved        chmodr: '~0.1.0',
+44 silly resolved        chownr: '0',
+44 silly resolved        'cmd-shim': '~1.1.2',
+44 silly resolved        columnify: '~1.1.0',
+44 silly resolved        editor: '~0.1.0',
+44 silly resolved        'fs-vacuum': '~1.2.1',
+44 silly resolved        fstream: '~1.0.2',
+44 silly resolved        'fstream-npm': '~1.0.0',
+44 silly resolved        'github-url-from-git': '~1.3.0',
+44 silly resolved        'github-url-from-username-repo': '~0.2.0',
+44 silly resolved        glob: '~4.0.5',
+44 silly resolved        'graceful-fs': '~3.0.0',
+44 silly resolved        inflight: '~1.0.1',
+44 silly resolved        ini: '~1.2.0',
+44 silly resolved        'init-package-json': '~1.0.0',
+44 silly resolved        lockfile: '~1.0.0',
+44 silly resolved        'lru-cache': '~2.5.0',
+44 silly resolved        minimatch: '~1.0.0',
+44 silly resolved        mkdirp: '~0.5.0',
+44 silly resolved        'node-gyp': '~1.0.1',
+44 silly resolved        nopt: '~3.0.1',
+44 silly resolved        'normalize-package-data': '~0.4.2',
+44 silly resolved        'npm-cache-filename': '~1.0.1',
+44 silly resolved        'npm-install-checks': '~1.0.2',
+44 silly resolved        'npm-package-arg': '~2.0.2',
+44 silly resolved        'npm-registry-client': '~3.1.3',
+44 silly resolved        'npm-user-validate': '~0.1.0',
+44 silly resolved        npmconf: '~2.0.4',
+44 silly resolved        npmlog: '~0.1.1',
+44 silly resolved        once: '~1.3.0',
+44 silly resolved        opener: '~1.3.0',
+44 silly resolved        osenv: '~0.1.0',
+44 silly resolved        'path-is-inside': '~1.0.0',
+44 silly resolved        read: '~1.0.4',
+44 silly resolved        'read-installed': '~3.1.0',
+44 silly resolved        'read-package-json': '~1.2.6',
+44 silly resolved        request: '~2.40.0',
+44 silly resolved        retry: '~0.6.0',
+44 silly resolved        rimraf: '~2.2.8',
+44 silly resolved        semver: '~3.0.0',
+44 silly resolved        sha: '~1.2.1',
+44 silly resolved        slide: '~1.1.5',
+44 silly resolved        'sorted-object': '~1.0.0',
+44 silly resolved        tar: '~1.0.1',
+44 silly resolved        'text-table': '~0.2.0',
+44 silly resolved        'uid-number': '0.0.5',
+44 silly resolved        which: '1' },
+44 silly resolved     bundleDependencies:
+44 silly resolved      [ 'abbrev',
+44 silly resolved        'ansi',
+44 silly resolved        'ansicolors',
+44 silly resolved        'ansistyles',
+44 silly resolved        'archy',
+44 silly resolved        'async-some',
+44 silly resolved        'block-stream',
+44 silly resolved        'char-spinner',
+44 silly resolved        'child-process-close',
+44 silly resolved        'chmodr',
+44 silly resolved        'chownr',
+44 silly resolved        'cmd-shim',
+44 silly resolved        'columnify',
+44 silly resolved        'editor',
+44 silly resolved        'fs-vacuum',
+44 silly resolved        'fstream',
+44 silly resolved        'fstream-npm',
+44 silly resolved        'github-url-from-git',
+44 silly resolved        'github-url-from-username-repo',
+44 silly resolved        'glob',
+44 silly resolved        'graceful-fs',
+44 silly resolved        'inflight',
+44 silly resolved        'inherits',
+44 silly resolved        'ini',
+44 silly resolved        'init-package-json',
+44 silly resolved        'lockfile',
+44 silly resolved        'lru-cache',
+44 silly resolved        'minimatch',
+44 silly resolved        'mkdirp',
+44 silly resolved        'node-gyp',
+44 silly resolved        'nopt',
+44 silly resolved        'normalize-package-data',
+44 silly resolved        'npm-cache-filename',
+44 silly resolved        'npm-install-checks',
+44 silly resolved        'npm-package-arg',
+44 silly resolved        'npm-registry-client',
+44 silly resolved        'npm-user-validate',
+44 silly resolved        'npmconf',
+44 silly resolved        'npmlog',
+44 silly resolved        'once',
+44 silly resolved        'opener',
+44 silly resolved        'osenv',
+44 silly resolved        'path-is-inside',
+44 silly resolved        'read',
+44 silly resolved        'read-installed',
+44 silly resolved        'read-package-json',
+44 silly resolved        'request',
+44 silly resolved        'retry',
+44 silly resolved        'rimraf',
+44 silly resolved        'semver',
+44 silly resolved        'sha',
+44 silly resolved        'slide',
+44 silly resolved        'sorted-object',
+44 silly resolved        'tar',
+44 silly resolved        'text-table',
+44 silly resolved        'uid-number',
+44 silly resolved        'which' ],
+44 silly resolved     devDependencies:
+44 silly resolved      { marked: '~0.3.2',
+44 silly resolved        nock: '~0.34.1',
+44 silly resolved        'npm-registry-couchapp': '~2.5.0',
+44 silly resolved        'npm-registry-mock': '~0.6.3',
+44 silly resolved        ronn: '~0.3.6',
+44 silly resolved        tap: '~0.4.12' },
+44 silly resolved     engines: { node: '>=0.8' },
+44 silly resolved     scripts:
+44 silly resolved      { 'test-legacy': 'node ./test/run.js',
+44 silly resolved        test: 'tap --timeout 120 test/tap/*.js',
+44 silly resolved        tap: 'tap --timeout 120 test/tap/*.js',
+44 silly resolved        'test-all': 'node ./test/run.js && tap test/tap/*.js',
+44 silly resolved        prepublish: 'node bin/npm-cli.js prune --prefix=. --no-global && rm -rf test/*/*/node_modules && make -j8 doc',
+44 silly resolved        dumpconf: 'env | grep npm | sort | uniq' },
+44 silly resolved     license: 'Artistic-2.0',
+44 silly resolved     man:
+44 silly resolved      [ '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-README.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-adduser.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-bin.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-bugs.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-build.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-bundle.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-cache.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-completion.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-config.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-dedupe.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-deprecate.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-docs.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-edit.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-explore.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-help-search.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-help.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-init.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-install.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-link.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-ls.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-outdated.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-owner.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-pack.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-prefix.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-prune.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-publish.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-rebuild.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-repo.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-restart.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-rm.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-root.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-run-script.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-search.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-shrinkwrap.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-star.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-stars.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-start.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-stop.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-submodule.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-tag.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-test.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-uninstall.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-unpublish.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-update.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-version.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-view.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm-whoami.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man1/npm.1',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-bin.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-bugs.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-cache.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-commands.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-config.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-deprecate.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-docs.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-edit.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-explore.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-help-search.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-init.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-install.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-link.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-load.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-ls.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-outdated.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-owner.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-pack.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-prefix.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-prune.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-publish.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-rebuild.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-repo.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-restart.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-root.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-run-script.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-search.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-shrinkwrap.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-start.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-stop.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-submodule.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-tag.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-test.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-uninstall.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-unpublish.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-update.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-version.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-view.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm-whoami.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man3/npm.3',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man5/npm-folders.5',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man5/npm-global.5',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man5/npm-json.5',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man5/npmrc.5',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man5/package.json.5',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man7/npm-coding-style.7',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man7/npm-config.7',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man7/npm-developers.7',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man7/npm-disputes.7',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man7/npm-faq.7',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man7/npm-index.7',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man7/npm-registry.7',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man7/npm-scripts.7',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man7/removing-npm.7',
+44 silly resolved        '/Users/ogd/Documents/projects/npm/npm/man/man7/semver.7' ],
+44 silly resolved     contributors:
+44 silly resolved      [ [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object],
+44 silly resolved        [Object] ],
+44 silly resolved     gitHead: '5cacaa2202a8f53bf95db9097aaa9ae9dc93a903',
+44 silly resolved     _id: 'npm@2.0.0-beta.0',
+44 silly resolved     _shasum: '750381429e602908a1b10f5935619694dd60cdf1',
+44 silly resolved     _from: 'npm@2.0.0-beta.0',
+44 silly resolved     _npmVersion: '2.0.0-beta.0',
+44 silly resolved     _npmUser: { name: 'othiym23', email: 'ogd@aoaioxxysz.net' },
+44 silly resolved     maintainers: [ [Object], [Object] ],
+44 silly resolved     dist:
+44 silly resolved      { shasum: '750381429e602908a1b10f5935619694dd60cdf1',
+44 silly resolved        tarball: 'http://registry.npmjs.org/npm/-/npm-2.0.0-beta.0.tgz' },
+44 silly resolved     _resolved: 'https://registry.npmjs.org/npm/-/npm-2.0.0-beta.0.tgz' } ]
+45 info install npm@2.0.0-beta.0 into /usr/local/lib
+46 info installOne npm@2.0.0-beta.0
+47 verbose lib/node_modules/npm unbuild
+48 info preuninstall npm@2.0.0-alpha-5
+49 info uninstall npm@2.0.0-alpha-5
+50 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild npm@2.0.0-alpha-5
+51 verbose /usr/local/bin,[object Object] binRoot
+52 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+53 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+54 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+55 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+56 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+57 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+58 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+59 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+60 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+61 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+62 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+63 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+64 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+65 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+66 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+67 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+68 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+69 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+70 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+71 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+72 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+73 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+74 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+75 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+76 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+77 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+78 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+79 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+80 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+81 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+82 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+83 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+84 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+85 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+86 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+87 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+88 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+89 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+90 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+91 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+92 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+93 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+94 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+95 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+96 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+97 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+98 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+99 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+100 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+101 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+102 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+103 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+104 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+105 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+106 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+107 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+108 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+109 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+110 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+111 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+112 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+113 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+114 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+115 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+116 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+117 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+118 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+119 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+120 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+121 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+122 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+123 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+124 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+125 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+126 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+127 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+128 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+129 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+130 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+131 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+132 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+133 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+134 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+135 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+136 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+137 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+138 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+139 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+140 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+141 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+142 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+143 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+144 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+145 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+146 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+147 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+148 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+149 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+150 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+151 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+152 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+153 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+154 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+155 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+156 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+157 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+158 silly gentlyRm /usr/local/bin/npm is not under /usr/local/lib/node_modules/npm
+159 silly gentlyRm checking to see if /usr/local/bin/npm is a link
+160 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+161 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+162 silly gentlyRm /usr/local/share/man/man1/npm-README.1 is not under /usr/local/lib/node_modules/npm
+163 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-README.1 is a link
+164 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+165 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+166 silly gentlyRm /usr/local/share/man/man1/npm-adduser.1 is not under /usr/local/lib/node_modules/npm
+167 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-adduser.1 is a link
+168 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+169 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+170 silly gentlyRm /usr/local/share/man/man1/npm-bin.1 is not under /usr/local/lib/node_modules/npm
+171 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-bin.1 is a link
+172 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+173 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+174 silly gentlyRm /usr/local/share/man/man1/npm-bugs.1 is not under /usr/local/lib/node_modules/npm
+175 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-bugs.1 is a link
+176 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+177 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+178 silly gentlyRm /usr/local/share/man/man1/npm-build.1 is not under /usr/local/lib/node_modules/npm
+179 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-build.1 is a link
+180 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+181 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+182 silly gentlyRm /usr/local/share/man/man1/npm-bundle.1 is not under /usr/local/lib/node_modules/npm
+183 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-bundle.1 is a link
+184 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+185 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+186 silly gentlyRm /usr/local/share/man/man1/npm-cache.1 is not under /usr/local/lib/node_modules/npm
+187 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-cache.1 is a link
+188 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+189 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+190 silly gentlyRm /usr/local/share/man/man1/npm-completion.1 is not under /usr/local/lib/node_modules/npm
+191 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-completion.1 is a link
+192 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+193 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+194 silly gentlyRm /usr/local/share/man/man1/npm-config.1 is not under /usr/local/lib/node_modules/npm
+195 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-config.1 is a link
+196 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+197 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+198 silly gentlyRm /usr/local/share/man/man1/npm-dedupe.1 is not under /usr/local/lib/node_modules/npm
+199 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-dedupe.1 is a link
+200 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+201 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+202 silly gentlyRm /usr/local/share/man/man1/npm-deprecate.1 is not under /usr/local/lib/node_modules/npm
+203 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-deprecate.1 is a link
+204 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+205 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+206 silly gentlyRm /usr/local/share/man/man1/npm-docs.1 is not under /usr/local/lib/node_modules/npm
+207 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-docs.1 is a link
+208 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+209 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+210 silly gentlyRm /usr/local/share/man/man1/npm-edit.1 is not under /usr/local/lib/node_modules/npm
+211 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-edit.1 is a link
+212 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+213 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+214 silly gentlyRm /usr/local/share/man/man1/npm-explore.1 is not under /usr/local/lib/node_modules/npm
+215 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-explore.1 is a link
+216 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+217 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+218 silly gentlyRm /usr/local/share/man/man1/npm-help-search.1 is not under /usr/local/lib/node_modules/npm
+219 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-help-search.1 is a link
+220 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+221 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+222 silly gentlyRm /usr/local/share/man/man1/npm-help.1 is not under /usr/local/lib/node_modules/npm
+223 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-help.1 is a link
+224 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+225 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+226 silly gentlyRm /usr/local/share/man/man1/npm-init.1 is not under /usr/local/lib/node_modules/npm
+227 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-init.1 is a link
+228 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+229 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+230 silly gentlyRm /usr/local/share/man/man1/npm-install.1 is not under /usr/local/lib/node_modules/npm
+231 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-install.1 is a link
+232 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+233 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+234 silly gentlyRm /usr/local/share/man/man1/npm-link.1 is not under /usr/local/lib/node_modules/npm
+235 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-link.1 is a link
+236 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+237 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+238 silly gentlyRm /usr/local/share/man/man1/npm-ls.1 is not under /usr/local/lib/node_modules/npm
+239 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-ls.1 is a link
+240 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+241 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+242 silly gentlyRm /usr/local/share/man/man1/npm-outdated.1 is not under /usr/local/lib/node_modules/npm
+243 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-outdated.1 is a link
+244 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+245 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+246 silly gentlyRm /usr/local/share/man/man1/npm-owner.1 is not under /usr/local/lib/node_modules/npm
+247 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-owner.1 is a link
+248 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+249 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+250 silly gentlyRm /usr/local/share/man/man1/npm-pack.1 is not under /usr/local/lib/node_modules/npm
+251 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-pack.1 is a link
+252 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+253 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+254 silly gentlyRm /usr/local/share/man/man1/npm-prefix.1 is not under /usr/local/lib/node_modules/npm
+255 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-prefix.1 is a link
+256 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+257 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+258 silly gentlyRm /usr/local/share/man/man1/npm-prune.1 is not under /usr/local/lib/node_modules/npm
+259 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-prune.1 is a link
+260 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+261 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+262 silly gentlyRm /usr/local/share/man/man1/npm-publish.1 is not under /usr/local/lib/node_modules/npm
+263 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-publish.1 is a link
+264 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+265 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+266 silly gentlyRm /usr/local/share/man/man1/npm-rebuild.1 is not under /usr/local/lib/node_modules/npm
+267 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-rebuild.1 is a link
+268 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+269 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+270 silly gentlyRm /usr/local/share/man/man1/npm-repo.1 is not under /usr/local/lib/node_modules/npm
+271 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-repo.1 is a link
+272 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+273 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+274 silly gentlyRm /usr/local/share/man/man1/npm-restart.1 is not under /usr/local/lib/node_modules/npm
+275 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-restart.1 is a link
+276 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+277 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+278 silly gentlyRm /usr/local/share/man/man1/npm-rm.1 is not under /usr/local/lib/node_modules/npm
+279 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-rm.1 is a link
+280 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+281 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+282 silly gentlyRm /usr/local/share/man/man1/npm-root.1 is not under /usr/local/lib/node_modules/npm
+283 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-root.1 is a link
+284 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+285 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+286 silly gentlyRm /usr/local/share/man/man1/npm-run-script.1 is not under /usr/local/lib/node_modules/npm
+287 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-run-script.1 is a link
+288 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+289 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+290 silly gentlyRm /usr/local/share/man/man1/npm-search.1 is not under /usr/local/lib/node_modules/npm
+291 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-search.1 is a link
+292 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+293 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+294 silly gentlyRm /usr/local/share/man/man1/npm-shrinkwrap.1 is not under /usr/local/lib/node_modules/npm
+295 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-shrinkwrap.1 is a link
+296 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+297 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+298 silly gentlyRm /usr/local/share/man/man1/npm-star.1 is not under /usr/local/lib/node_modules/npm
+299 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-star.1 is a link
+300 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+301 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+302 silly gentlyRm /usr/local/share/man/man1/npm-stars.1 is not under /usr/local/lib/node_modules/npm
+303 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-stars.1 is a link
+304 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+305 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+306 silly gentlyRm /usr/local/share/man/man1/npm-start.1 is not under /usr/local/lib/node_modules/npm
+307 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-start.1 is a link
+308 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+309 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+310 silly gentlyRm /usr/local/share/man/man1/npm-stop.1 is not under /usr/local/lib/node_modules/npm
+311 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-stop.1 is a link
+312 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+313 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+314 silly gentlyRm /usr/local/share/man/man1/npm-submodule.1 is not under /usr/local/lib/node_modules/npm
+315 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-submodule.1 is a link
+316 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+317 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+318 silly gentlyRm /usr/local/share/man/man1/npm-tag.1 is not under /usr/local/lib/node_modules/npm
+319 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-tag.1 is a link
+320 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+321 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+322 silly gentlyRm /usr/local/share/man/man1/npm-test.1 is not under /usr/local/lib/node_modules/npm
+323 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-test.1 is a link
+324 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+325 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+326 silly gentlyRm /usr/local/share/man/man1/npm-uninstall.1 is not under /usr/local/lib/node_modules/npm
+327 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-uninstall.1 is a link
+328 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+329 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+330 silly gentlyRm /usr/local/share/man/man1/npm-unpublish.1 is not under /usr/local/lib/node_modules/npm
+331 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-unpublish.1 is a link
+332 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+333 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+334 silly gentlyRm /usr/local/share/man/man1/npm-update.1 is not under /usr/local/lib/node_modules/npm
+335 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-update.1 is a link
+336 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+337 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+338 silly gentlyRm /usr/local/share/man/man1/npm-version.1 is not under /usr/local/lib/node_modules/npm
+339 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-version.1 is a link
+340 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+341 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+342 silly gentlyRm /usr/local/share/man/man1/npm-view.1 is not under /usr/local/lib/node_modules/npm
+343 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-view.1 is a link
+344 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+345 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+346 silly gentlyRm /usr/local/share/man/man1/npm-whoami.1 is not under /usr/local/lib/node_modules/npm
+347 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-whoami.1 is a link
+348 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+349 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+350 silly gentlyRm /usr/local/share/man/man1/npm.1 is not under /usr/local/lib/node_modules/npm
+351 silly gentlyRm checking to see if /usr/local/share/man/man1/npm.1 is a link
+352 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+353 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+354 silly gentlyRm /usr/local/share/man/man3/npm-bin.3 is not under /usr/local/lib/node_modules/npm
+355 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-bin.3 is a link
+356 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+357 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+358 silly gentlyRm /usr/local/share/man/man3/npm-bugs.3 is not under /usr/local/lib/node_modules/npm
+359 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-bugs.3 is a link
+360 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+361 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+362 silly gentlyRm /usr/local/share/man/man3/npm-cache.3 is not under /usr/local/lib/node_modules/npm
+363 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-cache.3 is a link
+364 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+365 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+366 silly gentlyRm /usr/local/share/man/man3/npm-commands.3 is not under /usr/local/lib/node_modules/npm
+367 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-commands.3 is a link
+368 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+369 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+370 silly gentlyRm /usr/local/share/man/man3/npm-config.3 is not under /usr/local/lib/node_modules/npm
+371 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-config.3 is a link
+372 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+373 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+374 silly gentlyRm /usr/local/share/man/man3/npm-deprecate.3 is not under /usr/local/lib/node_modules/npm
+375 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-deprecate.3 is a link
+376 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+377 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+378 silly gentlyRm /usr/local/share/man/man3/npm-docs.3 is not under /usr/local/lib/node_modules/npm
+379 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-docs.3 is a link
+380 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+381 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+382 silly gentlyRm /usr/local/share/man/man3/npm-edit.3 is not under /usr/local/lib/node_modules/npm
+383 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-edit.3 is a link
+384 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+385 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+386 silly gentlyRm /usr/local/share/man/man3/npm-explore.3 is not under /usr/local/lib/node_modules/npm
+387 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-explore.3 is a link
+388 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+389 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+390 silly gentlyRm /usr/local/share/man/man3/npm-help-search.3 is not under /usr/local/lib/node_modules/npm
+391 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-help-search.3 is a link
+392 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+393 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+394 silly gentlyRm /usr/local/share/man/man3/npm-init.3 is not under /usr/local/lib/node_modules/npm
+395 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-init.3 is a link
+396 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+397 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+398 silly gentlyRm /usr/local/share/man/man3/npm-install.3 is not under /usr/local/lib/node_modules/npm
+399 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-install.3 is a link
+400 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+401 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+402 silly gentlyRm /usr/local/share/man/man3/npm-link.3 is not under /usr/local/lib/node_modules/npm
+403 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-link.3 is a link
+404 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+405 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+406 silly gentlyRm /usr/local/share/man/man3/npm-load.3 is not under /usr/local/lib/node_modules/npm
+407 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-load.3 is a link
+408 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+409 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+410 silly gentlyRm /usr/local/share/man/man3/npm-ls.3 is not under /usr/local/lib/node_modules/npm
+411 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-ls.3 is a link
+412 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+413 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+414 silly gentlyRm /usr/local/share/man/man3/npm-outdated.3 is not under /usr/local/lib/node_modules/npm
+415 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-outdated.3 is a link
+416 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+417 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+418 silly gentlyRm /usr/local/share/man/man3/npm-owner.3 is not under /usr/local/lib/node_modules/npm
+419 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-owner.3 is a link
+420 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+421 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+422 silly gentlyRm /usr/local/share/man/man3/npm-pack.3 is not under /usr/local/lib/node_modules/npm
+423 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-pack.3 is a link
+424 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+425 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+426 silly gentlyRm /usr/local/share/man/man3/npm-prefix.3 is not under /usr/local/lib/node_modules/npm
+427 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-prefix.3 is a link
+428 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+429 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+430 silly gentlyRm /usr/local/share/man/man3/npm-prune.3 is not under /usr/local/lib/node_modules/npm
+431 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-prune.3 is a link
+432 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+433 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+434 silly gentlyRm /usr/local/share/man/man3/npm-publish.3 is not under /usr/local/lib/node_modules/npm
+435 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-publish.3 is a link
+436 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+437 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+438 silly gentlyRm /usr/local/share/man/man3/npm-rebuild.3 is not under /usr/local/lib/node_modules/npm
+439 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-rebuild.3 is a link
+440 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+441 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+442 silly gentlyRm /usr/local/share/man/man3/npm-repo.3 is not under /usr/local/lib/node_modules/npm
+443 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-repo.3 is a link
+444 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+445 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+446 silly gentlyRm /usr/local/share/man/man3/npm-restart.3 is not under /usr/local/lib/node_modules/npm
+447 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-restart.3 is a link
+448 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+449 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+450 silly gentlyRm /usr/local/share/man/man3/npm-root.3 is not under /usr/local/lib/node_modules/npm
+451 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-root.3 is a link
+452 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+453 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+454 silly gentlyRm /usr/local/share/man/man3/npm-run-script.3 is not under /usr/local/lib/node_modules/npm
+455 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-run-script.3 is a link
+456 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+457 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+458 silly gentlyRm /usr/local/share/man/man3/npm-search.3 is not under /usr/local/lib/node_modules/npm
+459 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-search.3 is a link
+460 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+461 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+462 silly gentlyRm /usr/local/share/man/man3/npm-shrinkwrap.3 is not under /usr/local/lib/node_modules/npm
+463 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-shrinkwrap.3 is a link
+464 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+465 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+466 silly gentlyRm /usr/local/share/man/man3/npm-start.3 is not under /usr/local/lib/node_modules/npm
+467 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-start.3 is a link
+468 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+469 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+470 silly gentlyRm /usr/local/share/man/man3/npm-stop.3 is not under /usr/local/lib/node_modules/npm
+471 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-stop.3 is a link
+472 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+473 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+474 silly gentlyRm /usr/local/share/man/man3/npm-submodule.3 is not under /usr/local/lib/node_modules/npm
+475 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-submodule.3 is a link
+476 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+477 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+478 silly gentlyRm /usr/local/share/man/man3/npm-tag.3 is not under /usr/local/lib/node_modules/npm
+479 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-tag.3 is a link
+480 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+481 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+482 silly gentlyRm /usr/local/share/man/man3/npm-test.3 is not under /usr/local/lib/node_modules/npm
+483 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-test.3 is a link
+484 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+485 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+486 silly gentlyRm /usr/local/share/man/man3/npm-uninstall.3 is not under /usr/local/lib/node_modules/npm
+487 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-uninstall.3 is a link
+488 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+489 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+490 silly gentlyRm /usr/local/share/man/man3/npm-unpublish.3 is not under /usr/local/lib/node_modules/npm
+491 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-unpublish.3 is a link
+492 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+493 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+494 silly gentlyRm /usr/local/share/man/man3/npm-update.3 is not under /usr/local/lib/node_modules/npm
+495 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-update.3 is a link
+496 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+497 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+498 silly gentlyRm /usr/local/share/man/man3/npm-version.3 is not under /usr/local/lib/node_modules/npm
+499 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-version.3 is a link
+500 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+501 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+502 silly gentlyRm /usr/local/share/man/man3/npm-view.3 is not under /usr/local/lib/node_modules/npm
+503 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-view.3 is a link
+504 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+505 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+506 silly gentlyRm /usr/local/share/man/man3/npm-whoami.3 is not under /usr/local/lib/node_modules/npm
+507 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-whoami.3 is a link
+508 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+509 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+510 silly gentlyRm /usr/local/share/man/man3/npm.3 is not under /usr/local/lib/node_modules/npm
+511 silly gentlyRm checking to see if /usr/local/share/man/man3/npm.3 is a link
+512 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+513 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+514 silly gentlyRm /usr/local/share/man/man5/npm-folders.5 is not under /usr/local/lib/node_modules/npm
+515 silly gentlyRm checking to see if /usr/local/share/man/man5/npm-folders.5 is a link
+516 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+517 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+518 silly gentlyRm /usr/local/share/man/man5/npm-global.5 is not under /usr/local/lib/node_modules/npm
+519 silly gentlyRm checking to see if /usr/local/share/man/man5/npm-global.5 is a link
+520 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+521 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+522 silly gentlyRm /usr/local/share/man/man5/npm-json.5 is not under /usr/local/lib/node_modules/npm
+523 silly gentlyRm checking to see if /usr/local/share/man/man5/npm-json.5 is a link
+524 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+525 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+526 silly gentlyRm /usr/local/share/man/man5/npmrc.5 is not under /usr/local/lib/node_modules/npm
+527 silly gentlyRm checking to see if /usr/local/share/man/man5/npmrc.5 is a link
+528 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+529 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+530 silly gentlyRm /usr/local/share/man/man5/npm-package.json.5 is not under /usr/local/lib/node_modules/npm
+531 silly gentlyRm checking to see if /usr/local/share/man/man5/npm-package.json.5 is a link
+532 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+533 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+534 silly gentlyRm /usr/local/share/man/man7/npm-coding-style.7 is not under /usr/local/lib/node_modules/npm
+535 silly gentlyRm checking to see if /usr/local/share/man/man7/npm-coding-style.7 is a link
+536 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+537 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+538 silly gentlyRm /usr/local/share/man/man7/npm-config.7 is not under /usr/local/lib/node_modules/npm
+539 silly gentlyRm checking to see if /usr/local/share/man/man7/npm-config.7 is a link
+540 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+541 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+542 silly gentlyRm /usr/local/share/man/man7/npm-developers.7 is not under /usr/local/lib/node_modules/npm
+543 silly gentlyRm checking to see if /usr/local/share/man/man7/npm-developers.7 is a link
+544 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+545 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+546 silly gentlyRm /usr/local/share/man/man7/npm-disputes.7 is not under /usr/local/lib/node_modules/npm
+547 silly gentlyRm checking to see if /usr/local/share/man/man7/npm-disputes.7 is a link
+548 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+549 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+550 silly gentlyRm /usr/local/share/man/man7/npm-faq.7 is not under /usr/local/lib/node_modules/npm
+551 silly gentlyRm checking to see if /usr/local/share/man/man7/npm-faq.7 is a link
+552 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+553 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+554 silly gentlyRm /usr/local/share/man/man7/npm-index.7 is not under /usr/local/lib/node_modules/npm
+555 silly gentlyRm checking to see if /usr/local/share/man/man7/npm-index.7 is a link
+556 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+557 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+558 silly gentlyRm /usr/local/share/man/man7/npm-registry.7 is not under /usr/local/lib/node_modules/npm
+559 silly gentlyRm checking to see if /usr/local/share/man/man7/npm-registry.7 is a link
+560 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+561 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+562 silly gentlyRm /usr/local/share/man/man7/npm-scripts.7 is not under /usr/local/lib/node_modules/npm
+563 silly gentlyRm checking to see if /usr/local/share/man/man7/npm-scripts.7 is a link
+564 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+565 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+566 silly gentlyRm /usr/local/share/man/man7/npm-removing-npm.7 is not under /usr/local/lib/node_modules/npm
+567 silly gentlyRm checking to see if /usr/local/share/man/man7/npm-removing-npm.7 is a link
+568 silly cacheAndTest /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+569 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+570 silly gentlyRm /usr/local/share/man/man7/npm-semver.7 is not under /usr/local/lib/node_modules/npm
+571 silly gentlyRm checking to see if /usr/local/share/man/man7/npm-semver.7 is a link
+572 silly gentlyRm /usr/local/bin/npm is a link
+573 silly gentlyRm /usr/local/share/man/man1/npm-adduser.1 is a link
+574 silly gentlyRm /usr/local/share/man/man1/npm-README.1 is a link
+575 silly gentlyRm /usr/local/share/man/man1/npm-bundle.1 is a link
+576 silly gentlyRm /usr/local/share/man/man1/npm-cache.1 is a link
+577 silly gentlyRm /usr/local/share/man/man1/npm-build.1 is a link
+578 silly gentlyRm /usr/local/share/man/man1/npm-completion.1 is a link
+579 silly gentlyRm /usr/local/share/man/man1/npm-config.1 is a link
+580 silly gentlyRm /usr/local/share/man/man1/npm-dedupe.1 is a link
+581 silly gentlyRm /usr/local/share/man/man1/npm-deprecate.1 is a link
+582 silly gentlyRm /usr/local/share/man/man1/npm-docs.1 is a link
+583 silly gentlyRm /usr/local/share/man/man1/npm-edit.1 is a link
+584 silly gentlyRm /usr/local/share/man/man1/npm-explore.1 is a link
+585 silly gentlyRm /usr/local/share/man/man1/npm-help-search.1 is a link
+586 silly gentlyRm /usr/local/share/man/man1/npm-help.1 is a link
+587 silly gentlyRm /usr/local/share/man/man1/npm-init.1 is a link
+588 silly gentlyRm /usr/local/share/man/man1/npm-install.1 is a link
+589 silly gentlyRm /usr/local/share/man/man1/npm-link.1 is a link
+590 silly gentlyRm /usr/local/share/man/man1/npm-ls.1 is a link
+591 silly gentlyRm /usr/local/share/man/man1/npm-outdated.1 is a link
+592 silly gentlyRm /usr/local/share/man/man1/npm-owner.1 is a link
+593 silly gentlyRm /usr/local/share/man/man1/npm-pack.1 is a link
+594 silly gentlyRm /usr/local/share/man/man1/npm-prefix.1 is a link
+595 silly gentlyRm /usr/local/share/man/man1/npm-prune.1 is a link
+596 silly gentlyRm /usr/local/share/man/man1/npm-bin.1 is a link
+597 silly gentlyRm /usr/local/share/man/man1/npm-bugs.1 is a link
+598 silly gentlyRm /usr/local/share/man/man1/npm-repo.1 is a link
+599 silly gentlyRm /usr/local/share/man/man1/npm-restart.1 is a link
+600 silly gentlyRm /usr/local/share/man/man1/npm-rebuild.1 is a link
+601 silly gentlyRm /usr/local/share/man/man1/npm-publish.1 is a link
+602 silly gentlyRm /usr/local/share/man/man1/npm-rm.1 is a link
+603 silly gentlyRm /usr/local/share/man/man1/npm-root.1 is a link
+604 silly gentlyRm /usr/local/share/man/man1/npm-run-script.1 is a link
+605 silly gentlyRm /usr/local/share/man/man1/npm-search.1 is a link
+606 silly gentlyRm /usr/local/share/man/man1/npm-shrinkwrap.1 is a link
+607 silly gentlyRm /usr/local/share/man/man1/npm-star.1 is a link
+608 silly gentlyRm /usr/local/share/man/man1/npm-stars.1 is a link
+609 silly gentlyRm /usr/local/share/man/man1/npm-start.1 is a link
+610 silly gentlyRm /usr/local/share/man/man1/npm-stop.1 is a link
+611 silly gentlyRm /usr/local/share/man/man1/npm-submodule.1 is a link
+612 silly gentlyRm /usr/local/share/man/man1/npm-tag.1 is a link
+613 silly gentlyRm /usr/local/share/man/man1/npm-test.1 is a link
+614 silly gentlyRm /usr/local/share/man/man1/npm-uninstall.1 is a link
+615 silly gentlyRm /usr/local/share/man/man1/npm-unpublish.1 is a link
+616 silly gentlyRm /usr/local/share/man/man1/npm-update.1 is a link
+617 silly gentlyRm /usr/local/share/man/man1/npm-version.1 is a link
+618 silly gentlyRm /usr/local/share/man/man1/npm-view.1 is a link
+619 silly gentlyRm /usr/local/share/man/man1/npm-whoami.1 is a link
+620 silly gentlyRm /usr/local/share/man/man1/npm.1 is a link
+621 silly gentlyRm /usr/local/share/man/man3/npm-commands.3 is a link
+622 silly gentlyRm /usr/local/share/man/man3/npm-config.3 is a link
+623 silly gentlyRm /usr/local/share/man/man3/npm-deprecate.3 is a link
+624 silly gentlyRm /usr/local/share/man/man3/npm-docs.3 is a link
+625 silly gentlyRm /usr/local/share/man/man3/npm-edit.3 is a link
+626 silly gentlyRm /usr/local/share/man/man3/npm-explore.3 is a link
+627 silly gentlyRm /usr/local/share/man/man3/npm-help-search.3 is a link
+628 silly gentlyRm /usr/local/share/man/man3/npm-init.3 is a link
+629 silly gentlyRm /usr/local/share/man/man3/npm-bugs.3 is a link
+630 silly gentlyRm /usr/local/share/man/man3/npm-cache.3 is a link
+631 silly gentlyRm /usr/local/share/man/man3/npm-bin.3 is a link
+632 silly gentlyRm /usr/local/share/man/man3/npm-install.3 is a link
+633 silly gentlyRm /usr/local/share/man/man3/npm-outdated.3 is a link
+634 silly gentlyRm /usr/local/share/man/man3/npm-owner.3 is a link
+635 silly gentlyRm /usr/local/share/man/man3/npm-load.3 is a link
+636 silly gentlyRm /usr/local/share/man/man3/npm-pack.3 is a link
+637 silly gentlyRm /usr/local/share/man/man3/npm-prefix.3 is a link
+638 silly gentlyRm /usr/local/share/man/man3/npm-prune.3 is a link
+639 silly gentlyRm /usr/local/share/man/man3/npm-publish.3 is a link
+640 silly gentlyRm /usr/local/share/man/man3/npm-rebuild.3 is a link
+641 silly gentlyRm /usr/local/share/man/man3/npm-repo.3 is a link
+642 silly gentlyRm /usr/local/share/man/man3/npm-restart.3 is a link
+643 silly gentlyRm /usr/local/share/man/man3/npm-root.3 is a link
+644 silly gentlyRm /usr/local/share/man/man3/npm-run-script.3 is a link
+645 silly gentlyRm /usr/local/share/man/man3/npm-search.3 is a link
+646 silly gentlyRm /usr/local/share/man/man3/npm-shrinkwrap.3 is a link
+647 silly gentlyRm /usr/local/share/man/man3/npm-start.3 is a link
+648 silly gentlyRm /usr/local/share/man/man3/npm-stop.3 is a link
+649 silly gentlyRm /usr/local/share/man/man3/npm-submodule.3 is a link
+650 silly gentlyRm /usr/local/share/man/man3/npm-tag.3 is a link
+651 silly gentlyRm /usr/local/share/man/man3/npm-test.3 is a link
+652 silly gentlyRm /usr/local/share/man/man3/npm-uninstall.3 is a link
+653 silly gentlyRm /usr/local/share/man/man3/npm-unpublish.3 is a link
+654 silly gentlyRm /usr/local/share/man/man3/npm-update.3 is a link
+655 silly gentlyRm /usr/local/share/man/man3/npm-version.3 is a link
+656 silly gentlyRm /usr/local/share/man/man3/npm-view.3 is a link
+657 silly gentlyRm /usr/local/share/man/man3/npm-whoami.3 is a link
+658 silly gentlyRm /usr/local/share/man/man3/npm.3 is a link
+659 silly gentlyRm /usr/local/share/man/man3/npm-ls.3 is a link
+660 silly gentlyRm /usr/local/share/man/man3/npm-link.3 is a link
+661 silly gentlyRm /usr/local/share/man/man5/npm-json.5 is a link
+662 silly gentlyRm /usr/local/share/man/man7/npm-coding-style.7 is a link
+663 silly gentlyRm /usr/local/share/man/man5/npm-global.5 is a link
+664 silly gentlyRm /usr/local/share/man/man7/npm-config.7 is a link
+665 silly gentlyRm /usr/local/share/man/man7/npm-developers.7 is a link
+666 silly gentlyRm /usr/local/share/man/man7/npm-disputes.7 is a link
+667 silly gentlyRm /usr/local/share/man/man7/npm-faq.7 is a link
+668 silly gentlyRm /usr/local/share/man/man7/npm-index.7 is a link
+669 silly gentlyRm /usr/local/share/man/man7/npm-registry.7 is a link
+670 silly gentlyRm /usr/local/share/man/man7/npm-scripts.7 is a link
+671 silly gentlyRm /usr/local/lib/node_modules/npm/bin/npm-cli.js inside /usr/local/lib/node_modules/npm
+672 verbose gentlyRm vacuuming /usr/local/bin/npm
+673 silly gentlyRm /usr/local/share/man/man5/npmrc.5 is a link
+674 silly gentlyRm /usr/local/share/man/man5/npm-folders.5 is a link
+675 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-README.1 inside /usr/local/lib/node_modules/npm
+676 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-README.1
+677 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-bundle.1 inside /usr/local/lib/node_modules/npm
+678 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-bundle.1
+679 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-adduser.1 inside /usr/local/lib/node_modules/npm
+680 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-adduser.1
+681 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-cache.1 inside /usr/local/lib/node_modules/npm
+682 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-cache.1
+683 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-build.1 inside /usr/local/lib/node_modules/npm
+684 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-build.1
+685 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-completion.1 inside /usr/local/lib/node_modules/npm
+686 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-completion.1
+687 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-config.1 inside /usr/local/lib/node_modules/npm
+688 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-config.1
+689 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-dedupe.1 inside /usr/local/lib/node_modules/npm
+690 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-dedupe.1
+691 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-docs.1 inside /usr/local/lib/node_modules/npm
+692 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-docs.1
+693 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-edit.1 inside /usr/local/lib/node_modules/npm
+694 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-edit.1
+695 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-deprecate.1 inside /usr/local/lib/node_modules/npm
+696 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-deprecate.1
+697 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-explore.1 inside /usr/local/lib/node_modules/npm
+698 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-explore.1
+699 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-help-search.1 inside /usr/local/lib/node_modules/npm
+700 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-help-search.1
+701 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-init.1 inside /usr/local/lib/node_modules/npm
+702 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-init.1
+703 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-help.1 inside /usr/local/lib/node_modules/npm
+704 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-help.1
+705 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-install.1 inside /usr/local/lib/node_modules/npm
+706 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-install.1
+707 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-outdated.1 inside /usr/local/lib/node_modules/npm
+708 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-outdated.1
+709 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-link.1 inside /usr/local/lib/node_modules/npm
+710 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-link.1
+711 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-ls.1 inside /usr/local/lib/node_modules/npm
+712 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-ls.1
+713 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-owner.1 inside /usr/local/lib/node_modules/npm
+714 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-owner.1
+715 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-pack.1 inside /usr/local/lib/node_modules/npm
+716 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-pack.1
+717 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-prefix.1 inside /usr/local/lib/node_modules/npm
+718 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-prefix.1
+719 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-prune.1 inside /usr/local/lib/node_modules/npm
+720 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-prune.1
+721 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-repo.1 inside /usr/local/lib/node_modules/npm
+722 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-repo.1
+723 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-bugs.1 inside /usr/local/lib/node_modules/npm
+724 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-bugs.1
+725 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-bin.1 inside /usr/local/lib/node_modules/npm
+726 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-bin.1
+727 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-restart.1 inside /usr/local/lib/node_modules/npm
+728 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-restart.1
+729 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-rebuild.1 inside /usr/local/lib/node_modules/npm
+730 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-rebuild.1
+731 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-publish.1 inside /usr/local/lib/node_modules/npm
+732 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-publish.1
+733 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-rm.1 inside /usr/local/lib/node_modules/npm
+734 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-rm.1
+735 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-root.1 inside /usr/local/lib/node_modules/npm
+736 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-root.1
+737 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-run-script.1 inside /usr/local/lib/node_modules/npm
+738 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-run-script.1
+739 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-search.1 inside /usr/local/lib/node_modules/npm
+740 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-search.1
+741 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-shrinkwrap.1 inside /usr/local/lib/node_modules/npm
+742 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-shrinkwrap.1
+743 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-star.1 inside /usr/local/lib/node_modules/npm
+744 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-star.1
+745 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-stars.1 inside /usr/local/lib/node_modules/npm
+746 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-stars.1
+747 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-start.1 inside /usr/local/lib/node_modules/npm
+748 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-start.1
+749 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-stop.1 inside /usr/local/lib/node_modules/npm
+750 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-stop.1
+751 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-submodule.1 inside /usr/local/lib/node_modules/npm
+752 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-submodule.1
+753 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-tag.1 inside /usr/local/lib/node_modules/npm
+754 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-tag.1
+755 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-test.1 inside /usr/local/lib/node_modules/npm
+756 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-test.1
+757 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-uninstall.1 inside /usr/local/lib/node_modules/npm
+758 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-uninstall.1
+759 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-unpublish.1 inside /usr/local/lib/node_modules/npm
+760 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-unpublish.1
+761 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-update.1 inside /usr/local/lib/node_modules/npm
+762 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-update.1
+763 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-version.1 inside /usr/local/lib/node_modules/npm
+764 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-version.1
+765 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-view.1 inside /usr/local/lib/node_modules/npm
+766 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-view.1
+767 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm-whoami.1 inside /usr/local/lib/node_modules/npm
+768 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm-whoami.1
+769 silly gentlyRm /usr/local/lib/node_modules/npm/man/man1/npm.1 inside /usr/local/lib/node_modules/npm
+770 verbose gentlyRm vacuuming /usr/local/share/man/man1/npm.1
+771 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-commands.3 inside /usr/local/lib/node_modules/npm
+772 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-commands.3
+773 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-deprecate.3 inside /usr/local/lib/node_modules/npm
+774 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-deprecate.3
+775 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-docs.3 inside /usr/local/lib/node_modules/npm
+776 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-docs.3
+777 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-config.3 inside /usr/local/lib/node_modules/npm
+778 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-config.3
+779 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-edit.3 inside /usr/local/lib/node_modules/npm
+780 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-edit.3
+781 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-explore.3 inside /usr/local/lib/node_modules/npm
+782 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-explore.3
+783 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-help-search.3 inside /usr/local/lib/node_modules/npm
+784 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-help-search.3
+785 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-init.3 inside /usr/local/lib/node_modules/npm
+786 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-init.3
+787 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-cache.3 inside /usr/local/lib/node_modules/npm
+788 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-cache.3
+789 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-bugs.3 inside /usr/local/lib/node_modules/npm
+790 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-bugs.3
+791 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-bin.3 inside /usr/local/lib/node_modules/npm
+792 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-bin.3
+793 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-install.3 inside /usr/local/lib/node_modules/npm
+794 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-install.3
+795 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-outdated.3 inside /usr/local/lib/node_modules/npm
+796 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-outdated.3
+797 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-owner.3 inside /usr/local/lib/node_modules/npm
+798 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-owner.3
+799 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-pack.3 inside /usr/local/lib/node_modules/npm
+800 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-pack.3
+801 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-load.3 inside /usr/local/lib/node_modules/npm
+802 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-load.3
+803 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-prune.3 inside /usr/local/lib/node_modules/npm
+804 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-prune.3
+805 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-prefix.3 inside /usr/local/lib/node_modules/npm
+806 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-prefix.3
+807 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-publish.3 inside /usr/local/lib/node_modules/npm
+808 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-publish.3
+809 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-rebuild.3 inside /usr/local/lib/node_modules/npm
+810 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-rebuild.3
+811 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-repo.3 inside /usr/local/lib/node_modules/npm
+812 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-repo.3
+813 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-restart.3 inside /usr/local/lib/node_modules/npm
+814 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-restart.3
+815 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-run-script.3 inside /usr/local/lib/node_modules/npm
+816 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-run-script.3
+817 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-search.3 inside /usr/local/lib/node_modules/npm
+818 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-search.3
+819 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-shrinkwrap.3 inside /usr/local/lib/node_modules/npm
+820 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-shrinkwrap.3
+821 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-root.3 inside /usr/local/lib/node_modules/npm
+822 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-root.3
+823 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-start.3 inside /usr/local/lib/node_modules/npm
+824 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-start.3
+825 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-stop.3 inside /usr/local/lib/node_modules/npm
+826 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-stop.3
+827 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-submodule.3 inside /usr/local/lib/node_modules/npm
+828 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-submodule.3
+829 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-tag.3 inside /usr/local/lib/node_modules/npm
+830 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-tag.3
+831 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-test.3 inside /usr/local/lib/node_modules/npm
+832 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-test.3
+833 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-uninstall.3 inside /usr/local/lib/node_modules/npm
+834 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-uninstall.3
+835 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-unpublish.3 inside /usr/local/lib/node_modules/npm
+836 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-unpublish.3
+837 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-update.3 inside /usr/local/lib/node_modules/npm
+838 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-update.3
+839 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-version.3 inside /usr/local/lib/node_modules/npm
+840 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-version.3
+841 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-view.3 inside /usr/local/lib/node_modules/npm
+842 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-view.3
+843 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-whoami.3 inside /usr/local/lib/node_modules/npm
+844 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-whoami.3
+845 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm.3 inside /usr/local/lib/node_modules/npm
+846 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm.3
+847 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-ls.3 inside /usr/local/lib/node_modules/npm
+848 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-ls.3
+849 silly gentlyRm /usr/local/lib/node_modules/npm/man/man3/npm-link.3 inside /usr/local/lib/node_modules/npm
+850 verbose gentlyRm vacuuming /usr/local/share/man/man3/npm-link.3
+851 silly gentlyRm /usr/local/lib/node_modules/npm/man/man5/npm-json.5 inside /usr/local/lib/node_modules/npm
+852 verbose gentlyRm vacuuming /usr/local/share/man/man5/npm-json.5
+853 silly gentlyRm /usr/local/lib/node_modules/npm/man/man7/npm-developers.7 inside /usr/local/lib/node_modules/npm
+854 verbose gentlyRm vacuuming /usr/local/share/man/man7/npm-developers.7
+855 silly gentlyRm /usr/local/lib/node_modules/npm/man/man7/npm-config.7 inside /usr/local/lib/node_modules/npm
+856 verbose gentlyRm vacuuming /usr/local/share/man/man7/npm-config.7
+857 silly gentlyRm /usr/local/lib/node_modules/npm/man/man5/npm-global.5 inside /usr/local/lib/node_modules/npm
+858 verbose gentlyRm vacuuming /usr/local/share/man/man5/npm-global.5
+859 silly gentlyRm /usr/local/lib/node_modules/npm/man/man7/npm-coding-style.7 inside /usr/local/lib/node_modules/npm
+860 verbose gentlyRm vacuuming /usr/local/share/man/man7/npm-coding-style.7
+861 silly gentlyRm /usr/local/lib/node_modules/npm/man/man7/npm-disputes.7 inside /usr/local/lib/node_modules/npm
+862 verbose gentlyRm vacuuming /usr/local/share/man/man7/npm-disputes.7
+863 silly gentlyRm /usr/local/lib/node_modules/npm/man/man7/npm-faq.7 inside /usr/local/lib/node_modules/npm
+864 verbose gentlyRm vacuuming /usr/local/share/man/man7/npm-faq.7
+865 silly gentlyRm removing /usr/local/bin/npm
+866 silly gentlyRm /usr/local/lib/node_modules/npm/man/man7/npm-index.7 inside /usr/local/lib/node_modules/npm
+867 verbose gentlyRm vacuuming /usr/local/share/man/man7/npm-index.7
+868 silly gentlyRm /usr/local/lib/node_modules/npm/man/man5/npmrc.5 inside /usr/local/lib/node_modules/npm
+869 verbose gentlyRm vacuuming /usr/local/share/man/man5/npmrc.5
+870 silly gentlyRm removing /usr/local/share/man/man1/npm-README.1
+871 silly gentlyRm removing /usr/local/share/man/man1/npm-bundle.1
+872 silly gentlyRm removing /usr/local/share/man/man1/npm-adduser.1
+873 silly gentlyRm removing /usr/local/share/man/man1/npm-cache.1
+874 silly gentlyRm removing /usr/local/share/man/man1/npm-build.1
+875 silly gentlyRm removing /usr/local/share/man/man1/npm-completion.1
+876 silly gentlyRm removing /usr/local/share/man/man1/npm-config.1
+877 silly gentlyRm removing /usr/local/share/man/man1/npm-dedupe.1
+878 silly gentlyRm removing /usr/local/share/man/man1/npm-docs.1
+879 silly gentlyRm removing /usr/local/share/man/man1/npm-edit.1
+880 silly gentlyRm removing /usr/local/share/man/man1/npm-deprecate.1
+881 silly gentlyRm removing /usr/local/share/man/man1/npm-explore.1
+882 silly gentlyRm removing /usr/local/share/man/man1/npm-help-search.1
+883 silly gentlyRm removing /usr/local/share/man/man1/npm-init.1
+884 silly gentlyRm removing /usr/local/share/man/man1/npm-help.1
+885 silly gentlyRm removing /usr/local/share/man/man1/npm-install.1
+886 silly gentlyRm removing /usr/local/share/man/man1/npm-outdated.1
+887 silly gentlyRm removing /usr/local/share/man/man1/npm-link.1
+888 silly gentlyRm removing /usr/local/share/man/man1/npm-ls.1
+889 silly gentlyRm removing /usr/local/share/man/man1/npm-owner.1
+890 silly gentlyRm removing /usr/local/share/man/man1/npm-pack.1
+891 silly gentlyRm removing /usr/local/share/man/man1/npm-prefix.1
+892 silly gentlyRm removing /usr/local/share/man/man1/npm-prune.1
+893 silly gentlyRm /usr/local/lib/node_modules/npm/man/man5/npm-folders.5 inside /usr/local/lib/node_modules/npm
+894 verbose gentlyRm vacuuming /usr/local/share/man/man5/npm-folders.5
+895 silly gentlyRm removing /usr/local/share/man/man1/npm-repo.1
+896 silly gentlyRm removing /usr/local/share/man/man1/npm-bugs.1
+897 silly gentlyRm removing /usr/local/share/man/man1/npm-bin.1
+898 silly gentlyRm removing /usr/local/share/man/man1/npm-restart.1
+899 silly gentlyRm removing /usr/local/share/man/man1/npm-rebuild.1
+900 silly gentlyRm removing /usr/local/share/man/man1/npm-publish.1
+901 silly gentlyRm removing /usr/local/share/man/man1/npm-rm.1
+902 silly gentlyRm removing /usr/local/share/man/man1/npm-root.1
+903 silly gentlyRm removing /usr/local/share/man/man1/npm-run-script.1
+904 silly gentlyRm removing /usr/local/share/man/man1/npm-search.1
+905 silly gentlyRm removing /usr/local/share/man/man1/npm-shrinkwrap.1
+906 silly gentlyRm removing /usr/local/share/man/man1/npm-star.1
+907 silly gentlyRm removing /usr/local/share/man/man1/npm-stars.1
+908 silly gentlyRm removing /usr/local/share/man/man1/npm-start.1
+909 silly gentlyRm removing /usr/local/share/man/man1/npm-submodule.1
+910 silly gentlyRm removing /usr/local/share/man/man1/npm-stop.1
+911 silly gentlyRm removing /usr/local/share/man/man1/npm-tag.1
+912 silly gentlyRm removing /usr/local/share/man/man1/npm-test.1
+913 silly gentlyRm removing /usr/local/share/man/man1/npm-uninstall.1
+914 silly gentlyRm removing /usr/local/share/man/man1/npm-update.1
+915 silly gentlyRm removing /usr/local/share/man/man1/npm-unpublish.1
+916 silly gentlyRm removing /usr/local/share/man/man1/npm-version.1
+917 silly gentlyRm removing /usr/local/share/man/man1/npm-view.1
+918 silly gentlyRm removing /usr/local/share/man/man1/npm-whoami.1
+919 silly gentlyRm removing /usr/local/share/man/man1/npm.1
+920 silly gentlyRm removing /usr/local/share/man/man3/npm-deprecate.3
+921 silly gentlyRm removing /usr/local/share/man/man3/npm-commands.3
+922 silly gentlyRm removing /usr/local/share/man/man3/npm-docs.3
+923 silly gentlyRm removing /usr/local/share/man/man3/npm-edit.3
+924 silly gentlyRm removing /usr/local/share/man/man3/npm-config.3
+925 silly gentlyRm removing /usr/local/share/man/man3/npm-explore.3
+926 silly gentlyRm removing /usr/local/share/man/man3/npm-help-search.3
+927 silly gentlyRm removing /usr/local/share/man/man3/npm-init.3
+928 silly gentlyRm removing /usr/local/share/man/man3/npm-cache.3
+929 silly gentlyRm removing /usr/local/share/man/man3/npm-bugs.3
+930 silly gentlyRm removing /usr/local/share/man/man3/npm-bin.3
+931 silly gentlyRm removing /usr/local/share/man/man3/npm-install.3
+932 silly gentlyRm removing /usr/local/share/man/man3/npm-outdated.3
+933 silly gentlyRm removing /usr/local/share/man/man3/npm-owner.3
+934 silly gentlyRm removing /usr/local/share/man/man3/npm-pack.3
+935 silly gentlyRm removing /usr/local/share/man/man3/npm-load.3
+936 silly gentlyRm removing /usr/local/share/man/man3/npm-prune.3
+937 silly gentlyRm removing /usr/local/share/man/man3/npm-prefix.3
+938 silly gentlyRm removing /usr/local/share/man/man3/npm-publish.3
+939 silly gentlyRm removing /usr/local/share/man/man3/npm-rebuild.3
+940 silly gentlyRm removing /usr/local/share/man/man3/npm-repo.3
+941 silly gentlyRm removing /usr/local/share/man/man3/npm-restart.3
+942 silly gentlyRm removing /usr/local/share/man/man3/npm-run-script.3
+943 silly gentlyRm removing /usr/local/share/man/man3/npm-search.3
+944 silly gentlyRm removing /usr/local/share/man/man3/npm-shrinkwrap.3
+945 silly gentlyRm removing /usr/local/share/man/man3/npm-root.3
+946 silly gentlyRm removing /usr/local/share/man/man3/npm-start.3
+947 silly gentlyRm removing /usr/local/share/man/man3/npm-stop.3
+948 silly gentlyRm removing /usr/local/share/man/man3/npm-submodule.3
+949 silly gentlyRm removing /usr/local/share/man/man3/npm-tag.3
+950 silly gentlyRm removing /usr/local/share/man/man3/npm-test.3
+951 silly gentlyRm removing /usr/local/share/man/man3/npm-uninstall.3
+952 silly gentlyRm removing /usr/local/share/man/man3/npm-unpublish.3
+953 silly gentlyRm removing /usr/local/share/man/man3/npm-update.3
+954 silly gentlyRm removing /usr/local/share/man/man3/npm-version.3
+955 silly gentlyRm removing /usr/local/share/man/man3/npm-view.3
+956 silly gentlyRm removing /usr/local/share/man/man3/npm-whoami.3
+957 silly gentlyRm removing /usr/local/share/man/man3/npm.3
+958 silly gentlyRm removing /usr/local/share/man/man3/npm-ls.3
+959 silly gentlyRm removing /usr/local/share/man/man3/npm-link.3
+960 silly gentlyRm removing /usr/local/share/man/man5/npm-json.5
+961 silly gentlyRm removing /usr/local/share/man/man7/npm-developers.7
+962 silly gentlyRm removing /usr/local/share/man/man7/npm-config.7
+963 silly gentlyRm removing /usr/local/share/man/man5/npm-global.5
+964 silly gentlyRm removing /usr/local/share/man/man7/npm-coding-style.7
+965 silly gentlyRm removing /usr/local/share/man/man7/npm-disputes.7
+966 silly gentlyRm removing /usr/local/share/man/man7/npm-faq.7
+967 silly gentlyRm removing /usr/local/share/man/man7/npm-index.7
+968 silly gentlyRm removing /usr/local/share/man/man5/npmrc.5
+969 silly gentlyRm removing /usr/local/share/man/man5/npm-folders.5
+970 silly gentlyRm /usr/local/lib/node_modules/npm/man/man7/npm-registry.7 inside /usr/local/lib/node_modules/npm
+971 verbose gentlyRm vacuuming /usr/local/share/man/man7/npm-registry.7
+972 silly gentlyRm /usr/local/lib/node_modules/npm/man/man7/npm-scripts.7 inside /usr/local/lib/node_modules/npm
+973 verbose gentlyRm vacuuming /usr/local/share/man/man7/npm-scripts.7
+974 silly gentlyRm quitting because other entries in /usr/local/bin
+975 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+976 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+977 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+978 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+979 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+980 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+981 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+982 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+983 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+984 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+985 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+986 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+987 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+988 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+989 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+990 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+991 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+992 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+993 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+994 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+995 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+996 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+997 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+998 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+999 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1000 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1001 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1002 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1003 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1004 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1005 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1006 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1007 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1008 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1009 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1010 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1011 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1012 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1013 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1014 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1015 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1016 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1017 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1018 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1019 silly gentlyRm removing /usr/local/share/man/man7/npm-registry.7
+1020 silly gentlyRm removing /usr/local/share/man/man7/npm-scripts.7
+1021 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1022 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1023 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1024 silly gentlyRm quitting because other entries in /usr/local/share/man/man1
+1025 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1026 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1027 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1028 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1029 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1030 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1031 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1032 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1033 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1034 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1035 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1036 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1037 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1038 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1039 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1040 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1041 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1042 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1043 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1044 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1045 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1046 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1047 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1048 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1049 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1050 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1051 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1052 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1053 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1054 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1055 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1056 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1057 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1058 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1059 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1060 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1061 silly gentlyRm quitting because other entries in /usr/local/share/man/man5
+1062 silly gentlyRm quitting because other entries in /usr/local/share/man/man7
+1063 silly gentlyRm quitting because other entries in /usr/local/share/man/man5
+1064 silly gentlyRm quitting because other entries in /usr/local/share/man/man7
+1065 silly gentlyRm quitting because other entries in /usr/local/share/man/man7
+1066 silly gentlyRm quitting because other entries in /usr/local/share/man/man7
+1067 silly gentlyRm quitting because other entries in /usr/local/share/man/man7
+1068 silly gentlyRm quitting because other entries in /usr/local/share/man/man7
+1069 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1070 silly gentlyRm quitting because other entries in /usr/local/share/man/man5
+1071 silly gentlyRm quitting because other entries in /usr/local/share/man/man5
+1072 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1073 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1074 silly gentlyRm quitting because other entries in /usr/local/share/man/man3
+1075 silly gentlyRm quitting because other entries in /usr/local/share/man/man7
+1076 silly gentlyRm quitting because other entries in /usr/local/share/man/man7
+1077 info postuninstall npm@2.0.0-alpha-5
+1078 verbose gentlyRm vacuuming /usr/local/lib/node_modules/npm
+1079 silly gentlyRm purging /usr/local/lib/node_modules/npm
+1080 verbose lib/node_modules/npm unbuild
+1081 info preuninstall npm@2.0.0-alpha-5
+1082 info uninstall npm@2.0.0-alpha-5
+1083 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild npm@2.0.0-alpha-5
+1084 verbose /usr/local/bin,[object Object] binRoot
+1085 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1086 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1087 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1088 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1089 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1090 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1091 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1092 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1093 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1094 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1095 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1096 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1097 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1098 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1099 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1100 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1101 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1102 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1103 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1104 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1105 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1106 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1107 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1108 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1109 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1110 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1111 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1112 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1113 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1114 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1115 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1116 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1117 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1118 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1119 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1120 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1121 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1122 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1123 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1124 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1125 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1126 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1127 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1128 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1129 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1130 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1131 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1132 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1133 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1134 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1135 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1136 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1137 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1138 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1139 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1140 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1141 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1142 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1143 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1144 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1145 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1146 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1147 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1148 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1149 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1150 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1151 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1152 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1153 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1154 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1155 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1156 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1157 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1158 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1159 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1160 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1161 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1162 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1163 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1164 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1165 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1166 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1167 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1168 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1169 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1170 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1171 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1172 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1173 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1174 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1175 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1176 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1177 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1178 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1179 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1180 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1181 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1182 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1183 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1184 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1185 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1186 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1187 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1188 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1189 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1190 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1191 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1192 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1193 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1194 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1195 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1196 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1197 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1198 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1199 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1200 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1201 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1202 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1203 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1204 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1205 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1206 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1207 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1208 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1209 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1210 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1211 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1212 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1213 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1214 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1215 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1216 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1217 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1218 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1219 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1220 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1221 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1222 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1223 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1224 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1225 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1226 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1227 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1228 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1229 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1230 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1231 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1232 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1233 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1234 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1235 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1236 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1237 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1238 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1239 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1240 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1241 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1242 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1243 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1244 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1245 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1246 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1247 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1248 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1249 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1250 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1251 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1252 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1253 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1254 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1255 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1256 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1257 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1258 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1259 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1260 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1261 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1262 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1263 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1264 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1265 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1266 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1267 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1268 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1269 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1270 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1271 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1272 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1273 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1274 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1275 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1276 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1277 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1278 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1279 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1280 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1281 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1282 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1283 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1284 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1285 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1286 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1287 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1288 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1289 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1290 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1291 verbose gentlyRm verifying that /usr/local/lib/node_modules/npm is managed by npm
+1292 silly isManaged /usr/local/lib/node_modules/npm is inside /usr/local/lib/node_modules
+1293 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1294 silly gentlyRm /usr/local/bin/npm is not under /usr/local/lib/node_modules/npm
+1295 silly gentlyRm checking to see if /usr/local/bin/npm is a link
+1296 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1297 silly gentlyRm /usr/local/share/man/man1/npm-README.1 is not under /usr/local/lib/node_modules/npm
+1298 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-README.1 is a link
+1299 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1300 silly gentlyRm /usr/local/share/man/man1/npm-adduser.1 is not under /usr/local/lib/node_modules/npm
+1301 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-adduser.1 is a link
+1302 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1303 silly gentlyRm /usr/local/share/man/man1/npm-bin.1 is not under /usr/local/lib/node_modules/npm
+1304 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-bin.1 is a link
+1305 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1306 silly gentlyRm /usr/local/share/man/man1/npm-bugs.1 is not under /usr/local/lib/node_modules/npm
+1307 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-bugs.1 is a link
+1308 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1309 silly gentlyRm /usr/local/share/man/man1/npm-build.1 is not under /usr/local/lib/node_modules/npm
+1310 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-build.1 is a link
+1311 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1312 silly gentlyRm /usr/local/share/man/man1/npm-bundle.1 is not under /usr/local/lib/node_modules/npm
+1313 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-bundle.1 is a link
+1314 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1315 silly gentlyRm /usr/local/share/man/man1/npm-cache.1 is not under /usr/local/lib/node_modules/npm
+1316 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-cache.1 is a link
+1317 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1318 silly gentlyRm /usr/local/share/man/man1/npm-completion.1 is not under /usr/local/lib/node_modules/npm
+1319 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-completion.1 is a link
+1320 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1321 silly gentlyRm /usr/local/share/man/man1/npm-config.1 is not under /usr/local/lib/node_modules/npm
+1322 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-config.1 is a link
+1323 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1324 silly gentlyRm /usr/local/share/man/man1/npm-dedupe.1 is not under /usr/local/lib/node_modules/npm
+1325 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-dedupe.1 is a link
+1326 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1327 silly gentlyRm /usr/local/share/man/man1/npm-deprecate.1 is not under /usr/local/lib/node_modules/npm
+1328 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-deprecate.1 is a link
+1329 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1330 silly gentlyRm /usr/local/share/man/man1/npm-docs.1 is not under /usr/local/lib/node_modules/npm
+1331 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-docs.1 is a link
+1332 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1333 silly gentlyRm /usr/local/share/man/man1/npm-edit.1 is not under /usr/local/lib/node_modules/npm
+1334 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-edit.1 is a link
+1335 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1336 silly gentlyRm /usr/local/share/man/man1/npm-explore.1 is not under /usr/local/lib/node_modules/npm
+1337 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-explore.1 is a link
+1338 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1339 silly gentlyRm /usr/local/share/man/man1/npm-help-search.1 is not under /usr/local/lib/node_modules/npm
+1340 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-help-search.1 is a link
+1341 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1342 silly gentlyRm /usr/local/share/man/man1/npm-help.1 is not under /usr/local/lib/node_modules/npm
+1343 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-help.1 is a link
+1344 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1345 silly gentlyRm /usr/local/share/man/man1/npm-init.1 is not under /usr/local/lib/node_modules/npm
+1346 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-init.1 is a link
+1347 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1348 silly gentlyRm /usr/local/share/man/man1/npm-install.1 is not under /usr/local/lib/node_modules/npm
+1349 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-install.1 is a link
+1350 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1351 silly gentlyRm /usr/local/share/man/man1/npm-link.1 is not under /usr/local/lib/node_modules/npm
+1352 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-link.1 is a link
+1353 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1354 silly gentlyRm /usr/local/share/man/man1/npm-ls.1 is not under /usr/local/lib/node_modules/npm
+1355 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-ls.1 is a link
+1356 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1357 silly gentlyRm /usr/local/share/man/man1/npm-outdated.1 is not under /usr/local/lib/node_modules/npm
+1358 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-outdated.1 is a link
+1359 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1360 silly gentlyRm /usr/local/share/man/man1/npm-owner.1 is not under /usr/local/lib/node_modules/npm
+1361 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-owner.1 is a link
+1362 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1363 silly gentlyRm /usr/local/share/man/man1/npm-pack.1 is not under /usr/local/lib/node_modules/npm
+1364 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-pack.1 is a link
+1365 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1366 silly gentlyRm /usr/local/share/man/man1/npm-prefix.1 is not under /usr/local/lib/node_modules/npm
+1367 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-prefix.1 is a link
+1368 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1369 silly gentlyRm /usr/local/share/man/man1/npm-prune.1 is not under /usr/local/lib/node_modules/npm
+1370 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-prune.1 is a link
+1371 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1372 silly gentlyRm /usr/local/share/man/man1/npm-publish.1 is not under /usr/local/lib/node_modules/npm
+1373 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-publish.1 is a link
+1374 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1375 silly gentlyRm /usr/local/share/man/man1/npm-rebuild.1 is not under /usr/local/lib/node_modules/npm
+1376 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-rebuild.1 is a link
+1377 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1378 silly gentlyRm /usr/local/share/man/man1/npm-repo.1 is not under /usr/local/lib/node_modules/npm
+1379 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-repo.1 is a link
+1380 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1381 silly gentlyRm /usr/local/share/man/man1/npm-restart.1 is not under /usr/local/lib/node_modules/npm
+1382 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-restart.1 is a link
+1383 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1384 silly gentlyRm /usr/local/share/man/man1/npm-rm.1 is not under /usr/local/lib/node_modules/npm
+1385 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-rm.1 is a link
+1386 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1387 silly gentlyRm /usr/local/share/man/man1/npm-root.1 is not under /usr/local/lib/node_modules/npm
+1388 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-root.1 is a link
+1389 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1390 silly gentlyRm /usr/local/share/man/man1/npm-run-script.1 is not under /usr/local/lib/node_modules/npm
+1391 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-run-script.1 is a link
+1392 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1393 silly gentlyRm /usr/local/share/man/man1/npm-search.1 is not under /usr/local/lib/node_modules/npm
+1394 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-search.1 is a link
+1395 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1396 silly gentlyRm /usr/local/share/man/man1/npm-shrinkwrap.1 is not under /usr/local/lib/node_modules/npm
+1397 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-shrinkwrap.1 is a link
+1398 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1399 silly gentlyRm /usr/local/share/man/man1/npm-star.1 is not under /usr/local/lib/node_modules/npm
+1400 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-star.1 is a link
+1401 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1402 silly gentlyRm /usr/local/share/man/man1/npm-stars.1 is not under /usr/local/lib/node_modules/npm
+1403 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-stars.1 is a link
+1404 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1405 silly gentlyRm /usr/local/share/man/man1/npm-start.1 is not under /usr/local/lib/node_modules/npm
+1406 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-start.1 is a link
+1407 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1408 silly gentlyRm /usr/local/share/man/man1/npm-stop.1 is not under /usr/local/lib/node_modules/npm
+1409 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-stop.1 is a link
+1410 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1411 silly gentlyRm /usr/local/share/man/man1/npm-submodule.1 is not under /usr/local/lib/node_modules/npm
+1412 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-submodule.1 is a link
+1413 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1414 silly gentlyRm /usr/local/share/man/man1/npm-tag.1 is not under /usr/local/lib/node_modules/npm
+1415 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-tag.1 is a link
+1416 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1417 silly gentlyRm /usr/local/share/man/man1/npm-test.1 is not under /usr/local/lib/node_modules/npm
+1418 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-test.1 is a link
+1419 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1420 silly gentlyRm /usr/local/share/man/man1/npm-uninstall.1 is not under /usr/local/lib/node_modules/npm
+1421 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-uninstall.1 is a link
+1422 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1423 silly gentlyRm /usr/local/share/man/man1/npm-unpublish.1 is not under /usr/local/lib/node_modules/npm
+1424 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-unpublish.1 is a link
+1425 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1426 silly gentlyRm /usr/local/share/man/man1/npm-update.1 is not under /usr/local/lib/node_modules/npm
+1427 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-update.1 is a link
+1428 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1429 silly gentlyRm /usr/local/share/man/man1/npm-version.1 is not under /usr/local/lib/node_modules/npm
+1430 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-version.1 is a link
+1431 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1432 silly gentlyRm /usr/local/share/man/man1/npm-view.1 is not under /usr/local/lib/node_modules/npm
+1433 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-view.1 is a link
+1434 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1435 silly gentlyRm /usr/local/share/man/man1/npm-whoami.1 is not under /usr/local/lib/node_modules/npm
+1436 silly gentlyRm checking to see if /usr/local/share/man/man1/npm-whoami.1 is a link
+1437 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1438 silly gentlyRm /usr/local/share/man/man1/npm.1 is not under /usr/local/lib/node_modules/npm
+1439 silly gentlyRm checking to see if /usr/local/share/man/man1/npm.1 is a link
+1440 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1441 silly gentlyRm /usr/local/share/man/man3/npm-bin.3 is not under /usr/local/lib/node_modules/npm
+1442 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-bin.3 is a link
+1443 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1444 silly gentlyRm /usr/local/share/man/man3/npm-bugs.3 is not under /usr/local/lib/node_modules/npm
+1445 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-bugs.3 is a link
+1446 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1447 silly gentlyRm /usr/local/share/man/man3/npm-cache.3 is not under /usr/local/lib/node_modules/npm
+1448 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-cache.3 is a link
+1449 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1450 silly gentlyRm /usr/local/share/man/man3/npm-commands.3 is not under /usr/local/lib/node_modules/npm
+1451 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-commands.3 is a link
+1452 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1453 silly gentlyRm /usr/local/share/man/man3/npm-config.3 is not under /usr/local/lib/node_modules/npm
+1454 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-config.3 is a link
+1455 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1456 silly gentlyRm /usr/local/share/man/man3/npm-deprecate.3 is not under /usr/local/lib/node_modules/npm
+1457 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-deprecate.3 is a link
+1458 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1459 silly gentlyRm /usr/local/share/man/man3/npm-docs.3 is not under /usr/local/lib/node_modules/npm
+1460 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-docs.3 is a link
+1461 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1462 silly gentlyRm /usr/local/share/man/man3/npm-edit.3 is not under /usr/local/lib/node_modules/npm
+1463 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-edit.3 is a link
+1464 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1465 silly gentlyRm /usr/local/share/man/man3/npm-explore.3 is not under /usr/local/lib/node_modules/npm
+1466 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-explore.3 is a link
+1467 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1468 silly gentlyRm /usr/local/share/man/man3/npm-help-search.3 is not under /usr/local/lib/node_modules/npm
+1469 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-help-search.3 is a link
+1470 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1471 silly gentlyRm /usr/local/share/man/man3/npm-init.3 is not under /usr/local/lib/node_modules/npm
+1472 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-init.3 is a link
+1473 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1474 silly gentlyRm /usr/local/share/man/man3/npm-install.3 is not under /usr/local/lib/node_modules/npm
+1475 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-install.3 is a link
+1476 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1477 silly gentlyRm /usr/local/share/man/man3/npm-link.3 is not under /usr/local/lib/node_modules/npm
+1478 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-link.3 is a link
+1479 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1480 silly gentlyRm /usr/local/share/man/man3/npm-load.3 is not under /usr/local/lib/node_modules/npm
+1481 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-load.3 is a link
+1482 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1483 silly gentlyRm /usr/local/share/man/man3/npm-ls.3 is not under /usr/local/lib/node_modules/npm
+1484 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-ls.3 is a link
+1485 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1486 silly gentlyRm /usr/local/share/man/man3/npm-outdated.3 is not under /usr/local/lib/node_modules/npm
+1487 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-outdated.3 is a link
+1488 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1489 silly gentlyRm /usr/local/share/man/man3/npm-owner.3 is not under /usr/local/lib/node_modules/npm
+1490 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-owner.3 is a link
+1491 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1492 silly gentlyRm /usr/local/share/man/man3/npm-pack.3 is not under /usr/local/lib/node_modules/npm
+1493 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-pack.3 is a link
+1494 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1495 silly gentlyRm /usr/local/share/man/man3/npm-prefix.3 is not under /usr/local/lib/node_modules/npm
+1496 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-prefix.3 is a link
+1497 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1498 silly gentlyRm /usr/local/share/man/man3/npm-prune.3 is not under /usr/local/lib/node_modules/npm
+1499 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-prune.3 is a link
+1500 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1501 silly gentlyRm /usr/local/share/man/man3/npm-publish.3 is not under /usr/local/lib/node_modules/npm
+1502 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-publish.3 is a link
+1503 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1504 silly gentlyRm /usr/local/share/man/man3/npm-rebuild.3 is not under /usr/local/lib/node_modules/npm
+1505 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-rebuild.3 is a link
+1506 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1507 silly gentlyRm /usr/local/share/man/man3/npm-repo.3 is not under /usr/local/lib/node_modules/npm
+1508 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-repo.3 is a link
+1509 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1510 silly gentlyRm /usr/local/share/man/man3/npm-restart.3 is not under /usr/local/lib/node_modules/npm
+1511 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-restart.3 is a link
+1512 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1513 silly gentlyRm /usr/local/share/man/man3/npm-root.3 is not under /usr/local/lib/node_modules/npm
+1514 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-root.3 is a link
+1515 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1516 silly gentlyRm /usr/local/share/man/man3/npm-run-script.3 is not under /usr/local/lib/node_modules/npm
+1517 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-run-script.3 is a link
+1518 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1519 silly gentlyRm /usr/local/share/man/man3/npm-search.3 is not under /usr/local/lib/node_modules/npm
+1520 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-search.3 is a link
+1521 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1522 silly gentlyRm /usr/local/share/man/man3/npm-shrinkwrap.3 is not under /usr/local/lib/node_modules/npm
+1523 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-shrinkwrap.3 is a link
+1524 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1525 silly gentlyRm /usr/local/share/man/man3/npm-start.3 is not under /usr/local/lib/node_modules/npm
+1526 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-start.3 is a link
+1527 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1528 silly gentlyRm /usr/local/share/man/man3/npm-stop.3 is not under /usr/local/lib/node_modules/npm
+1529 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-stop.3 is a link
+1530 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1531 silly gentlyRm /usr/local/share/man/man3/npm-submodule.3 is not under /usr/local/lib/node_modules/npm
+1532 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-submodule.3 is a link
+1533 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1534 silly gentlyRm /usr/local/share/man/man3/npm-tag.3 is not under /usr/local/lib/node_modules/npm
+1535 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-tag.3 is a link
+1536 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1537 silly gentlyRm /usr/local/share/man/man3/npm-test.3 is not under /usr/local/lib/node_modules/npm
+1538 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-test.3 is a link
+1539 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1540 silly gentlyRm /usr/local/share/man/man3/npm-uninstall.3 is not under /usr/local/lib/node_modules/npm
+1541 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-uninstall.3 is a link
+1542 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1543 silly gentlyRm /usr/local/share/man/man3/npm-unpublish.3 is not under /usr/local/lib/node_modules/npm
+1544 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-unpublish.3 is a link
+1545 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1546 silly gentlyRm /usr/local/share/man/man3/npm-update.3 is not under /usr/local/lib/node_modules/npm
+1547 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-update.3 is a link
+1548 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1549 silly gentlyRm /usr/local/share/man/man3/npm-version.3 is not under /usr/local/lib/node_modules/npm
+1550 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-version.3 is a link
+1551 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1552 silly gentlyRm /usr/local/share/man/man3/npm-view.3 is not under /usr/local/lib/node_modules/npm
+1553 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-view.3 is a link
+1554 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1555 silly gentlyRm /usr/local/share/man/man3/npm-whoami.3 is not under /usr/local/lib/node_modules/npm
+1556 silly gentlyRm checking to see if /usr/local/share/man/man3/npm-whoami.3 is a link
+1557 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1558 silly gentlyRm /usr/local/share/man/man3/npm.3 is not under /usr/local/lib/node_modules/npm
+1559 silly gentlyRm checking to see if /usr/local/share/man/man3/npm.3 is a link
+1560 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1561 silly gentlyRm /usr/local/share/man/man5/npm-folders.5 is not under /usr/local/lib/node_modules/npm
+1562 silly gentlyRm checking to see if /usr/local/share/man/man5/npm-folders.5 is a link
+1563 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1564 silly gentlyRm /usr/local/share/man/man5/npm-global.5 is not under /usr/local/lib/node_modules/npm
+1565 silly gentlyRm checking to see if /usr/local/share/man/man5/npm-global.5 is a link
+1566 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1567 silly gentlyRm /usr/local/share/man/man5/npm-json.5 is not under /usr/local/lib/node_modules/npm
+1568 silly gentlyRm checking to see if /usr/local/share/man/man5/npm-json.5 is a link
+1569 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1570 silly gentlyRm /usr/local/share/man/man5/npmrc.5 is not under /usr/local/lib/node_modules/npm
+1571 silly gentlyRm checking to see if /usr/local/share/man/man5/npmrc.5 is a link
+1572 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1573 silly gentlyRm /usr/local/share/man/man5/npm-package.json.5 is not under /usr/local/lib/node_modules/npm
+1574 silly gentlyRm checking to see if /usr/local/share/man/man5/npm-package.json.5 is a link
+1575 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1576 silly gentlyRm /usr/local/share/man/man7/npm-coding-style.7 is not under /usr/local/lib/node_modules/npm
+1577 silly gentlyRm checking to see if /usr/local/share/man/man7/npm-coding-style.7 is a link
+1578 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1579 silly gentlyRm /usr/local/share/man/man7/npm-config.7 is not under /usr/local/lib/node_modules/npm
+1580 silly gentlyRm checking to see if /usr/local/share/man/man7/npm-config.7 is a link
+1581 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1582 silly gentlyRm /usr/local/share/man/man7/npm-developers.7 is not under /usr/local/lib/node_modules/npm
+1583 silly gentlyRm checking to see if /usr/local/share/man/man7/npm-developers.7 is a link
+1584 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1585 silly gentlyRm /usr/local/share/man/man7/npm-disputes.7 is not under /usr/local/lib/node_modules/npm
+1586 silly gentlyRm checking to see if /usr/local/share/man/man7/npm-disputes.7 is a link
+1587 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1588 silly gentlyRm /usr/local/share/man/man7/npm-faq.7 is not under /usr/local/lib/node_modules/npm
+1589 silly gentlyRm checking to see if /usr/local/share/man/man7/npm-faq.7 is a link
+1590 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1591 silly gentlyRm /usr/local/share/man/man7/npm-index.7 is not under /usr/local/lib/node_modules/npm
+1592 silly gentlyRm checking to see if /usr/local/share/man/man7/npm-index.7 is a link
+1593 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1594 silly gentlyRm /usr/local/share/man/man7/npm-registry.7 is not under /usr/local/lib/node_modules/npm
+1595 silly gentlyRm checking to see if /usr/local/share/man/man7/npm-registry.7 is a link
+1596 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1597 silly gentlyRm /usr/local/share/man/man7/npm-scripts.7 is not under /usr/local/lib/node_modules/npm
+1598 silly gentlyRm checking to see if /usr/local/share/man/man7/npm-scripts.7 is a link
+1599 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1600 silly gentlyRm /usr/local/share/man/man7/npm-removing-npm.7 is not under /usr/local/lib/node_modules/npm
+1601 silly gentlyRm checking to see if /usr/local/share/man/man7/npm-removing-npm.7 is a link
+1602 silly gentlyRm /usr/local/lib/node_modules/npm is managed by npm
+1603 silly gentlyRm /usr/local/share/man/man7/npm-semver.7 is not under /usr/local/lib/node_modules/npm
+1604 silly gentlyRm checking to see if /usr/local/share/man/man7/npm-semver.7 is a link
+1605 info postuninstall npm@2.0.0-alpha-5
+1606 verbose gentlyRm vacuuming /usr/local/lib/node_modules/npm
+1607 silly gentlyRm purging /usr/local/lib/node_modules/npm
+1608 error error rolling back Error: EACCES, unlink '/usr/local/lib/node_modules/npm/.eslintrc'
+1608 error error rolling back  npm@2.0.0-beta.0 { [Error: EACCES, unlink '/usr/local/lib/node_modules/npm/.eslintrc']
+1608 error error rolling back   errno: 3,
+1608 error error rolling back   code: 'EACCES',
+1608 error error rolling back   path: '/usr/local/lib/node_modules/npm/.eslintrc' }
+1609 error Error: EACCES, unlink '/usr/local/lib/node_modules/npm/.eslintrc'
+1609 error  { [Error: EACCES, unlink '/usr/local/lib/node_modules/npm/.eslintrc']
+1609 error   errno: 3,
+1609 error   code: 'EACCES',
+1609 error   path: '/usr/local/lib/node_modules/npm/.eslintrc' }
+1610 error Please try running this command again as root/Administrator.
+1611 error System Darwin 13.3.0
+1612 error command "node" "/usr/local/bin/npm" "update" "npm" "-g"
+1613 error cwd /Users/mhhf/Documents/Arbeit/nukular/redisc
+1614 error node -v v0.10.17
+1615 error npm -v 2.0.0-alpha-5
+1616 error path /usr/local/lib/node_modules/npm/.eslintrc
+1617 error code EACCES
+1618 error errno 3
+1619 error stack Error: EACCES, unlink '/usr/local/lib/node_modules/npm/.eslintrc'
+1620 verbose exit [ 3, true ]

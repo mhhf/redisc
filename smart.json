@@ -1,35 +1,10 @@
 {
   "packages": {
-    "collection2": {},
-    "emitter": {},
-    "iron-router": {},
-    "tags": {
-      "git": "git://github.com/mhhf/meteor-tags.git"
-    },
-    "bootstrap3-less": {},
-    "spin": {},
-    "editor": {
-      "git": "https://github.com/mhhf/editor.git"
-    },
-    "llmd-core": {
-      "path": "/Users/mhhf/work/meteor/packages/llmd-core"
-    },
-    "llmd": {
-      "path": "/Users/mhhf/work/meteor/packages/llmd"
-    },
-    "llmd-md": {
-      "path": "/Users/mhhf/work/meteor/packages/llmd-md"
-    },
-    "llmd-redisc": {
-      "path": "/Users/mhhf/work/meteor/packages/llmd-redisc"
-    },
-    "module-loader": {},
-    "fontawesome4": {},
-    "accounts-entry": {},
-    "sendgrid": {},
-    "moment": {},
-    "synced-cron": {},
+    "collectionfs": {},
+    "cfs-filesystem": {},
     "cfs-s3": {},
-    "changesets": {}
+    "bootstrap-less": {},
+    "bourbon": {},
+    "neat": {}
   }
 }
