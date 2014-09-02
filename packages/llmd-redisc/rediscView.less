@@ -1,0 +1,41 @@
+#editor, #ace {
+  min-height: 600px;
+}
+
+.editorWrapper {
+  display: block;
+  width: 100%;
+  margin-top: 7px;
+  min-height: 600px;
+  
+  #editor, #preview-md {
+    vertical-align: top;
+    display: inline-block;
+  }
+  
+  .full {
+    width: 100%;
+  }
+  .split {
+    width: 50%;
+  }
+  .splitPreview {
+    float: right;
+    width: 49%;
+  }
+  #preview-md {
+    overflow: scroll;
+    height: 600px;
+  }
+  .none {
+    display: none !important;
+  }
+}
+
+.editorSelect .btn-group{
+  float: right;
+}
+
+.CodeMirror {
+  height: 600px !important;
+}
