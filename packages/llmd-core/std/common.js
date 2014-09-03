@@ -105,10 +105,13 @@ LLMD.registerPackage('name', {
       key: {
         type: String,
         defaultValue: ''
-      }
-    },
-    {
+      },
       value: {
+        type: [ Object ],
+        blackbox: true,
+        defaultValue: [] 
+      },
+      'value.$': {
         type: Object,
         blackbox: true
       }

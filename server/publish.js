@@ -7,6 +7,29 @@ Meteor.publish('atom', function( _id ){
   return Atoms.find({ _id: _id });
 });
 
+Meteor.publish('atom.deep', function( _id ){
+  
+  var _ids = collectNested( _id );
+  _ids.push(_id);
+  
+  return Atoms.find( {_id: {$in: _ids } } );
+});
+
+
+// [TODO] - developing function: slow as fuck!!!!
+collectNested = function( _id ){
+  var atom = new AtomModel( _id );
+  var _ids = [];
+
+  atom.eachDescendant( function(a){
+    _ids.push( a.getId() );
+  });
+  
+  _ids.push(_id);
+
+  return _ids;
+}
+
 Meteor.publish('Redisc.Posts', function( tags, page ){
   
   // make shure user is logged in

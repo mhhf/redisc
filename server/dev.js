@@ -44,5 +44,11 @@ Meteor.methods({
     Meteor.users.remove({});
     GlobalTags.remove({});
     Owners.remove({});
-  }
+  },
+  'create.test': function(){
+    var seq = new AtomModel(new LLMD.Atom('seq'));
+    var name = seq.addAfter('data', new LLMD.Atom('name'));
+    var title = name.addAfter('value', new LLMD.Atom('string'))
+    console.log(seq.get()._id);
+  } 
 });

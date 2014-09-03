@@ -32,7 +32,7 @@ LLMD.Atom = function( name, parent ){
         },
         _seedId: {
           type: String,
-          defaultValue: CryptoJS.SHA1(Math.random()+''+Math.random()).toString()
+          defaultValue: CryptoJS.SHA3(Math.random()+''+Math.random(),{outputLength: 112}).toString()
         },
         _version: {
           type: String,
