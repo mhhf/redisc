@@ -108,7 +108,7 @@ Router.map( function(){
       AccountsEntry.signInRequired(this);
     },
     data: function(){
-      return new RediscModel({ rootId: this.params._id });
+      return { atom: new AtomModel( this.params._id ) };
     }
   });
   

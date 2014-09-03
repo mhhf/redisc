@@ -470,6 +470,24 @@ AtomModel = function( o, params ){
   
   
 }
+if( Meteor.isClient ) {
+  AtomModel.dep = new Deps.Dependency;
+  AtomModel.state = 'INIT';
+  AtomModel.data = {};
+  AtomModel.set = function( state, data ){
+    AtomModel.dep.changed();
+    AtomModel.state = state;
+    AtomModel.data = data;
+  }
+  AtomModel.get = function( state ){
+    AtomModel.dep.depend();
+    if( !state || state == AtomModel.state) {
+      return AtomModel.data;
+    } else {
+      return null;
+    }
+  };
+}
 AtomModel.prototype.toString = function(){
   return this.getId();
 }
