@@ -22,6 +22,7 @@ ctl-helper@1.0.2
 ctl@1.0.0
 cunneen:sendgrid@0.9.0
 deps@1.0.1
+editor@0.0.0
 ejson@1.0.0
 email@1.0.2
 follower-livedata@1.0.0
@@ -60,6 +61,7 @@ mongo-livedata@1.0.3
 mrt:accounts-t9n@0.0.13
 mrt:module-loader@0.5.1
 mrt:moment@2.8.1
+mrt:selectize@0.0.1
 mrt:underscore-string-latest@2.3.3
 npm-bcrypt@0.7.7
 oauth1@1.0.0

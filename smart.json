@@ -5,6 +5,9 @@
     "cfs-s3": {},
     "bootstrap-less": {},
     "bourbon": {},
-    "neat": {}
+    "neat": {},
+    "editor": {
+      "git": "https://github.com/mhhf/editor.git"
+    }
   }
 }

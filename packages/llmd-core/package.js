@@ -8,9 +8,11 @@ Package.on_use(function (api) {
   
   api.use('templating','client');
   api.use('less','client');
+  api.use('minimongo',['client','server']);
   api.use('tmeasday:crypto-base',['client','server']);
   
   api.add_files("llmd.js", ["client","server"]);
+  api.add_files("atomModel.js", ["client","server"]);
   
   api.add_files("plugin.js", ["client"]);
   api.add_files("handler.js", ["client"]);
@@ -25,6 +27,8 @@ Package.on_use(function (api) {
     api.export('LLMD');
     api.export('BasicPlugin');
     api.export('PluginHandler');
+    api.export('AtomModel');
+    api.export('Atoms');
   }
   
 });

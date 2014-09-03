@@ -11,6 +11,7 @@ Package.on_use(function (api) {
   api.use('templating', 'client');
   api.use('minimongo', ['client','server']);
   api.use('less', 'client');
+  api.use('editor', 'client');
   
   
   api.use('llmd','client');

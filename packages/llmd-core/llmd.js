@@ -33,6 +33,10 @@ LLMD.Atom = function( name, parent ){
         _seedId: {
           type: String,
           defaultValue: CryptoJS.SHA1(Math.random()+''+Math.random()).toString()
+        },
+        _version: {
+          type: String,
+          defaultValue: '0.1.0'
         }
       }));
   

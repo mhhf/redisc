@@ -7,7 +7,11 @@
       "cfs-s3": {},
       "bootstrap-less": {},
       "bourbon": {},
-      "neat": {}
+      "neat": {},
+      "editor": {
+        "git": "https://github.com/mhhf/editor.git",
+        "branch": "master"
+      }
     },
     "packages": {
       "collectionfs": {
@@ -39,6 +43,11 @@
         "git": "https://github.com/chicagogrooves/meteor-neat.git",
         "tag": "v1.5.0",
         "commit": "6c318cce1c02e822d6a340c547273b29b6379197"
+      },
+      "editor": {
+        "git": "https://github.com/mhhf/editor.git",
+        "branch": "master",
+        "commit": "2e1ff54038f78813c2383f10ecab49b2df68f182"
       },
       "cfs-base-package": {
         "git": "https://github.com/CollectionFS/Meteor-cfs-base-package.git",
@@ -79,6 +88,11 @@
         "git": "https://github.com/CollectionFS/Meteor-cfs-storage-adapter.git",
         "tag": "v0.0.31",
         "commit": "710ebe8cf3dd782766574591e18d216705db1324"
+      },
+      "marked": {
+        "git": "https://github.com/chuangbo/meteor-marked.git",
+        "tag": "v0.3.3",
+        "commit": "a0966771f9108835755368d0879429675d7e0db4"
       },
       "cfs-filesaver": {
         "git": "https://github.com/CollectionFS/Meteor-cfs-filesaver.git",
