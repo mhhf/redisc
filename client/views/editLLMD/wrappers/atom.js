@@ -9,35 +9,38 @@ Template.atomWrapper.rendered = function(){
 
 Template.atomWrapper.helpers({
   editable: function(){
-    return editorModel.editable && this.atom.meta.state != 'conflict';
+    return this.atom.meta.state != 'conflict';
   },
   editMode: function(){
-    var edit = editorModel.get('edit') || editorModel.get('add');
-    return edit === this ;
+    // var edit = editorModel.get('edit') || editorModel.get('add');
+    // return edit === this ;
+    return false;
   },
   editModeClass: function(){
-    
-    if( editorModel.get('edit') === this) {
-      return 'edit';
-    } else if( !this.isLocked() ){
-      return 'changed';
-    } else {
+    // if( editorModel.get('edit') === this) {
+    //   return 'edit';
+    // } else if( !this.isLocked() ){
+    //   return 'changed';
+    // } else {
       return '';
-    }
+    // }
   },
   getActivateClass: function(){
-    return ( this.get().meta.active )?'':'inactive';
+    console.log(this);
+    return ( this.atom.get().meta.active )?'':'inactive';
   },
   isActive: function(){
-    return ( this.get().meta.active );
+    return ( this.atom.get().meta.active );
   },
   dynamicTemplate: function(){
-    var edit = editorModel.get("edit") || editorModel.get('add');
+    // var edit = editorModel.get("edit") || editorModel.get('add');
+    var edit = false;
     var editMode =  edit === this;
     console.log('aahhaha', editMode);
     var mode = ( editMode )?'edit':'ast';
-    var template = Template['llmd_'+this.get().name+'_'+mode];
-    if(!template) throw new Error('no teplate for '+this.get().name+" found!");
+    console.log(this.atom.get().name);
+    var template = Template['llmd_'+this.atom.get().name+'_'+mode];
+    if(!template) throw new Error('no teplate for '+this.atom.get().name+" found!");
     return template || null;
   },
   getSmallSpinner: function(){
@@ -61,7 +64,7 @@ Template.atomWrapper.helpers({
     };
   },
   isPending: function(){
-    return this.get().meta.state == "pending";
+    return this.atom.get().meta.state == "pending";
   }
 });
 

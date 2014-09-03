@@ -88,27 +88,33 @@ Template.llmd_seq_edit.helpers({
   }
 })
 
+Template.llmd_name_ast.helpers({
+  key: function(){
+    return this.atom.get().key;
+  }
+});
+
 Template.llmd_nested.helpers({
   atoms: function(){
     return this.atom.getNested(this.key);
   },
   getWrapper: function(){
     console.log('n',this);
-    if( this.atom.name === 'comment') {
+    if( this.name === 'comment') {
       return Template['commentWrapper'];
-    } else if( this.atom.name === 'seq' ) {
-      if( this.atom.meta && this.atom.meta.state == 'conflict' ) {
+    } else if( this.name === 'seq' ) {
+      if( this.meta && this.meta.state == 'conflict' ) {
         console.log('merge');
         return Template['atomWrapper'];
       } else {
-        console.log('merge', this.atom);
+        console.log('merge', this);
         return Template['atomWrapper'];
       }
     } else {
-      if( this.atom.meta && this.atom.meta.state == 'conflict' && !LLMD.Package( this.atom.name ).nested ) {
-        if( this.atom.meta.diff.type == 'remove') {
+      if( this.meta && this.meta.state == 'conflict' && !LLMD.Package( this.name ).nested ) {
+        if( this.meta.diff.type == 'remove') {
           return Template['removeWrapper'];
-        } else if( this.atom.meta.diff.type == 'add') {
+        } else if( this.meta.diff.type == 'add') {
           return Template['addWrapper'];
         } else {
           return Template['diffWrapper'];
