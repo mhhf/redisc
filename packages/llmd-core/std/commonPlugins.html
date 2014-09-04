@@ -34,14 +34,14 @@
 
 <template name="llmd_name_ast">
 <div class="editorContainerWrapper">
-  key: {{key}}
+  {{key}}
   {{> llmd_nested key='value' atom=this.atom}}
 </div>
 </template>
 
 <template name="llmd_string_ast">
 <div class="editorContainerWrapper">
-  {{atom.data}}
+  {{value}}
 </div>
 </template>
 

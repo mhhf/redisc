@@ -4,3 +4,8 @@
 // $visual-grid: true;
 $visual-grid-color: #ccc;
 @import "packages/neat/neat";
+
+.atomWrapper {
+  border: 1px solid #f00;
+  padding: 1px;
+}

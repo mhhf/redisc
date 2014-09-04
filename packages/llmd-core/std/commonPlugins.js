@@ -94,6 +94,13 @@ Template.llmd_name_ast.helpers({
   }
 });
 
+
+Template.llmd_string_ast.helpers({
+  value: function(){
+    return this.atom.get().value;
+  }
+});
+
 Template.llmd_nested.helpers({
   atoms: function(){
     return this.atom.getNested(this.key);

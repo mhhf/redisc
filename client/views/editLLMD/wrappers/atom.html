@@ -1,9 +1,10 @@
-<template name="atomWrapper">
+<template name="atomWrapper2">
 
 <div class="atomContainer {{editModeClass}} {{getActivateClass}} {{atom.name}}Wrapper" data-index="{{index}}">
   <label>{{atom.name}}</label> {{getId}}
   <div class="{{name}} atomWrapper">
-    {{> dynamicTemplate}}
+  {{> UI.contentBlock}}
+
   </div>
   
 {{#if editable}}
@@ -33,5 +34,18 @@
   </div>
 {{/if}}  
 </div>
-  
+
+</template>
+
+<template name="atomWrapper3">
+<div class="atomWrapper">
+  {{> UI.contentBlock}}
+</div>
+</template>
+
+
+<template name="atomWrapper">
+{{#atomWrapper3}}
+    {{> dynamicTemplate}}
+{{/atomWrapper3}}
 </template>
