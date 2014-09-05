@@ -90,26 +90,55 @@ Template.llmd_seq_edit.helpers({
 
 Template.llmd_name_ast.helpers({
   key: function(){
-    return this.atom.get().key;
+    return this.get().key;
   }
 });
 
+
+// BASIC PRIMITIVES
+//
+//
+//
+// STRING
+
+Template.llmd_string_edit.rendered = function(){
+  
+  var self = this;
+  
+  this.data.buildAtom = function(){
+    return {
+      value: self.find('input[name=value]').value,
+    }
+  }
+}
 
 Template.llmd_string_ast.helpers({
   value: function(){
-    return this.atom.get().value;
+    return this.get().value;
   }
 });
 
+Template.llmd_string_edit.helpers({
+  value: function(){
+    return this.get().value;
+  }
+});
+
+
+
+
 Template.llmd_nested.helpers({
   atoms: function(){
+    console.log(this);
     return this.atom.getNested(this.key);
   },
   getWrapper: function(){
     console.log('n',this);
-    if( this.name === 'comment') {
+    var name = this.get().name;
+    console.log(name);
+    if( name === 'comment') {
       return Template['commentWrapper'];
-    } else if( this.name === 'seq' ) {
+    } else if( name === 'seq' ) {
       if( this.meta && this.meta.state == 'conflict' ) {
         console.log('merge');
         return Template['atomWrapper'];
@@ -118,7 +147,7 @@ Template.llmd_nested.helpers({
         return Template['atomWrapper'];
       }
     } else {
-      if( this.meta && this.meta.state == 'conflict' && !LLMD.Package( this.name ).nested ) {
+      if( this.meta && this.meta.state == 'conflict' && !LLMD.Package( name ).nested ) {
         if( this.meta.diff.type == 'remove') {
           return Template['removeWrapper'];
         } else if( this.meta.diff.type == 'add') {

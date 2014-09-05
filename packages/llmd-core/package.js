@@ -9,6 +9,7 @@ Package.on_use(function (api) {
   api.use('templating','client');
   api.use('less','client');
   api.use('deps','client');
+  api.use('ui','client');
   api.use('minimongo',['client','server']);
   api.use('tmeasday:crypto-base',['client','server']);
   

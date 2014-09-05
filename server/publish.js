@@ -10,7 +10,7 @@ Meteor.publish('atom', function( _id ){
 Meteor.publish('atom.deep', function( _id ){
   
   var _ids = collectNested( _id );
-  _ids.push(_id);
+  console.log(_ids);
   
   return Atoms.find( {_id: {$in: _ids } } );
 });

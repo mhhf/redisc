@@ -1,20 +1,15 @@
 
 
-
-Template.atomWrapper.rendered = function(){
-  console.log(this.data); 
-}
-
-
-
-Template.atomWrapper.helpers({
+Template.devAtomWrapper.helpers({
+  getName: function(){
+    return this.get().name;
+  },
   editable: function(){
-    return this.atom.meta.state != 'conflict';
+    return this.get().meta.state != 'conflict';
   },
   editMode: function(){
-    // var edit = editorModel.get('edit') || editorModel.get('add');
-    // return edit === this ;
-    return false;
+    var edit = AtomModel.get('edit') || AtomModel.get('add');
+    return edit === this;
   },
   editModeClass: function(){
     // if( editorModel.get('edit') === this) {
@@ -26,22 +21,12 @@ Template.atomWrapper.helpers({
     // }
   },
   getActivateClass: function(){
-    console.log(this);
-    return ( this.atom.get().meta.active )?'':'inactive';
+    return '';
+    // return ( this.atom.get().meta.active )?'':'inactive';
   },
   isActive: function(){
-    return ( this.atom.get().meta.active );
-  },
-  dynamicTemplate: function(){
-    // var edit = editorModel.get("edit") || editorModel.get('add');
-    var edit = false;
-    var editMode =  edit === this;
-    console.log('aahhaha', editMode);
-    var mode = ( editMode )?'edit':'ast';
-    console.log(this.atom.get().name);
-    var template = Template['llmd_'+this.atom.get().name+'_'+mode];
-    if(!template) throw new Error('no teplate for '+this.atom.get().name+" found!");
-    return template || null;
+    return true;
+    // return ( this.atom.get().meta.active );
   },
   getSmallSpinner: function(){
     return {
@@ -68,6 +53,39 @@ Template.atomWrapper.helpers({
   }
 });
 
+Template.atomWrapper.helpers({
+  // Select wrapper type for each atom
+  //
+  // default wrapper is 'devAtomWrapper'
+  //
+  wrapperTemplate: function(){
+    var wrapperName = 'devAtomWrapper';
+    
+    switch( this.get().name ){
+      case 'seq':
+        wrapperName = 'seqWrapper';
+        break;
+      case 'redisc': 
+        wrapperName = 'PostWrapper';
+        break;
+      case 'name': 
+        wrapperName = 'nameWrapper';
+        break;
+    }
+    
+    return Template[ wrapperName ];
+  },
+  dynamicTemplate: function(){
+    var edit = AtomModel.get("edit") || AtomModel.get('add');
+    var editMode =  edit === this;
+    var mode = ( editMode )?'edit':'ast';
+    var template = Template['llmd_'+this.get().name+'_'+mode];
+    if(!template) throw new Error('no teplate for '+this.get().name+" found!");
+    return template || null;
+  },
+});
+
+
 Template.diffWrapper.helpers({
   getDiffedAtom: function(){
     var otherAtom = Atoms.findOne({ _id: this.get().meta.diff.atom });
@@ -76,7 +94,7 @@ Template.diffWrapper.helpers({
   }
 });
 
-Template.atomWrapper.events = {
+Template.devAtomWrapper.events = {
   "click .edit-btn": function(e,t){
     e.preventDefault();
     
@@ -85,19 +103,21 @@ Template.atomWrapper.events = {
     $(ele).css('min-height',ele.clientHeight + "px");
     console.log(this);
     
-    editorModel.set( 'edit', this );
+    AtomModel.set( 'edit', this);
   },
   "click .remove-btn": function(e,t){
     var self = this;
     $(t.find('.atomContainer')).fadeOut(400, function(){
-      self.remove( self.parents.concat( [ self.atom._id ] ));
+      self.remove( self.parents.concat( [ self._id ] ));
       // $(t.find('.atomContainer.')).css('display','block');
     });
   },
   "click .save-btn": function(e,t){
     e.preventDefault();
-    var atom = this.buildAtom();
-    editorModel.save( _.extend( atom, { meta: { state: 'pending' } } ) );
+    
+    var atom = _.extend( this.buildAtom(), { meta: { state: 'pending' } } );
+    this.update(atom);
+    AtomModel.set( 'INIT' );
     
   },
   "click .dismiss-btn": function(e,t){
@@ -107,7 +127,7 @@ Template.atomWrapper.events = {
   },
   "click .activate-toggle-btn": function(e,t){
     e.preventDefault();
-    var atom = this.atom;
+    var atom = this;
     atom.meta.active = !atom.meta.active;
     this.save( atom, this.parents.concat([ this.atom._id ]) );
   }

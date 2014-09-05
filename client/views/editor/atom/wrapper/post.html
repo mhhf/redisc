@@ -21,3 +21,27 @@
 {{/if}}
 
 </template>
+
+<template name="PostWrapper">
+<div class="contentWrapper {{isHighlighted}}">
+
+  <div class="dataWrapper">
+    {{> UI.contentBlock}}
+  </div>
+  <!-- <div class="codeWrapper"> </div> -->
+  <div class="interactions">
+    <a href="#" class="btn-comment" data-target="{{_id}}"> <i class="fa fa-reply"></i></a>
+    {{#if owner}}
+      <a href="#" class="btn-edit" data-target="{{_id}}"> <i class="fa fa-pencil"></i></a>
+    {{/if}}
+  </div>
+
+</div>
+
+{{> Stats getAtom}}
+
+{{#if isComment}}
+{{> EditorWrapper newCommentAtom }}
+{{/if}}
+
+</template>

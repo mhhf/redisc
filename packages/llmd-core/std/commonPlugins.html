@@ -20,22 +20,22 @@
 
 <template name="llmd_seq_edit">
 <div class="editorContainerWrapper">
-  {{> llmd_nested key='data' atom=this.atom}}
+  {{> llmd_nested key='data' atom=this}}
   {{> addNewAtomBtn key='data' atom=this editorModel=.. }}
 </div>
 </template>
 
 <template name="llmd_seq_ast">
 <div class="editorContainerWrapper">
-  {{> llmd_nested key='data' atom=this.atom}}
+  {{> llmd_nested key='data' atom=this}}
   {{> addNewAtomBtn key='data' atom=this editorModel=.. }}
 </div>
 </template>
 
 <template name="llmd_name_ast">
 <div class="editorContainerWrapper">
-  {{key}}
-  {{> llmd_nested key='value' atom=this.atom}}
+  <h2>{{key}} :</h2>
+  {{> llmd_nested key='value' atom=this}}
 </div>
 </template>
 
@@ -45,16 +45,18 @@
 </div>
 </template>
 
+<template name="llmd_string_edit">
+<div class="editorContainerWrapper">
+  <input type="text" name="value" value="{{value}}" /> 
+</div>
+</template>
+
 <template name="llmd_nested">
-  <ul id="editorContainer">
+  <ul class="editorContainer">
     {{#each atoms}}
-
-    {{#with atom=this }}
       <li>
-        {{> getWrapper }}
+      {{> getWrapper }}
       </li>
-    {{/with}}
-
     {{/each}}
   </ul>
 </template>

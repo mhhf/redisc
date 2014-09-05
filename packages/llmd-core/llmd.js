@@ -266,18 +266,12 @@ var cleanBlocks = function( bs ){
 
 LLMD.AtomSchema = {
   owner: {
-    type: Object
-  },
-  "owner.name": {
     type: String,
     autoValue: function(){
-      return Meteor.user().profile.name;
-    }
-  },
-  "owner._id": {
-    type: String,
-    autoValue: function(){
-      return Meteor.userId();
+      if( !this.isSet ) {
+        var usr = Meteor.users.findOne({_id: this.userId });
+        return usr.profile.id;
+      }
     }
   },
   updatedOn: {

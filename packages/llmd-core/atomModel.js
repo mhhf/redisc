@@ -146,6 +146,7 @@ AtomModel = function( o, params ){
   this.update = function( atomO ){
     
     if( !atom.meta.lock && atom.meta.state != 'tmp' ) {
+      if( atomO.meta ) atomO.meta = _.extend( atom.meta, atomO.meta )
       Atoms.update({ _id: atom._id }, { $set: _.omit( atomO, '_id' ) });
       // atom = Atoms.findOne({ _id: atom._id });
       this.emit('change.soft', null);
