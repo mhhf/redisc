@@ -190,7 +190,7 @@ AtomModel = function( o, params ){
     }
     
     // [TODO] - maybe refactor out of the model
-    Meteor.call( 'atom.compile', this.getId() );
+    Meteor.call( 'atom.precompile', this.getId() );
     
   }
   
