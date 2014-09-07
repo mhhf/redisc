@@ -134,7 +134,7 @@ Template.llmd_name_edit.rendered = function(){
   
   this.data.buildAtom = function(){
     return {
-      value: self.find('input[name=key]').value
+      key: self.find('input[name=key]').value
     }
   }
 } 
@@ -144,6 +144,12 @@ Template.llmd_name_ast.helpers({
   key: function(){
     var key = this.get().key;
     return ( key != '')? key : 'undefined';
+  }
+});
+
+Template.llmd_edit.helpers({
+  omitFields: function(){
+    return ['owner','updatedOn','pro','con','score'];
   }
 });
 

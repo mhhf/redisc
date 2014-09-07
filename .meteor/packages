@@ -23,8 +23,6 @@ llmd-core
 llmd
 llmd-redisc
 aldeed:collection2
-raix:collectionfs
-raix:cfs-s3
 cunneen:sendgrid
 joshowens:accounts-entry
 iron:router
@@ -36,4 +34,3 @@ editor
 mrt:selectize
 peernohell:c3
 crypto
-

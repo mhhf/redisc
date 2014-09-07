@@ -21,14 +21,14 @@
 <template name="llmd_seq_edit">
 <div class="editorContainerWrapper">
   {{> llmd_nested key='data' atom=this}}
-  <!-- {{> addNewAtomBtn key='data' atom=this editorModel=.. }} -->
+  {{> addNewAtomBtn key='data' atom=this }}
 </div>
 </template>
 
 <template name="llmd_seq_ast">
 <div class="editorContainerWrapper">
   {{> llmd_nested key='data' atom=this}}
-  <!-- {{> addNewAtomBtn key='data' atom=this editorModel=.. }} -->
+  {{> addNewAtomBtn key='data' atom=this editorModel=.. }}
 </div>
 </template>
 
@@ -53,7 +53,7 @@
 </template>
 
 <template name="llmd_edit">
-  {{> quickForm schema=getSchema id="customEdit" doc=get}}
+  {{> quickForm schema=getSchema id="customEdit" doc=get omitFields=omitFields}}
 </template>
 
 <template name="llmd_nested">
