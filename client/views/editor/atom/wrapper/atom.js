@@ -61,20 +61,21 @@ Template.atomWrapper.helpers({
   wrapperTemplate: function(){
     var wrapperName = 'devAtomWrapper';
     
-    switch( this.get().name ){
-      case 'seq':
-        wrapperName = 'seqWrapper';
-        break;
-      case 'redisc': 
-        wrapperName = 'PostWrapper';
-        break;
-      case 'name': 
-        wrapperName = 'simpleAtomWrapper';
-        break;
-      case 'string': 
-        wrapperName = 'simpleAtomWrapper';
-        break;
-    }
+    if( !Session.get('dev') )
+      switch( this.get().name ){
+        case 'seq':
+          wrapperName = 'seqWrapper';
+          break;
+        case 'redisc': 
+          wrapperName = 'PostWrapper';
+          break;
+        case 'name': 
+          wrapperName = 'simpleAtomWrapper';
+          break;
+        case 'string': 
+          wrapperName = 'simpleAtomWrapper';
+          break;
+      }
     
     return Template[ wrapperName ];
   },
@@ -83,7 +84,13 @@ Template.atomWrapper.helpers({
     var editMode =  edit === this;
     var mode = ( editMode )?'edit':'ast';
     var template = Template['llmd_'+this.get().name+'_'+mode];
-    if(!template) throw new Error('no teplate for '+this.get().name+" found!");
+    if(!template) {
+      if( mode == 'edit' ) { // fallback to autoform
+        template = Template['llmd_edit'];
+      } else {
+        throw new Error('no teplate for '+this.get().name+" found!");
+      }
+    } 
     return template || null;
   },
 });

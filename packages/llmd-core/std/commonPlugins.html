@@ -52,10 +52,8 @@
 </div>
 </template>
 
-<template name="llmd_string_edit">
-<div class="editorContainerWrapper">
-  <input type="text" name="value" value="{{value}}" /> 
-</div>
+<template name="llmd_edit">
+  {{> quickForm schema=getSchema id="customEdit" doc=get}}
 </template>
 
 <template name="llmd_nested">

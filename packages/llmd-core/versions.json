@@ -9,6 +9,10 @@
       "1.0.1"
     ],
     [
+      "aldeed:autoform",
+      "1.0.0"
+    ],
+    [
       "aldeed:collection2",
       "1.0.0"
     ],
@@ -69,6 +73,10 @@
       "1.0.0"
     ],
     [
+      "handlebars",
+      "1.0.0"
+    ],
+    [
       "htmljs",
       "1.0.0"
     ],
@@ -87,6 +95,10 @@
     [
       "less",
       "1.0.7"
+    ],
+    [
+      "livedata",
+      "1.0.9"
     ],
     [
       "localstorage",
@@ -111,6 +123,10 @@
     [
       "mongo-livedata",
       "1.0.4"
+    ],
+    [
+      "mrt:moment",
+      "2.8.1"
     ],
     [
       "npm-bcrypt",

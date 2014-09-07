@@ -9,10 +9,16 @@ LLMD.Atom = function( name, parent ){
   var S = new SimpleSchema(
       LLMD.packageTypes[name].shema.concat({
         name: {
-          type: String
+          type: String,
+          autoform: {
+            omit: true
+          }
         },
         meta: {
-          type: Object
+          type: Object,
+          autoform: {
+            omit: true
+          }
         },
         'meta.state': {
           type: String,
@@ -276,24 +282,43 @@ LLMD.AtomSchema = {
           return 'all';
         }
       }
+    },
+    autoform: {
+      omit: true
     }
+
   },
   updatedOn: {
     type: Date,
     autoValue: function(){
       return new Date();
+    },
+    autoform: {
+      omit: true
     }
+
   },
   pro: {
     type: [String],
-    defaultValue: []
+    defaultValue: [],
+    autoform: {
+      omit: true
+    }
+
   },
   con: {
     type: [String],
-    defaultValue: [] 
+    defaultValue: [],
+    autoform: {
+      omit: true
+    }
+
   },
   score: {
     type: Number,
-    defaultValue: 0
-  },
+    defaultValue: 0,
+    autoform: {
+      omit: true
+    }
+  }
 };

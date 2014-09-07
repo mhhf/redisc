@@ -22,6 +22,7 @@ Package.on_use(function (api) {
   api.use('emitter',b);
   api.use('crypto',b);
   api.use('aldeed:collection2@1.0.0',b);
+  api.use('aldeed:autoform@1.0.0',c);
   
   api.add_files("llmd.js", b);
   api.add_files("atomModel.js", b);

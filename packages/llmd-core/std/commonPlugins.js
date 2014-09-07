@@ -99,22 +99,22 @@ Template.llmd_seq_edit.helpers({
 //
 // STRING
 
-Template.llmd_string_edit.rendered = function(){
-  
-  var self = this;
-  
-  this.data.buildAtom = function(){
-    return {
-      key: self.find('input[name=value]').value,
-    }
-  }
-}
-
-Template.llmd_string_edit.helpers({
-  value: function(){
-    return this.get().value;
-  }
-});
+// Template.llmd_string_edit.rendered = function(){
+//   
+//   var self = this;
+//   
+//   this.data.buildAtom = function(){
+//     return {
+//       key: self.find('input[name=value]').value,
+//     }
+//   }
+// }
+// 
+// Template.llmd_string_edit.helpers({
+//   value: function(){
+//     return this.get().value;
+//   }
+// });
 
 Template.llmd_string_ast.helpers({
   value: function(){
@@ -183,3 +183,17 @@ Template.llmd_nested.helpers({
     }
   },
 });
+
+
+AutoForm.addHooks('customEdit', {
+  onSubmit: function (o, t, _a) {
+    this.event.preventDefault();
+    
+    var id =  _a._id;
+    var atom = new AtomModel( id );
+    atom.update(o);
+    
+    AtomModel.set('INIT');
+    
+  }
+}, true);
