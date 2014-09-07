@@ -69,7 +69,10 @@ Template.atomWrapper.helpers({
         wrapperName = 'PostWrapper';
         break;
       case 'name': 
-        wrapperName = 'nameWrapper';
+        wrapperName = 'simpleAtomWrapper';
+        break;
+      case 'string': 
+        wrapperName = 'simpleAtomWrapper';
         break;
     }
     
@@ -122,8 +125,7 @@ Template.devAtomWrapper.events = {
   },
   "click .dismiss-btn": function(e,t){
     e.preventDefault();
-    
-    this.dismiss();
+    AtomModel.set( 'INIT' );
   },
   "click .activate-toggle-btn": function(e,t){
     e.preventDefault();
