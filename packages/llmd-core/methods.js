@@ -1,6 +1,6 @@
 Meteor.methods({
 
-  "atom.percompile": function( _id ){
+  "atom.precompile": function( _id ){
     var atom = Atoms.findOne({ _id: _id});
     
     if( LLMD.Package( atom.name ) && LLMD.Package( atom.name ).preprocess ) {

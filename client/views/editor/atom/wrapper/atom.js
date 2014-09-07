@@ -8,7 +8,7 @@ Template.devAtomWrapper.helpers({
     return this.get().meta.state != 'conflict';
   },
   editMode: function(){
-    var edit = AtomModel.get('edit') || AtomModel.get('add');
+    var edit = AtomModel.get('EDIT') || AtomModel.get('ADD');
     return edit === this;
   },
   editModeClass: function(){
@@ -79,7 +79,7 @@ Template.atomWrapper.helpers({
     return Template[ wrapperName ];
   },
   dynamicTemplate: function(){
-    var edit = AtomModel.get("edit") || AtomModel.get('add');
+    var edit = AtomModel.get("EDIT") || AtomModel.get('ADD');
     var editMode =  edit === this;
     var mode = ( editMode )?'edit':'ast';
     var template = Template['llmd_'+this.get().name+'_'+mode];

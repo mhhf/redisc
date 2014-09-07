@@ -88,11 +88,9 @@ Template.llmd_seq_edit.helpers({
   }
 })
 
-Template.llmd_name_ast.helpers({
-  key: function(){
-    return this.get().key;
-  }
-});
+
+
+
 
 
 // BASIC PRIMITIVES
@@ -107,16 +105,10 @@ Template.llmd_string_edit.rendered = function(){
   
   this.data.buildAtom = function(){
     return {
-      value: self.find('input[name=value]').value,
+      key: self.find('input[name=value]').value,
     }
   }
 }
-
-Template.llmd_string_ast.helpers({
-  value: function(){
-    return this.get().value;
-  }
-});
 
 Template.llmd_string_edit.helpers({
   value: function(){
@@ -124,6 +116,36 @@ Template.llmd_string_edit.helpers({
   }
 });
 
+Template.llmd_string_ast.helpers({
+  value: function(){
+    var val = this.get().value;
+    return val || 'undefined';
+  }
+});
+
+
+//  NAME
+//
+//
+
+Template.llmd_name_edit.rendered = function(){
+  
+  var self = this;
+  
+  this.data.buildAtom = function(){
+    return {
+      value: self.find('input[name=key]').value
+    }
+  }
+} 
+
+
+Template.llmd_name_ast.helpers({
+  key: function(){
+    var key = this.get().key;
+    return ( key != '')? key : 'undefined';
+  }
+});
 
 
 

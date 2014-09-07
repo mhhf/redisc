@@ -48,13 +48,7 @@ AtomModel = function( o, params ){
   
   if( typeof o == 'string' ) {
     _id = o;
-    atom = Atoms.findOne({ _id: _id });
-    
-    if( !atom ) throw new Error('[LLMD] Atom id not found!');
-    
-    _seedId = atom._seedId;
-    name = atom.name;
-    
+   
     // singleton
     if( atomModelMap[ _id ] ) {
       return atomModelMap[ _id ];
@@ -103,6 +97,7 @@ AtomModel = function( o, params ){
     var atom;
     
     atom = Atoms.findOne({ _id: _id });
+    
     if( _id && !atom ) {
       // invalidate the child
       delete atomModelMap[_id];
@@ -112,6 +107,9 @@ AtomModel = function( o, params ){
       }
       return null;
     }
+    
+    _seedId = atom._seedId;
+    name = atom.name;
     
     computeNested();
     // deps.changed();

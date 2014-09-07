@@ -1,3 +1,17 @@
 <template name="simpleAtomWrapper">
+<div class="edit-atom">
+{{#if isEditing}}
+  <a href="#" class="save-atom-btn" data-target="{{getId}}">
+    <i class="fa fa-check"></i>
+  </a>
+  <a href="#" class="cancel-atom-btn" data-target="{{getId}}">
+    <i class="fa fa-times"></i>
+  </a>
+{{else}}
+  <a href="#" class="edit-atom-btn" data-target="{{getId}}">
+    <i class="fa fa-pencil"></i>
+  </a>
+{{/if}}
+</div>
 {{> UI.contentBlock}}
 </template>

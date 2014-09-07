@@ -17,6 +17,7 @@ Package.on_use(function (api) {
   api.use('accounts-base',b);
   api.use('accounts-password',b);
   api.use('ui',c);
+  api.use('blaze',c);
   api.use('minimongo',b);
   api.use('emitter',b);
   api.use('crypto',b);
@@ -34,6 +35,7 @@ Package.on_use(function (api) {
   api.add_files("std/commonPlugins.html", c);
   api.add_files("std/commonPlugins.less", c);
   api.add_files("std/commonPlugins.js", c);
+  api.add_files("std/commonHelpers.js", c);
   
 
   if (api.export) {

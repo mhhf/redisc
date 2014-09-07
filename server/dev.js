@@ -50,5 +50,6 @@ Meteor.methods({
     var name = seq.addAfter('data', new LLMD.Atom('name'));
     var title = name.addAfter('value', new LLMD.Atom('string'))
     console.log(seq.get()._id);
-  } 
+    return seq.getId();
+  } ,
 });

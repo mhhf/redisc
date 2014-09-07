@@ -385,6 +385,10 @@ describe.server('Model', function(){
     
   });
   
+  it('should build desired structure', function(){
+    
+  });
+  
   // it('should export an ast', function(){
   //   var _atomId1 = Atoms.insert( new LLMD.Atom('seq') );
   //   var a1 = new AtomModel( _atomId1 );
