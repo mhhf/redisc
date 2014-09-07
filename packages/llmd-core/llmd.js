@@ -269,8 +269,12 @@ LLMD.AtomSchema = {
     type: String,
     autoValue: function(){
       if( !this.isSet ) {
-        var usr = Meteor.users.findOne({_id: this.userId });
-        return usr.profile.id;
+        if( this.userId ) {
+          var usr = Meteor.users.findOne({_id: this.userId });
+          return usr.profile.id;
+        } else {
+          return 'all';
+        }
       }
     }
   },

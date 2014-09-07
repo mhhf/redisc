@@ -1,8 +1,44 @@
 {
   "dependencies": [
     [
+      "accounts-base",
+      "1.0.0"
+    ],
+    [
+      "accounts-password",
+      "1.0.0"
+    ],
+    [
+      "aldeed:collection2",
+      "1.0.0"
+    ],
+    [
+      "aldeed:simple-schema",
+      "1.0.1"
+    ],
+    [
+      "application-configuration",
+      "1.0.0"
+    ],
+    [
+      "binary-heap",
+      "1.0.0"
+    ],
+    [
       "blaze",
       "1.0.3"
+    ],
+    [
+      "callback-hook",
+      "1.0.0"
+    ],
+    [
+      "check",
+      "1.0.0"
+    ],
+    [
+      "crypto",
+      "3.1.2"
     ],
     [
       "deps",
@@ -10,6 +46,18 @@
     ],
     [
       "ejson",
+      "1.0.0"
+    ],
+    [
+      "email",
+      "1.0.2"
+    ],
+    [
+      "emitter",
+      "0.0.0"
+    ],
+    [
+      "follower-livedata",
       "1.0.0"
     ],
     [
@@ -37,12 +85,32 @@
       "1.0.6"
     ],
     [
+      "livedata",
+      "1.0.7"
+    ],
+    [
+      "localstorage",
+      "1.0.0"
+    ],
+    [
+      "logging",
+      "1.0.2"
+    ],
+    [
       "meteor",
       "1.0.2"
     ],
     [
       "minimongo",
       "1.0.1"
+    ],
+    [
+      "mongo-livedata",
+      "1.0.3"
+    ],
+    [
+      "npm-bcrypt",
+      "0.7.7"
     ],
     [
       "observe-sequence",
@@ -57,12 +125,24 @@
       "1.0.0"
     ],
     [
-      "templating",
-      "1.0.4"
+      "retry",
+      "1.0.0"
     ],
     [
-      "tmeasday:crypto-base",
-      "0.0.1"
+      "service-configuration",
+      "1.0.0"
+    ],
+    [
+      "sha",
+      "1.0.0"
+    ],
+    [
+      "srp",
+      "1.0.0"
+    ],
+    [
+      "templating",
+      "1.0.4"
     ],
     [
       "ui",

@@ -4,25 +4,36 @@ Package.describe({
   name: 'llmd-core'
 });
 
+
+var s = 'server';
+var c = 'client';
+var b = ['client','server']
+
 Package.on_use(function (api) {
   
-  api.use('templating','client');
-  api.use('less','client');
-  api.use('deps','client');
-  api.use('ui','client');
-  api.use('minimongo',['client','server']);
-  api.use('tmeasday:crypto-base',['client','server']);
+  api.use('templating',c);
+  api.use('less',c);
+  api.use('deps',c);
+  api.use('accounts-base',b);
+  api.use('accounts-password',b);
+  api.use('ui',c);
+  api.use('minimongo',b);
+  api.use('emitter',b);
+  api.use('crypto',b);
+  api.use('aldeed:collection2@1.0.0',b);
   
-  api.add_files("llmd.js", ["client","server"]);
-  api.add_files("atomModel.js", ["client","server"]);
+  api.add_files("llmd.js", b);
+  api.add_files("atomModel.js", b);
   
-  api.add_files("plugin.js", ["client"]);
-  api.add_files("handler.js", ["client"]);
+  api.add_files("methods.js", s);
   
-  api.add_files("std/common.js", ['client',"server"]);
-  api.add_files("std/commonPlugins.html", ["client"]);
-  api.add_files("std/commonPlugins.less", ["client"]);
-  api.add_files("std/commonPlugins.js", ["client"]);
+  api.add_files("plugin.js", c);
+  api.add_files("handler.js", c);
+  
+  api.add_files("std/common.js", b);
+  api.add_files("std/commonPlugins.html", c);
+  api.add_files("std/commonPlugins.less", c);
+  api.add_files("std/commonPlugins.js", c);
   
 
   if (api.export) {
@@ -33,4 +44,13 @@ Package.on_use(function (api) {
     api.export('Atoms');
   }
   
+});
+
+Package.onTest( function(api){
+  api.use(['llmd-core', 'tinytest', 'test-helpers', 'gfk:munit']); 
+  
+  api.use('accounts-base',b);
+  api.use('accounts-password',b);
+  
+  api.add_files('tests/atomModel.js', b);
 });

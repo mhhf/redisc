@@ -1,12 +1,30 @@
 LLMD.registerPackage("if", {
-  init: function() {
-    this.name = 'if';
-    this.c = 'true';
-    this.t = [];
-    this.f = [];
-    // this.t = Atoms.insert( new LLMD.Atom('seq') );
-    // this.f = Atoms.insert( new LLMD.Atom('seq') );
-  },
+  shema: [
+    LLMD.AtomSchema,
+    {
+      c: {
+        // [TODO] - expr
+        type: String,
+        defaultValue: 'true'
+      },
+      t: {
+        type: [Object],
+        defaultValue: []
+      },
+      't.$': {
+        type: Object,
+        blackbox: true
+      },
+      f: {
+        type: [Object],
+        defaultValue: []
+      },
+      'f.$': {
+        type: Object,
+        blackbox: true
+      }
+    }
+  ],
   nested:['t','f'],
   dataFilter: function( params, rawData ){
     this.c; // condition
