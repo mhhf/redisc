@@ -27,6 +27,7 @@ deps@1.0.3
 editor@0.0.0
 ejson@1.0.1
 email@1.0.2
+emitter@0.0.0
 follower-livedata@1.0.1
 fourseven:scss@0.9.5
 geojson-utils@1.0.0
