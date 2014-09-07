@@ -49,7 +49,7 @@ Template.selectLLMDTypes.rendered = function(){
   
   $('select').selectize({
     onChange: function( name ){
-      self.data.atom.addAfter('data', new LLMD.Atom(name));
+      self.data.atom.addAfter(self.data.key, new LLMD.Atom(name));
       AtomModel.set('INIT');
     }
   })[0].selectize.focus();

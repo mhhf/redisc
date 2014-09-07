@@ -21,21 +21,25 @@
 <template name="llmd_seq_edit">
 <div class="editorContainerWrapper">
   {{> llmd_nested key='data' atom=this}}
-  {{> addNewAtomBtn key='data' atom=this }}
+  {{> addNewAtomBtn key='data' atom=this template='rightButton' }}
 </div>
 </template>
 
 <template name="llmd_seq_ast">
 <div class="editorContainerWrapper">
   {{> llmd_nested key='data' atom=this}}
-  {{> addNewAtomBtn key='data' atom=this editorModel=.. }}
+  {{> addNewAtomBtn key='data' atom=this template='rightButton'  }}
 </div>
 </template>
 
 <template name="llmd_name_ast">
 <div class="editorContainerWrapper">
   <h4>{{key}} :</h4>
-  {{> llmd_nested key='value' atom=this}}
+  {{#if hasChildren }}
+    {{> llmd_nested key='value' atom=this}}
+  {{else}}
+    {{> addNewAtomBtn key='value' atom=this template='bigButton' }}
+  {{/if}}
 </div>
 </template>
 

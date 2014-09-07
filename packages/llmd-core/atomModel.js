@@ -307,13 +307,39 @@ AtomModel = function( o, params ){
     }
   }
   
+  
+  this.hasChildren = function(){
+    return this.numChildren() > 0;
+  }
+
+  this.numChildren = function( f ){
+    
+    var numChildren = 0;
+    
+    this.eachNested( function( seq, key ){
+      
+      numChildren += seq.length;
+      
+    });
+    
+    return numChildren;
+    
+  }
+  
   // [TODO] - test
   this.eachChildren = function( f ){
+    
+    var atom;
     
     this.eachNested( function( seq, key ){
       
       for(var i in seq) {
-        f( atomModelMap[seq[i]], key, i );
+        atom = atomModelMap[seq[i]];
+        if( atom ) {
+          f( atom, key, i );
+        } else {
+          console.log('ERROR: no model for atom', this.getId, seq[i], key);
+        }
       }
       
     });
