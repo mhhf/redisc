@@ -68,7 +68,7 @@ Template.PostWrapper.helpers({
     
     // [TODO] - export to atomModel
     var parent = this.get()
-    var atom = new LLMD.Atom('redisc', parent);
+    var atom = new LLMD.Atom('redisc', null ,parent);
         
     atom.root = parent.root != ''? parent.root : parent._seedId;
     atom.parent = parent._seedId;

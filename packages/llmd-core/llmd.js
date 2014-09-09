@@ -42,7 +42,7 @@ LLMD.Atom = function( name, data, parent ){
         }
       }));
   
-  data = S.clean(_.extend( data, { name: name }));
+  data = S.clean( _.extend( data, { name: name }));
   if( !S.namedContext().validate(data) ) throw new Error('[LLMD] Context is not valide:'+data);
   
   _.extend(this, data );

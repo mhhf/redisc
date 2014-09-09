@@ -155,7 +155,7 @@ Template.llmd_name_ast.helpers({
 Template.llmd_edit.helpers({
   omitFields: function(){
     return ['owner','updatedOn','pro','con','score'];
-  }
+  },
 });
 
 

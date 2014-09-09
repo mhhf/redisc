@@ -415,6 +415,11 @@ AtomModel = function( o, params ){
     }
   }
   
+  this.compile = function(){
+    var c = LLMD.Package( this.get().name ).compile;
+    if( c ) return c.apply(this, [this.get()]); 
+  }
+  
   // this.export = function(){
   //   
   //   var n = _.clone(nested);

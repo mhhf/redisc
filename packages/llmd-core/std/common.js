@@ -112,7 +112,10 @@ LLMD.registerPackage('string', {
         defaultValue: ''
       }
     }
-  ]
+  ],
+  compile: function( atom, parentModel){
+    return atom.value;
+  }
 });
 
 // has value to be nested
@@ -135,31 +138,24 @@ LLMD.registerPackage('name', {
       }
     }
   ],
-  nested: ['value']
+  nested: ['value'],
+  compile: function( atom ){
+    var retObject = {};
+    var retVal;
+    
+    this.eachChildren(function( a ){
+      var compiled = a.compile();
+      if(!retVal) retVal = compiled;
+      else if( typeof retVal == 'object' && typeof compiled == 'object' ) 
+        _.extend( retVal, compiled );
+      else throw Error('Compiled type mismatch');
+    });
+
+    retObject[ atom.key ] = retVal;
+    return retObject;
+  }
 });
 
-
-LLMD.registerPackage('ctx', {
-  shema: [
-    LLMD.AtomSchema,
-    {
-      key: {
-        type: String,
-        defaultValue: ''
-      },
-      value: {
-        type: [ Object ],
-        blackbox: true,
-        defaultValue: [] 
-      },
-      'value.$': {
-        type: Object,
-        blackbox: true
-      }
-    }
-  ],
-  nested: ['value']
-});
 
 // LLMD.registerPackage('diff', {
 //   init: function(){

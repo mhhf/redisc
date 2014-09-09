@@ -45,7 +45,7 @@
 
 <template name="llmd_name_edit">
 <div class="editorContainerWrapper">
-  <h4> <input type="text" name="key" value="{{key}}" /> :</h4>
+  <h4> <input type="text" name="key" value="{{getProperty 'key'}}" /> :</h4>
   {{> llmd_nested key='value' atom=this}}
 </div>
 </template>

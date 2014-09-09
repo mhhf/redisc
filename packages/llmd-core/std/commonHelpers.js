@@ -4,6 +4,9 @@ UI.registerHelper('isEditing', function(){
 });
 
 UI.registerHelper('getSchema', function(){
-  console.log(LLMD.Package(this.get().name).shema);
   return new SimpleSchema(LLMD.Package(this.get().name).shema);
+});
+
+UI.registerHelper('getProperty', function(k){
+  return this.get()[k];
 });

@@ -412,6 +412,11 @@ describe.server('Model', function(){
     (function(){new LLMD.Atom('name',{value:'key'})}).should.throw(Error);
   });
   
+
+  // it('#addDeep should add a value to a deep key', function(){
+  //   
+  // });
+  
   // it('should export an ast', function(){
   //   var _atomId1 = Atoms.insert( new LLMD.Atom('seq') );
   //   var a1 = new AtomModel( _atomId1 );

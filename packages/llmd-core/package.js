@@ -55,5 +55,6 @@ Package.onTest( function(api){
   api.use('accounts-base',b);
   api.use('accounts-password',b);
   
+  api.add_files('tests/compiler.js', b);
   api.add_files('tests/atomModel.js', b);
 });
