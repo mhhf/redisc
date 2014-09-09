@@ -1,11 +1,11 @@
 Router.map( function(){
   this.route('editor',{
     waitOn: function(){
-      return Meteor.subscribe('atom.deep','wGoCkjzWbrs8Gn9ij');
+      return Meteor.subscribe('atom.deep','yKLZT5xSYu9JHbLoc');
     },
     data: function(){
       return {
-        atom: new AtomModel('wGoCkjzWbrs8Gn9ij')
+        atom: new AtomModel('yKLZT5xSYu9JHbLoc')
       };
     }
   });

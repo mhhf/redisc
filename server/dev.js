@@ -50,12 +50,14 @@ Meteor.methods({
     var hero = a1.push( new LLMD.Atom('name', {key:'hero'}) );
     var heroName = hero.push( new LLMD.Atom('name',{key:'name'}));
     var heroNameString = heroName.push( new LLMD.Atom('string',{value:'hero'}));
-    var heroHead = hero.push( new LLMD.Atom('name',{key:'name'}));
+    var heroHead = hero.push( new LLMD.Atom('name',{key:'headline'}));
     var heroHeadString = heroHead.push( new LLMD.Atom('string',{value:'LifeT.me'}));
-    var heroSHead = hero.push( new LLMD.Atom('name',{key:'name'}));
+    var heroSHead = hero.push( new LLMD.Atom('name',{key:'subheadline1'}));
     var heroSHeadString = heroSHead.push( new LLMD.Atom('string',{value:'Gesundheit ist Lebenszeit'}));
-    var heroSHead2 = hero.push( new LLMD.Atom('name',{key:'name'}));
+    var heroSHead2 = hero.push( new LLMD.Atom('name',{key:'subheadline2'}));
     var heroSHead2String = heroSHead2.push( new LLMD.Atom('string',{value:'Dein verlässlicher Begleiter immer an Deiner Seite.'}));
+    var blog = a1.push( new LLMD.Atom('name', { key: 'blog' } ));
+    var blogVar = blog.push( new LLMD.Atom('var', { key: 'blog' } ));
     return a1.getId();
   }
 });

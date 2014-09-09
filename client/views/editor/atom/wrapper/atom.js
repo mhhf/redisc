@@ -75,6 +75,9 @@ Template.atomWrapper.helpers({
         case 'string': 
           wrapperName = 'simpleAtomWrapper';
           break;
+        case 'var': 
+          wrapperName = 'simpleAtomWrapper';
+          break;
       }
     
     return Template[ wrapperName ];

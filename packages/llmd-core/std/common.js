@@ -113,7 +113,7 @@ LLMD.registerPackage('string', {
       }
     }
   ],
-  compile: function( atom, parentModel){
+  compile: function( atom ){
     return atom.value;
   }
 });
@@ -139,12 +139,12 @@ LLMD.registerPackage('name', {
     }
   ],
   nested: ['value'],
-  compile: function( atom ){
+  compile: function( atom, scope ){
     var retObject = {};
     var retVal;
     
     this.eachChildren(function( a ){
-      var compiled = a.compile();
+      var compiled = a.compile( scope );
       if(!retVal) retVal = compiled;
       else if( typeof retVal == 'object' && typeof compiled == 'object' ) 
         _.extend( retVal, compiled );
@@ -153,6 +153,21 @@ LLMD.registerPackage('name', {
 
     retObject[ atom.key ] = retVal;
     return retObject;
+  }
+});
+
+LLMD.registerPackage('var', {
+  shema: [
+    LLMD.AtomSchema,
+    {
+      key: {
+        type: String,
+        defaultValue: 'undefined'
+      }
+    }
+  ],
+  compile: function( atom, scope ){
+    if( scope[ atom.value ] ) return scope[ atom.value ].compile( scope );
   }
 });
 

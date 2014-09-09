@@ -415,9 +415,9 @@ AtomModel = function( o, params ){
     }
   }
   
-  this.compile = function(){
+  this.compile = function( scope ){
     var c = LLMD.Package( this.get().name ).compile;
-    if( c ) return c.apply(this, [this.get()]); 
+    if( c ) return c.apply(this, [this.get(), scope]); 
     else throw Error('No compiler defined for atom: ' + this.get().name );
   }
   
