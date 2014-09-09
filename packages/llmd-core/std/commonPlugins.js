@@ -196,6 +196,12 @@ Template.llmd_nested.helpers({
 });
 
 
+AutoForm.addHooks(null, {
+  onSubmit: function (o, t, _a) {
+    this.event.preventDefault();
+  }
+});
+
 AutoForm.addHooks('customEdit', {
   onSubmit: function (o, t, _a) {
     this.event.preventDefault();

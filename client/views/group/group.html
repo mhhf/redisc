@@ -8,9 +8,32 @@
 
 <template name="groupNamespace">
 <h2>Namespace</h2>
+{{#unless adding }}
+  <a class="btn btn-primary right new-name-btn" href="#">new Name</a>
+{{/unless}}
+<ul class="postList">
+{{#if adding}}
+<li>
+<form>
+  <input type="text" name="key" placeholder="name..." autofocus>
+  <input type="submit" value="Submit">
+</form>
+</li>
+{{/if}}
 {{#each names}}
-{{this}}
+  <li>
+  
+    {{> Score }}
+    
+    <div class="contentContainer">
+      <a href="#">
+        <span class="title"> {{getProperty 'key'}} </span>
+      </a>
+    </div>
+    
+  </li>
 {{/each}}
+</ul>
 </template>
 
 

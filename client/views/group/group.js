@@ -17,11 +17,53 @@ Template.group.rendered = function(){
   });
 }
 
+var adding = {
+  dep:	new Deps.Dependency,
+  val: false,
+  get: function(){
+    this.dep.depend();
+    return this.val;
+  },
+  set: function( val ){
+    this.dep.changed();
+    this.val = val;
+  }
+}
+
 Template.groupNamespace.helpers({
   names: function(){
-    return [1,2,3];
+    var names = new AtomModel( this.group.ctx );
+    var atoms = names.getNested('data');
+    return atoms;
+  },
+  adding: function(){
+    return adding.get();
+  },
+  nameSchema: function(){
+    return new SimpleSchema(LLMD.Package( 'name' ).shema);
+  },
+  nameField: function(){
+    return ['key'];
   }
 });
+
+Template.groupNamespace.events = {
+  "click .new-name-btn": function(e,t){
+    e.preventDefault();
+    
+    adding.set(true);
+
+  },
+  "submit": function(e,t){
+    e.preventDefault();
+    adding.set(false);
+
+    var val = t.find('input[name=key]').value;
+    var a = new AtomModel( this.group.ctx );
+    var name = a.push( new LLMD.Atom( 'name', {key: val} ) );
+    
+  }
+};
 
 
 Template.groupDeligations.helpers({
@@ -29,3 +71,4 @@ Template.groupDeligations.helpers({
     return [1,2,3];
   }
 });
+

@@ -43,7 +43,7 @@ Template.Score.helpers({
     }
   },
   getScore: function(){
-    // console.log( 'sc', this.get().data, this.get().score);
+    // console.log( 'sc',  this.get().score);
     return this.get().score;
   }
 });
