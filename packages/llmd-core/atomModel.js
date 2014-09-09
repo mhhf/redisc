@@ -427,6 +427,23 @@ AtomModel = function( o, params ){
   //   var e = _.extend( {}, _.omit(atom,['_id','meta','_seedId']), n );
   //   return e;
   // }
+  // 
+  //
+
+
+  this.distanceToRoot = function( distance ){
+    if( !distance ) distance = 0;
+
+    if( this.parent  ) {
+      if( this.parent.get().name == 'name' ) distance += 1;
+      return this.parent.distanceToRoot( distance );
+    } else {
+      return distance;
+    }
+    
+  }
+
+
   
   // search for the smalest matched index
   var findFirstMatched = function( as1, as2 ) {

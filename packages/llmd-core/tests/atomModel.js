@@ -385,7 +385,16 @@ describe.server('Model', function(){
     
   });
   
-  it('should build desired structure', function(){
+  it('#contextDepth should return the right context depth', function(){
+    
+    var a0 = new AtomModel( new LLMD.Atom('name') );
+    var a1 = a0.push( new LLMD.Atom('seq') );
+    var a2 = a1.push( new LLMD.Atom('name') );
+    var a3 = a2.push( new LLMD.Atom('seq') );
+    var a4 = a3.push( new LLMD.Atom('name') );
+    var a5 = a4.push( new LLMD.Atom('string') );
+    
+    a5.distanceToRoot().should.eql(3);
     
   });
   
