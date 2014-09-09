@@ -34,7 +34,7 @@
 
 <template name="llmd_name_ast">
 <div class="editorContainerWrapper">
-  <h4>{{key}} :</h4>
+  {{#getTag}}{{key}} :{{/getTag}}
   {{#if hasChildren }}
     {{> llmd_nested key='value' atom=this}}
   {{else}}
@@ -68,4 +68,20 @@
       </li>
     {{/each}}
   </ul>
+</template>
+
+<template name="h1Wrapper">
+<h1> {{> UI.contentBlock}} </h1>
+</template>
+<template name="h2Wrapper">
+<h2> {{> UI.contentBlock}} </h2>
+</template>
+<template name="h3Wrapper">
+<h3> {{> UI.contentBlock}} </h3>
+</template>
+<template name="h4Wrapper">
+<h4> {{> UI.contentBlock}} </h4>
+</template>
+<template name="h5Wrapper">
+<h5> {{> UI.contentBlock}} </h5>
 </template>

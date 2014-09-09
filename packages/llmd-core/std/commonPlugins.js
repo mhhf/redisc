@@ -144,6 +144,11 @@ Template.llmd_name_ast.helpers({
   key: function(){
     var key = this.get().key;
     return ( key != '')? key : 'undefined';
+  },
+  getTag: function(){
+    var distance = this.distanceToRoot() + 1 ;
+    if( !distance || distance > 5 || distance < 0 ) distance = 5;
+    return Template['h'+distance+'Wrapper'];
   }
 });
 

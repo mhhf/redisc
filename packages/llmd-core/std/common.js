@@ -138,6 +138,29 @@ LLMD.registerPackage('name', {
   nested: ['value']
 });
 
+
+LLMD.registerPackage('ctx', {
+  shema: [
+    LLMD.AtomSchema,
+    {
+      key: {
+        type: String,
+        defaultValue: ''
+      },
+      value: {
+        type: [ Object ],
+        blackbox: true,
+        defaultValue: [] 
+      },
+      'value.$': {
+        type: Object,
+        blackbox: true
+      }
+    }
+  ],
+  nested: ['value']
+});
+
 // LLMD.registerPackage('diff', {
 //   init: function(){
 //     return {
