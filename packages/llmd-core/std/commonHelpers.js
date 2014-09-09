@@ -10,3 +10,7 @@ UI.registerHelper('getSchema', function(){
 UI.registerHelper('getProperty', function(k){
   return this.get()[k];
 });
+
+UI.registerHelper('editableAtom', function(){
+  return this.hasMajority();
+});

@@ -10,10 +10,11 @@ Meteor.publish('atom', function( _id ){
 Meteor.publish('atom.deep', function( _id ){
   
   var _ids = collectNested( _id );
-  console.log(_ids);
+  var atom = Atoms.findOne(_ids[0]);
   
-  return Atoms.find( {_id: {$in: _ids } } );
+  return [Atoms.find( {_id: {$in: _ids } } ), Owners.find({_id:atom.owner})];
 });
+
 
 
 // [TODO] - developing function: slow as fuck!!!!

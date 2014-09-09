@@ -418,6 +418,7 @@ AtomModel = function( o, params ){
   this.compile = function(){
     var c = LLMD.Package( this.get().name ).compile;
     if( c ) return c.apply(this, [this.get()]); 
+    else throw Error('No compiler defined for atom: ' + this.get().name );
   }
   
   // this.export = function(){
@@ -447,6 +448,39 @@ AtomModel = function( o, params ){
     }
     
   }
+  
+  this.transfearOwner = function( owner ){
+    this.update({owner: owner});
+    
+    this.eachChildren( function( a ){
+      a.transfearOwner( owner );
+    });
+  }
+  
+
+  // hacky
+  //
+  // return a bool, if the user has the majority for this atom
+  this.hasMajority = function(){
+    
+    // has majority of the owner group
+    
+    var owner = this.get().owner;
+    var user = Meteor.users.findOne({ _id: Meteor.userId() });
+    
+    if( user.profile.groups.indexOf( owner ) > -1 ) {
+      var group = Owners.findOne( owner );
+      
+      var d = _.find(group.distribution, function( d ){
+        return d._userId == Meteor.userId();
+      });
+      return d && d.shares/group.sum > 0.66; 
+    }
+    return false;
+    
+    // is deligated
+    
+  } 
 
 
   

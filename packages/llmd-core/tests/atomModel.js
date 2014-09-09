@@ -413,6 +413,21 @@ describe.server('Model', function(){
   });
   
 
+  it('#transfear Ownership should transfear the ownership of all nested children', function(){
+    
+    var a = new AtomModel( new LLMD.Atom('name',{ key: 'key' } ));
+    var b = a.push( new LLMD.Atom('string', { value: 'val' }));
+    
+    a.transfearOwner('mhhf');
+
+    a.get().owner.should.eql('mhhf');
+    
+    b.get().owner.should.eql('mhhf');
+
+    
+  });
+  
+
   // it('#addDeep should add a value to a deep key', function(){
   //   
   // });
