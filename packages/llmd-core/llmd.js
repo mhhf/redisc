@@ -4,7 +4,9 @@ LLMD = function() {
 
 LLMD.packageTypes = {};
 
-LLMD.Atom = function( name, parent ){
+LLMD.Atom = function( name, data, parent ){
+  
+  if(!data) data={};
   
   var S = new SimpleSchema(
       LLMD.packageTypes[name].shema.concat({
@@ -40,7 +42,10 @@ LLMD.Atom = function( name, parent ){
         }
       }));
   
-  _.extend(this, S.clean({ name: name }));
+  data = S.clean(_.extend( data, { name: name }));
+  if( !S.namedContext().validate(data) ) throw new Error('[LLMD] Context is not valide:'+data);
+  
+  _.extend(this, data );
   
   if( parent ) {
     this._rights = parent._rights;

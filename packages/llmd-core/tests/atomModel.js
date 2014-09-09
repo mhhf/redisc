@@ -398,6 +398,20 @@ describe.server('Model', function(){
     
   });
   
+  it('#LLMD.Atom should integrate parameters', function(){
+    var a = new LLMD.Atom('name',{key:'key'});
+    a.key.should.eql('key');
+  });
+  
+  it('#LLMD.Atom should filter parameters', function(){
+    var a = new LLMD.Atom('name', {keyy:'key'});
+    (typeof a.keyy).should.eql('undefined');
+  });
+  
+  it('#LLMD.Atom should ignore wrong parameters', function(){
+    (function(){new LLMD.Atom('name',{value:'key'})}).should.throw(Error);
+  });
+  
   // it('should export an ast', function(){
   //   var _atomId1 = Atoms.insert( new LLMD.Atom('seq') );
   //   var a1 = new AtomModel( _atomId1 );
