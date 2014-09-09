@@ -1,4 +1,21 @@
 <template name="group">
 <h1>{{group._id}}</h1>
 <div class="chart"></div>
+
+{{> groupNamespace}}
+{{> groupDeligations}}
+</template>
+
+<template name="groupNamespace">
+<h1>Namespace</h1>
+</template>
+
+
+<template name="groupDeligations">
+<h1>Deligations</h1>
+<ul>
+{{#each group.deligations}}
+  <li>a</li>
+{{/each}}
+</ul>
 </template>
