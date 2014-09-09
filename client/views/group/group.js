@@ -16,3 +16,16 @@ Template.group.rendered = function(){
     }
   });
 }
+
+Template.groupNamespace.helpers({
+  names: function(){
+    return [1,2,3];
+  }
+});
+
+
+Template.groupDeligations.helpers({
+  deligations: function(){
+    return [1,2,3];
+  }
+});

@@ -7,14 +7,17 @@
 </template>
 
 <template name="groupNamespace">
-<h1>Namespace</h1>
+<h2>Namespace</h2>
+{{#each names}}
+{{this}}
+{{/each}}
 </template>
 
 
 <template name="groupDeligations">
-<h1>Deligations</h1>
+<h2>Deligations</h2>
 <ul>
-{{#each group.deligations}}
+{{#each deligations}}
   <li>a</li>
 {{/each}}
 </ul>

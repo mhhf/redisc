@@ -26,13 +26,17 @@ Owners = new Meteor.Collection('shares', {
       defaultValue: 1
     },
     ctx: {
-      type: Object,
+      type: String,
       blackbox: true,
-      defaultValue: {}
+      autoValue: function(){
+        return Atoms.insert( new LLMD.Atom('seq') );
+      }
     },
     deligations: {
-      type: [Object],
-      defaultValue: []
+      type: String,
+      autoValue: function(){
+        return Atoms.insert( new LLMD.Atom('seq') );
+      }
     },
     'deligations.$': {
       type: Object,
