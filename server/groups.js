@@ -65,6 +65,7 @@ Meteor.publish('user.groups', function( ids ){
 });
 
 Meteor.publish('group', function( _id ){
+  console.log('publish');
   var owner = Owners.findOne({ _id: _id });
   var ids = [owner.ctx, owner.deligations];
   // hacky

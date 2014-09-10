@@ -7,7 +7,7 @@ Meteor.publish('atom', function( _id ){
   return Atoms.find({ _id: _id });
 });
 
-Meteor.publish('atom.deep', function( _id ){
+Meteor.publish('atom.deep', function( _id, c ){
   
   var _ids = collectNested( _id );
   var atom = Atoms.findOne(_ids[0]);

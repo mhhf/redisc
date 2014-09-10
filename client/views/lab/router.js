@@ -16,7 +16,9 @@ Router.map( function(){
     path: 'e/:_id',
     template: 'editor',
     waitOn: function(){
-      return Meteor.subscribe( 'atom.deep', this.params._id );
+      var a = Atoms.find().count();
+      var s = Meteor.subscribe( 'atom.deep', this.params._id, a )
+      return s;
     },
     data: function(){
       return {

@@ -3,6 +3,8 @@ Router.map( function(){
   this.route('group', {
     path: '/group/:_id',
     waitOn: function(){
+      var o = Owners.findOne();
+      var o = Atoms.findOne();
       return Meteor.subscribe('group', this.params._id);
     },
     data: function(){
