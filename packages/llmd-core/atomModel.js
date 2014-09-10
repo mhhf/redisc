@@ -50,10 +50,10 @@ AtomModel = function( o, params ){
     _id = o;
    
     // singleton
-    if( atomModelMap[ _id ] ) {
+    if( Meteor.isClient && atomModelMap[ _id ] ) {
       return atomModelMap[ _id ];
     }
-    atomModelMap[_id] = this;
+    if( Meteor.isClient ) atomModelMap[_id] = this;
     
   } else if( typeof o == 'object' && o != null ) {
     var insertAtoms = function( ast ){
@@ -100,10 +100,13 @@ AtomModel = function( o, params ){
     
     if( _id && !atom ) {
       // invalidate the child
-      delete atomModelMap[_id];
-      // invalidate the parent, which holds the invalid child
-      if( this.parent ) {
-        delete atomModelMap[ this.parent.atom._id ];
+      // 
+      if( Meteor.isClient ) {
+        delete atomModelMap[_id];
+        // invalidate the parent, which holds the invalid child
+        if( this.parent ) {
+          delete atomModelMap[ this.parent.atom._id ];
+        }
       }
       return null;
     }
@@ -175,8 +178,10 @@ AtomModel = function( o, params ){
       
       computeNested();
       
-      delete atomModelMap[ _oldId ];
-      atomModelMap[ _id ] = this;
+      if( Meteor.isClient ) {
+        delete atomModelMap[ _oldId ];
+        atomModelMap[ _id ] = this;
+      }
        
       // trigger hard change
       this.emit('change.hard',{
@@ -334,11 +339,16 @@ AtomModel = function( o, params ){
     this.eachNested( function( seq, key ){
       
       for(var i in seq) {
-        atom = atomModelMap[seq[i]];
+        
+        if( Meteor.isClient )
+          atom = atomModelMap[seq[i]];
+        else
+          atom = new AtomModel( seq[i] );
+    
         if( atom ) {
           f( atom, key, i );
         } else {
-          console.log('ERROR: no model for atom', this.getId, seq[i], key);
+          console.log('ERROR: no model for atom', seq[i], key);
         }
       }
       
@@ -396,7 +406,12 @@ AtomModel = function( o, params ){
     
     this.update( obj );
     
-    atomModelMap[ _atomId ].emit('remove');
+    if( Meteor.isClient )
+      atom = atomModelMap[seq[i]];
+    else
+      atom = new AtomModel( seq[i] );
+    atom.emit('remove');
+    // atomModelMap[ _atomId ].emit('remove');
     
   }
   
