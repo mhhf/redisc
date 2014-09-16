@@ -1,0 +1,55 @@
+<template name="llmd_blog_edit">
+<div class="dragWrapper">
+  <div class="dragMask"></div>
+  <form>
+    <div class="form-group">
+      <label class="control-label" for="title">Title</label>
+      <input type="text" name="title" class="form-control" value="{{getTitle}}" placeholder="Title...">
+      <span class="help-block"></span>
+    </div>
+    
+    <div class="form-group">
+      <label class="control-label" for="title">Subtitle 1</label>
+      <input type="text" name="subtitle1" class="form-control" value="{{getProperty 'subtitle1'}}" placeholder="Subitle 1...">
+      <span class="help-block"></span>
+    </div>
+    
+    <div class="form-group">
+      <label class="control-label" for="title">Subtitle 2</label>
+      <input type="text" name="subtitle2" class="form-control" value="{{getProperty 'subtitle2'}}" placeholder="Subtitle 2...">
+      <span class="help-block"></span>
+    </div>
+    
+    <div class="form-group editorSelect">
+      <label class="control-label" for="data">Content</label>
+
+      <div class="btn-group">
+        <button type="button" data-target="editor" class="btn editorView btn-default {{isActive 'editor'}}" tabindex="-1"><i class="fa fa-list-alt"></i></button>
+        <button type="button" data-target="split" class="btn editorView btn-default {{isActive 'split'}}" tabindex="-1"><i class="fa fa-columns"></i></button>
+        <button type="button" data-target="preview" class="btn editorView btn-default {{isActive 'preview'}}" tabindex="-1"><i class="fa fa-eye"></i></button>
+      </div>
+
+      <div class="editorWrapper">
+        <div id="editor" class="{{getEditorClass}}">
+          <!-- {{> sharejsAce docid=getId id="ace" callback=config onConnect=onConnect}} -->
+        </div>
+        <div id="preview-md" class="{{getViewClass}}">
+          <div id="markdownWrapper">
+            {{>llmd getEditorData }}
+          </div>
+        </div>
+      </div>
+
+      <span class="help-block"></span>
+    </div>
+
+</form>
+</div>
+
+</template>
+
+<template name="llmd_blog_ast">
+{{#llmd}}
+{{atom.data}}
+{{/llmd}}
+</template>

@@ -72,6 +72,9 @@ Template.atomWrapper.helpers({
         case 'name': 
           wrapperName = 'simpleAtomWrapper';
           break;
+        case 'blog': 
+          wrapperName = 'simpleAtomWrapper';
+          break;
         case 'string': 
           wrapperName = 'simpleAtomWrapper';
           break;

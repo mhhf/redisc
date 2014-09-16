@@ -26,6 +26,7 @@ Package.on_use(function (api) {
   
   api.add_files("llmd.js", b);
   api.add_files("atomModel.js", b);
+  api.add_files("compilers.js", b);
   
   api.add_files("methods.js", s);
   

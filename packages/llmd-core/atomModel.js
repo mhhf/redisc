@@ -272,11 +272,12 @@ AtomModel = function( o, params ){
   
   this.push = function(child){
     if( this.isNested() ) {
-      var k = LLMD.Package(this.get().name).nested[0];
-      
+      var k = LLMD.Package( this.get().name ).nested[0];
       
       if( typeof child == 'string' ) {
         var _atomId = child;
+      } else if(typeof child.getId == 'function'){
+        var _atomId = child.getId();
       } else {
         var _atomId = Atoms.insert( child );
       }
@@ -407,9 +408,9 @@ AtomModel = function( o, params ){
     this.update( obj );
     
     if( Meteor.isClient )
-      atom = atomModelMap[seq[i]];
+      atom = atomModelMap[_atomId];
     else
-      atom = new AtomModel( seq[i] );
+      atom = new AtomModel(_atomId);
     atom.emit('remove');
     // atomModelMap[ _atomId ].emit('remove');
     
