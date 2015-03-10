@@ -6,6 +6,7 @@
 standard-app-packages
 insecure
 kestanous:emitter@0.1.0
+emitter
 less
 sacha:spin@2.0.4
 mrt:module-loader@0.5.1
