@@ -5,7 +5,7 @@ Template.addNewAtomBtn.events({
     
     // parents = this.parents.concat( this.atom._id );
     
-    this.editorModel.set( 'choose', this.atom );
+    AtomModel.set( 'CHOOSING', this );
   },
   "submit": function(e,t){
     e.preventDefault();
@@ -20,17 +20,17 @@ Template.addNewAtomBtn.events({
 
 Template.addNewAtomBtn.helpers({
   editable: function(){
-    return this.editorModel.editable;
+    return true;
   },
   isAdding: function(a,b){
-    var adding = this.editorModel.get('add');
+    var adding = AtomModel.get('ADD');
     // console.log(this,adding, this.atom);
     // return adding && adding.key == this.getId();
-    return adding && adding.parent == this.atom;
+    return adding && adding.parent == this;
   },
   isChoosing: function(){
     // console.log('hahah',this);
-    return this.editorModel.get('choose') == this.atom;
+    return AtomModel.get('CHOOSING') == this;
   },
   tmpAtom: function(){
     return this.editorModel.get('add').atom;
@@ -49,7 +49,8 @@ Template.selectLLMDTypes.rendered = function(){
   
   $('select').selectize({
     onChange: function( name ){
-      self.data.editorModel.add( name, self.data.key, self.data.atom );
+      self.data.atom.addAfter(self.data.key, new LLMD.Atom(name));
+      AtomModel.set('INIT');
     }
   })[0].selectize.focus();
 }

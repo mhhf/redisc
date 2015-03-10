@@ -1,3 +1,13 @@
+/*
+ * Editor Model has to manage the client side of an lisp tree
+ *
+ * it has to watch the overall state of the model
+ *
+ * States:
+ *  INIT <-> EDIT
+ *  INIT <-> NEW CHILD
+ *  INIT <-> DIFF
+ */
 EditorModel = function( o ){
   
   this.editable = !!o.editable;

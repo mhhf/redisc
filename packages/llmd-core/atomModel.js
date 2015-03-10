@@ -11,7 +11,12 @@ Atoms = new Meteor.Collection( 'atoms' );
 AtomModel = function( o, params ){
   
   
-  var _id;
+  /*
+   * Parameter, which not change with the atomModel
+   * name
+   */
+  var _id, name, _seedId;
+
   // var deps = new Deps.Dependency;
   var nested;
   var self = this;
@@ -43,13 +48,12 @@ AtomModel = function( o, params ){
   
   if( typeof o == 'string' ) {
     _id = o;
-    if( !Atoms.findOne({ _id: _id }) ) return null;
-    
+   
     // singleton
-    if( atomModelMap[ _id ] ) {
+    if( Meteor.isClient && atomModelMap[ _id ] ) {
       return atomModelMap[ _id ];
     }
-    atomModelMap[_id] = this;
+    if( Meteor.isClient ) atomModelMap[_id] = this;
     
   } else if( typeof o == 'object' && o != null ) {
     var insertAtoms = function( ast ){
@@ -76,6 +80,9 @@ AtomModel = function( o, params ){
     
     if( o.meta.state != 'tmp' ) {
       _id = insertAtoms( o );
+      atom = Atoms.findOne({_id: _id});
+      _seedId = atom._seedId;
+      name = atom.name;
     } else {
       _id = 'tmp';
     }
@@ -90,15 +97,22 @@ AtomModel = function( o, params ){
     var atom;
     
     atom = Atoms.findOne({ _id: _id });
+    
     if( _id && !atom ) {
       // invalidate the child
-      delete atomModelMap[_id];
-      // invalidate the parent, which holds the invalid child
-      if( this.parent ) {
-        delete atomModelMap[ this.parent.atom._id ];
+      // 
+      if( Meteor.isClient ) {
+        delete atomModelMap[_id];
+        // invalidate the parent, which holds the invalid child
+        if( this.parent ) {
+          delete atomModelMap[ this.parent.atom._id ];
+        }
       }
       return null;
     }
+    
+    _seedId = atom._seedId;
+    name = atom.name;
     
     computeNested();
     // deps.changed();
@@ -131,11 +145,11 @@ AtomModel = function( o, params ){
   }
   
   this.getId = function(){
-    return this.get()._id;
+    return _id;
   }
   
   this.getSeed = function(){
-    return this.get()._seedId;
+    return _seedId;
   }
   
   /**
@@ -145,36 +159,41 @@ AtomModel = function( o, params ){
    */
   this.update = function( atomO ){
     
-    if( !atom.meta.lock && atom.meta.state != 'tmp' ) {
-      Atoms.update({ _id: atom._id }, { $set: _.omit( atomO, '_id' ) });
+    atom = this.get();
+
+    if( !this.isLocked() && atom.meta.state != 'tmp' ) {
+      if( atomO.meta ) atomO.meta = _.extend( atom.meta, atomO.meta )
+        
+      Atoms.update({ _id: _id }, { $set: _.omit( atomO, '_id' ) });
       // atom = Atoms.findOne({ _id: atom._id });
       this.emit('change.soft', null);
       // trigger soft change
     } else {
-      console.log('inserting', atom, atomO);
       
       atom.meta.lock = false;
       var _oldId = atom._id;
       // BUG: _.extend not extends deep, overvrites object propertys
       atom.meta = _.extend( atom.meta, atomO.meta );
-      var _atomId = Atoms.insert( _.omit( _.extend( atom, _.omit(atomO,'meta') ), '_id' ) );
+      _id = Atoms.insert( _.omit( _.extend( atom, _.omit(atomO,'meta') ), '_id' ) );
       
       computeNested();
       
-      delete atomModelMap[ _oldId ];
-      atomModelMap[ _atomId ] = this;
+      if( Meteor.isClient ) {
+        delete atomModelMap[ _oldId ];
+        atomModelMap[ _id ] = this;
+      }
        
       // trigger hard change
       this.emit('change.hard',{
         _oldId: _oldId,
-        _newId: _atomId
+        _newId: _id
       });
       
-      this.parent && this.parent.exchangeChildren( _oldId, _atomId );
+      this.parent && this.parent.exchangeChildren( _oldId, _id );
     }
     
     // [TODO] - maybe refactor out of the model
-    Meteor.call( 'atom.compile', this.getId() );
+    Meteor.call( 'atom.precompile', this.getId() );
     
   }
   
@@ -184,7 +203,7 @@ AtomModel = function( o, params ){
     var p;
     var k;
     
-    LLMD.eachNested( atom, function(seq, key){
+    LLMD.eachNested( this.get(), function(seq, key){
       
       for(var i in seq) {
         
@@ -218,6 +237,8 @@ AtomModel = function( o, params ){
    */
   this.addAfter = function( key, child, pos ){
     
+    atom = this.get();
+    
     if( !( this.isNested() ) ) {
       throw new Error( 'atom '+atom.name+ ' is not nested or nested key isn\'t '+key);
     }
@@ -249,10 +270,36 @@ AtomModel = function( o, params ){
     
   }
   
+  this.push = function(child){
+    if( this.isNested() ) {
+      var k = LLMD.Package( this.get().name ).nested[0];
+      
+      if( typeof child == 'string' ) {
+        var _atomId = child;
+      } else if(typeof child.getId == 'function'){
+        var _atomId = child.getId();
+      } else {
+        var _atomId = Atoms.insert( child );
+      }
+      
+      var field = this.get()[k];
+      field.push( _atomId );
+      
+      var updateObject = {};
+      updateObject[k] = field;
+      
+      this.update( updateObject );
+      
+      return new AtomModel(_atomId, {
+        parent: this
+      });
+    }
+  }
+  
   
   // [TODO] - refactor hasChildren
   this.isNested = function(k){
-    return LLMD.hasNested( atom );
+    return LLMD.hasNested( this.get() );
   }
   
   this.isLocked = function(){
@@ -262,17 +309,48 @@ AtomModel = function( o, params ){
   // [TODO] - refactor: eachChildren
   this.eachNested = function( f ){
     if( this.isNested() ) {
-      LLMD.eachNested(atom, f);
+      LLMD.eachNested(this.get(), f);
     }
+  }
+  
+  
+  this.hasChildren = function(){
+    return this.numChildren() > 0;
+  }
+
+  this.numChildren = function( f ){
+    
+    var numChildren = 0;
+    
+    this.eachNested( function( seq, key ){
+      
+      numChildren += seq.length;
+      
+    });
+    
+    return numChildren;
+    
   }
   
   // [TODO] - test
   this.eachChildren = function( f ){
     
+    var atom;
+    
     this.eachNested( function( seq, key ){
       
       for(var i in seq) {
-        f( atomModelMap[seq[i]], key, i );
+        
+        if( Meteor.isClient )
+          atom = atomModelMap[seq[i]];
+        else
+          atom = new AtomModel( seq[i] );
+    
+        if( atom ) {
+          f( atom, key, i );
+        } else {
+          console.log('ERROR: no model for atom', seq[i], key);
+        }
       }
       
     });
@@ -290,21 +368,21 @@ AtomModel = function( o, params ){
   
   this.getChild = function( key, pos ){
     if( this.isNested() ) {
-      return atom[key][pos];
+      return this.get()[key][pos];
     }
   }
   
   // @return: AtomModel
   this.getChildModel = function( key, pos ){
     if( this.isNested() ) {
-      return new AtomModel( atom[key][pos] );
+      return new AtomModel( this.get()[key][pos] );
     }
   }
   
   // [TODO] - refactor: replaceChild
   this.exchangeChildAt = function( key, pos, _atomId ){
     var obj = {};
-    obj[key] = atom[key];
+    obj[key] = this.get()[key];
     obj[key][pos] = _atomId;
     
     this.update( obj );
@@ -313,18 +391,28 @@ AtomModel = function( o, params ){
   this.exchangeChildren = function( _oldId, _newId ){
     
     var pos = this.getNestedPos( _oldId );
-    if( pos ) this.exchangeChildAt( pos.key, pos.pos, _newId )
+    if( pos ) {
+      this.exchangeChildAt( pos.key, pos.pos, _newId );
+    } else {
+      throw new Error('[LLMD] atom with id: '+_oldId+' not found in '+this.getId());
+    }
+     
     
   }
   
   this.removeAt = function( key, pos ){
     var obj = {};
-    obj[key] = atom[key];
+    obj[key] = this.get()[key];
     var _atomId = obj[key].splice(pos, 1);
     
     this.update( obj );
     
-    atomModelMap[ _atomId ].emit('remove');
+    if( Meteor.isClient )
+      atom = atomModelMap[_atomId];
+    else
+      atom = new AtomModel(_atomId);
+    atom.emit('remove');
+    // atomModelMap[ _atomId ].emit('remove');
     
   }
   
@@ -334,27 +422,83 @@ AtomModel = function( o, params ){
   }
   
   this.remove = function(){
-    this.parent.removeChild( atom._id );
+    this.parent.removeChild( this.getId() );
   }
   
   this.lock = function(){
-    if( !atom.meta.lock ) {
+    if( !this.get().meta.lock ) {
       this.update({meta:{lock: true}});
     }
   }
   
-  this.export = function(){
-    
-    var n = _.clone(nested);
-    _.forEach(n,function( s, k ){
-      for( var i in s ) {
-        n[k][i] = n[k][i].export();
-      }
-    });
-    
-    var e = _.extend( {}, _.omit(atom,['_id','meta','_seedId']), n );
-    return e;
+  this.compile = function( scope ){
+    var c = LLMD.Package( this.get().name ).compile;
+    if( c ) return c.apply(this, [this.get(), scope]); 
+    else throw Error('No compiler defined for atom: ' + this.get().name );
   }
+  
+  // this.export = function(){
+  //   
+  //   var n = _.clone(nested);
+  //   _.forEach(n,function( s, k ){
+  //     for( var i in s ) {
+  //       n[k][i] = n[k][i].export();
+  //     }
+  //   });
+  //   
+  //   var e = _.extend( {}, _.omit(atom,['_id','meta','_seedId']), n );
+  //   return e;
+  // }
+  // 
+  //
+
+
+  this.distanceToRoot = function( distance ){
+    if( !distance ) distance = 0;
+
+    if( this.parent  ) {
+      if( this.parent.get().name == 'name' ) distance += 1;
+      return this.parent.distanceToRoot( distance );
+    } else {
+      return distance;
+    }
+    
+  }
+  
+  this.transfearOwner = function( owner ){
+    this.update({owner: owner});
+    
+    this.eachChildren( function( a ){
+      a.transfearOwner( owner );
+    });
+  }
+  
+
+  // hacky
+  //
+  // return a bool, if the user has the majority for this atom
+  this.hasMajority = function(){
+    
+    // has majority of the owner group
+    
+    var owner = this.get().owner;
+    var user = Meteor.users.findOne({ _id: Meteor.userId() });
+    
+    if( user.profile.groups.indexOf( owner ) > -1 ) {
+      var group = Owners.findOne( owner );
+      
+      var d = _.find(group.distribution, function( d ){
+        return d._userId == Meteor.userId();
+      });
+      return d && d.shares/group.sum > 0.66; 
+    }
+    return false;
+    
+    // is deligated
+    
+  } 
+
+
   
   // search for the smalest matched index
   var findFirstMatched = function( as1, as2 ) {
@@ -469,6 +613,24 @@ AtomModel = function( o, params ){
   }
   
   
+}
+if( Meteor.isClient ) {
+  AtomModel.dep = new Deps.Dependency;
+  AtomModel.state = 'INIT';
+  AtomModel.data = {};
+  AtomModel.set = function( state, data ){
+    AtomModel.dep.changed();
+    AtomModel.state = state;
+    AtomModel.data = data;
+  }
+  AtomModel.get = function( state ){
+    AtomModel.dep.depend();
+    if( !state || state == AtomModel.state) {
+      return AtomModel.data;
+    } else {
+      return null;
+    }
+  };
 }
 AtomModel.prototype.toString = function(){
   return this.getId();

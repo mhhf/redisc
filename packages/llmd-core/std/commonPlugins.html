@@ -1,0 +1,93 @@
+<template name="llmd_if_ast">
+<strong>if</strong> ( {{atom.c}} )
+{{> llmd_if_body }}
+</template>
+
+<template name="llmd_if_edit">
+<strong>if</strong> ( <input name="condition" class="form-control" type="text" value="{{atom.c}}" /> )
+{{> llmd_if_body }}
+</template>
+
+<template name="llmd_if_body">
+<div class="iftrue hatched">
+  {{> llmd_nested atom=this key='t' }}
+</div>
+<div class="iffalse hatched">
+  {{> llmd_nested atom=this key='f' }}
+</div>
+</template>
+
+
+<template name="llmd_seq_edit">
+<div class="editorContainerWrapper">
+  {{> llmd_nested key='data' atom=this}}
+  {{> addNewAtomBtn key='data' atom=this template='rightButton' }}
+</div>
+</template>
+
+<template name="llmd_seq_ast">
+<div class="editorContainerWrapper">
+  {{> llmd_nested key='data' atom=this}}
+  {{> addNewAtomBtn key='data' atom=this template='rightButton'  }}
+</div>
+</template>
+
+<template name="llmd_name_ast">
+<div class="editorContainerWrapper">
+  {{#getTag}}{{key}} :{{/getTag}}
+  {{#if hasChildren }}
+    {{> llmd_nested key='value' atom=this}}
+  {{else}}
+    {{> addNewAtomBtn key='value' atom=this template='bigButton' }}
+  {{/if}}
+</div>
+</template>
+
+<template name="llmd_name_edit">
+<div class="editorContainerWrapper">
+  <h4> <input type="text" name="key" value="{{getProperty 'key'}}" /> :</h4>
+  {{> llmd_nested key='value' atom=this}}
+</div>
+</template>
+
+<template name="llmd_string_ast">
+<div class="editorContainerWrapper">
+  {{value}}
+</div>
+</template>
+
+<template name="llmd_var_ast">
+<div class="editorContainerWrapper">
+  &lt;{{getProperty 'key'}}&gt;
+</div>
+</template>
+
+<template name="llmd_edit">
+  {{> quickForm schema=getSchema id="customEdit" doc=get omitFields=omitFields}}
+</template>
+
+<template name="llmd_nested">
+  <ul class="editorContainer">
+    {{#each atoms}}
+      <li>
+      {{> getWrapper }}
+      </li>
+    {{/each}}
+  </ul>
+</template>
+
+<template name="h1Wrapper">
+<h1> {{> UI.contentBlock}} </h1>
+</template>
+<template name="h2Wrapper">
+<h2> {{> UI.contentBlock}} </h2>
+</template>
+<template name="h3Wrapper">
+<h3> {{> UI.contentBlock}} </h3>
+</template>
+<template name="h4Wrapper">
+<h4> {{> UI.contentBlock}} </h4>
+</template>
+<template name="h5Wrapper">
+<h5> {{> UI.contentBlock}} </h5>
+</template>

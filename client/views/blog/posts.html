@@ -1,0 +1,9 @@
+<template name="blogPosts">
+<ul>
+{{#each posts }}
+  <li>
+    <h2> <a href="{{pathFor 'blogPost'}}">{{title}}</a> </h2>
+  </li>
+{{/each}}
+</ul>
+</template>

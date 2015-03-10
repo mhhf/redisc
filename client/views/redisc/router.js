@@ -19,7 +19,7 @@ Router.map( function(){
       var page = this.params.page || 0;
       return [
         Meteor.subscribe( 'Redisc.Posts', [], page ),
-        new SyncLoader( 'Redisc.Posts.count', [] )
+        // new SyncLoader( 'Redisc.Posts.count', [] )
       ];
     },
     data: function(){
@@ -49,7 +49,7 @@ Router.map( function(){
       var page = this.params.page || 0;
       return [
         Meteor.subscribe( 'Redisc.Posts', tagsA, page ),
-        new SyncLoader( 'Redisc.Posts.count', tagsA )
+        // new SyncLoader( 'Redisc.Posts.count', tagsA )
       ];
     },
     onBeforeAction: function ( pause ) {
@@ -108,7 +108,7 @@ Router.map( function(){
       AccountsEntry.signInRequired(this);
     },
     data: function(){
-      return new RediscModel({ rootId: this.params._id });
+      return { atom: new AtomModel( this.params._id ) };
     }
   });
   

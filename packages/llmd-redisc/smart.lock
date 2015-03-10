@@ -1,0 +1,20 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "llmd-markdown": {
+        "path": "."
+      }
+    },
+    "packages": {
+      "llmd-markdown": {
+        "path": "."
+      },
+      "marked": {
+        "git": "https://github.com/chuangbo/meteor-marked.git",
+        "tag": "v0.3.3",
+        "commit": "a0966771f9108835755368d0879429675d7e0db4"
+      }
+    }
+  }
+}

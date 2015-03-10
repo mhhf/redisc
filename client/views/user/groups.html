@@ -15,7 +15,7 @@
 <tbody>
 {{#each groups}}
   <tr>
-    <td>{{_id}}</td>
+    <td> <a href="{{pathFor 'group'}}">{{_id}}</a> </td>
     <td>{{distribution.length}}</td>
     <td>{{sum}}</td>
     <td>{{getOwnedShares}}</td>

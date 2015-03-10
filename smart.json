@@ -1,15 +1,14 @@
 {
   "packages": {
-    "collection2": {},
-    "emitter": {},
-    "iron-router": {},
-    "tags": {
-      "git": "git://github.com/mhhf/meteor-tags.git"
-    },
-    "bootstrap3-less": {},
-    "spin": {},
+    "collectionfs": {},
+    "cfs-filesystem": {},
+    "cfs-s3": {},
+    "bootstrap-less": {},
+    "bourbon": {},
+    "neat": {},
     "editor": {
       "git": "https://github.com/mhhf/editor.git"
+<<<<<<< HEAD
     },
     "llmd-core": {
       "git": "https://github.com/mhhf/llmd-core.git"
@@ -32,5 +31,8 @@
     "collectionFS":{},
     "cfs-s3": {},
     "sharejs": {}
+=======
+    }
+>>>>>>> develop
   }
 }

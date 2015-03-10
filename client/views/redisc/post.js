@@ -1,34 +1,32 @@
-var rediscModel;
-
 Template.RediscPostView.helpers({
   getTitle: function(){
-    return this.root.get().title;
+    return this.atom.get().title;
   },
   isWatching: function(){
     var watch = Meteor.user().profile.watch;
-    return watch && watch[rediscModel.root.getId()];
+    return watch && watch[this.atom.getId()];
   }
 });
 
 Template.RediscPostView.created = function(){
-  rediscModel = this.data;
+  // rediscModel = this.data.atomModel;
 }
 Template.RediscPostView.rendered = function(){
   var watch = Meteor.user().profile.watch;
-  if( watch && watch[rediscModel.root.getId()] ) 
-    Meteor.call('user.seen', rediscModel.root.getId() );
+  if( watch && watch[this.data.atom.getId()] ) 
+    Meteor.call('user.seen', this.data.atom.getId() );
 }
 
 Template.RediscPostView.events = {
   "click .watch-btn": function(e,t){
     e.preventDefault();
     
-    Meteor.call('user.watchAtom', rediscModel.root.getId() );
+    Meteor.call('user.watchAtom', this.atom.getId() );
   },
   "click .unwatch-btn": function(e,t){
     e.preventDefault();
     
-    Meteor.call('user.unwatchAtom', rediscModel.root.getId() );
+    Meteor.call('user.unwatchAtom', this.atom.getId() );
   }
 }
 
@@ -42,7 +40,7 @@ Template.RediscBackButton.helpers({
 
 Template.RediscPost.helpers({
   isEdit: function(){
-    return rediscModel.get('EDIT') === this;
+    return AtomModel.get('EDIT') === this;
   },
   hasChildren: function(){
     var nested = this.getNested('nested');
@@ -52,10 +50,10 @@ Template.RediscPost.helpers({
 
 Template.PostWrapper.events = {
   "click .btn-edit": function(){
-    rediscModel.set('EDIT', this);
+    AtomModel.set('EDIT',this);
   },
   "click .btn-comment": function(){
-    rediscModel.set('COMMENT', this);
+    AtomModel.set('COMMENT', this);
   }
 }
 
@@ -64,13 +62,13 @@ Template.PostWrapper.helpers({
     return this.get();
   },
   isComment: function(){
-    return rediscModel.get('COMMENT') === this;
+    return AtomModel.get('COMMENT') === this;
   },
   newCommentAtom: function(){
     
-    // [TODO] - export to rediscModel
+    // [TODO] - export to atomModel
     var parent = this.get()
-    var atom = new LLMD.Atom('redisc', parent);
+    var atom = new LLMD.Atom('redisc', null ,parent);
         
     atom.root = parent.root != ''? parent.root : parent._seedId;
     atom.parent = parent._seedId;
@@ -85,17 +83,26 @@ Template.PostWrapper.helpers({
 
 Template.EditorWrapper.events = {
   "click .cancel-btn": function(){
-    rediscModel.set('INIT');
+    AtomModel.set('INIT');
   },
   "click .save-btn": function(){
-    rediscModel.save( this.buildAtom() );
+    
+    // [TODO] - export to atom model
+    if( AtomModel.state === 'COMMENT' ) {
+      var parent = AtomModel.data.get();
+      var root = parent.root || parent._id;
+      var atom = _.extend( new LLMD.Atom('redisc'), this.buildAtom(), {root: root} );
+      AtomModel.data.addAfter( 'nested', atom );
+    } else if( AtomModel.state === 'EDIT' ) {
+      AtomModel.data.update( this.buildAtom() );
+    }
+    AtomModel.set('INIT');
   }
 }
 
 Template.Comments.helpers({
   getComments: function(){
     var children = this.getNested('nested');
-    console.log(children);
     children.sort( function( a, b ){
       return b.get().score - a.get().score; });
     return children;

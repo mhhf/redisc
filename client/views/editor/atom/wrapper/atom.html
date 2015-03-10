@@ -1,0 +1,42 @@
+<template name="devAtomWrapper">
+<div class="atomContainer {{editModeClass}} {{getActivateClass}} {{atom.name}}Wrapper" data-index="{{index}}">
+  <label>{{getName}}</label> {{getId}}
+  <div class="{{name}} atomWrapper">
+    {{> UI.contentBlock}}
+  </div>
+
+  {{#if editable}}
+    <div class="actions">
+        {{#if editMode}}
+        <a href='#' class="activate-toggle-btn"><i class="fa fa-square-o"></i></a>
+        <a href='#' class="remove-btn"><i class="fa fa-trash-o"></i></a>
+        {{else}}
+        <a href='#' class="edit-atom-btn" data-target="{{getId}}"><i class="fa fa-pencil"></i></a>
+        {{/if}}
+    </div>
+
+    {{#if editMode}}
+    <div class="editActions">
+      <a class="save-btn btn btn-primary" href="#" data-target="{{getParent}}"><i class="fa fa-check"></i> Save</a>
+      <a class="dismiss-btn btn btn-default" href="#"><i class="fa fa-times"></i> Dismiss</a>
+    </div>
+    {{/if}}
+
+    <div class="stateWrapper">
+      {{#if isPending}}
+      {{> spinner getSmallSpinner}}
+      {{/if}}
+      {{#if previewable}}
+      <a href="#"><i class="fa fa-play"></i></a>
+      {{/if}}
+    </div>
+  {{/if}}  
+</div>
+</template>
+
+
+<template name="atomWrapper">
+{{#wrapperTemplate}}
+  {{> dynamicTemplate}}
+{{/wrapperTemplate}}
+</template>
