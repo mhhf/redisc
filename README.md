@@ -2,12 +2,12 @@
 
 Redisc is a Reddit like Multi-User Scinetific Notepad with MathJax and GraphViz support.
 
-Its a Sandbox Project, *not designed for public or production use*.
+Its a Sandbox Project, **not designed for public or production use**.
 
 ![](screen.png)
 
 ### Features
-* Reddit like voting of posts
+* reddit like posts voting
 * tags
 * nested comments
 * comments in markdown 
