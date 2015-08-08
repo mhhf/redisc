@@ -3,9 +3,10 @@ Router.onBeforeAction('loading');
 Router.map( function(){
   
   this.route('Home', {
-    path:'/',
+    path:'*',
     action: function(){
       this.redirect('RediscAll');
+      console.log('yay');
     }
   });
   
