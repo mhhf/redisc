@@ -1,0 +1,11 @@
+{
+  "name": "CodeMirror with own Markdown",
+  "description": "own markdown extended CodeMirror",
+  "homepage": "",
+  "version": "0.1",
+	"author": "Denis Erfurt <denis.erfurt@gmail.com>",
+  "git": "git@bitbucket.org:liquidlearningdev/editor.git",
+  "packages": {
+    "marked":{}
+  }
+}

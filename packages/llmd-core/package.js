@@ -19,7 +19,7 @@ Package.on_use(function (api) {
   api.use('ui',c);
   api.use('blaze',c);
   api.use('minimongo',b);
-  api.use('emitter',b);
+  api.use('kestanous:emitter',b);
   api.use('crypto',b);
   api.use('aldeed:collection2@1.0.0',b);
   api.use('aldeed:autoform@1.0.0',c);

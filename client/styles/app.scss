@@ -1,9 +1,9 @@
-@import "packages/bourbon/bourbon";
-@import "packages/neat/neat-helpers";
+@import "bourbon/bourbon";
+@import "neat/neat-helpers";
 
 // $visual-grid: true;
 $visual-grid-color: #ccc;
-@import "packages/neat/neat";
+@import "neat/neat";
 
 // .atomWrapper {
 //   border: 1px solid #f00;

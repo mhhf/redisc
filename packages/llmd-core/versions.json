@@ -65,10 +65,6 @@
       "1.0.4"
     ],
     [
-      "emitter",
-      "0.0.0"
-    ],
-    [
       "follower-livedata",
       "1.0.2"
     ],
@@ -95,6 +91,10 @@
     [
       "json",
       "1.0.1"
+    ],
+    [
+      "kestanous:emitter",
+      "0.1.0"
     ],
     [
       "less",

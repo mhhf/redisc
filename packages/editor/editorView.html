@@ -1,0 +1,26 @@
+
+<template name="editorView">
+<div class="btn-group left">
+  <button type="button" data-target="editor" class="btn editorView btn-default {{isActive 'editor'}}"><i class="fa fa-list-alt"></i></button>
+  {{#unless llmdEngine}}
+  <button type="button" data-target="split" class="btn editorView btn-default {{isActive 'split'}}"><i class="fa fa-columns"></i></button>
+  {{/unless}}
+  <button type="button" data-target="preview" class="btn editorView btn-default {{isActive 'preview'}}"><i class="fa fa-eye"></i></button>
+</div>
+
+{{#if llmdEngine}}
+  <div class="btn-group left functions">
+    <button type="button" class="btn btn-default tts-btn"><i class="fa fa-comment-o"></i> TTS</button>
+    <button type="button" class="btn btn-default ms-btn"><i class="fa fa-list"></i> Multiple Choice</button>
+  </div>
+{{/if}}
+
+{{#if saveBtn}}
+  <button type="button" class="btn btn-default right save-btn"><i class="fa fa-save"></i> Save</button>
+{{/if}}
+
+<div class="row clear">
+  <div id="editor" class="{{getEditorClass}}"></div>
+  <div id="preview-md" class="{{getViewClass}}"></div>
+</div>
+</template>
