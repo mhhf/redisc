@@ -3,7 +3,7 @@ Router.onBeforeAction('loading');
 Router.map( function(){
   
   this.route('Home', {
-    path:'*',
+    path:'/',
     action: function(){
       this.redirect('RediscAll');
       console.log('yay');
@@ -13,9 +13,9 @@ Router.map( function(){
   this.route('RediscAll', {
     path:'/all/:page?',
     template: 'RediscPosts', 
-    onBeforeAction: function (pause) {
-      AccountsEntry.signInRequired( this, pause );
-    },
+    // onBeforeAction: function (pause) {
+    //   AccountsEntry.signInRequired( this, pause );
+    // },
     waitOn: function(){
       var page = this.params.page || 0;
       return [
@@ -53,9 +53,9 @@ Router.map( function(){
         // new SyncLoader( 'Redisc.Posts.count', tagsA )
       ];
     },
-    onBeforeAction: function ( pause ) {
-      AccountsEntry.signInRequired( this, pause );
-    },
+    // onBeforeAction: function ( pause ) {
+    //   AccountsEntry.signInRequired( this, pause );
+    // },
     data: function(){
       
       var postsCount = syncValue['Redisc.Posts.count'];
@@ -85,9 +85,9 @@ Router.map( function(){
     waitOn: function(){
       return Meteor.subscribe('GlobalTags');
     },
-    onBeforeAction: function ( pause ) {
-      AccountsEntry.signInRequired( this, pause );
-    },
+    // onBeforeAction: function ( pause ) {
+    //   AccountsEntry.signInRequired( this, pause );
+    // },
     data: function(){
       var tags = this.params.tags;
       return {
@@ -105,9 +105,9 @@ Router.map( function(){
     waitOn: function(){
       return Meteor.subscribe('Redisc.Post',this.params._id);
     },
-    onBeforeAction: function () {
-      AccountsEntry.signInRequired(this);
-    },
+    // onBeforeAction: function () {
+    //   AccountsEntry.signInRequired(this);
+    // },
     data: function(){
       return { atom: new AtomModel( this.params._id ) };
     }

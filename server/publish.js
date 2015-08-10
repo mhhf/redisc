@@ -2,7 +2,7 @@ Meteor.publish('atom', function( _id ){
    
   // make shure user is logged in
   // replace with an scl and later with share model
-  if( !this.userId ) return null;
+  // if( !this.userId ) return null;
   
   return Atoms.find({ _id: _id });
 });
@@ -35,7 +35,7 @@ Meteor.publish('Redisc.Posts', function( tags, page ){
   
   // make shure user is logged in
   // replace with an scl and later with share model
-  if( !this.userId ) return null;
+  // if( !this.userId ) return null;
   var usr = Meteor.users.findOne({ _id: this.userId });
   
   var qry = { 
@@ -43,7 +43,7 @@ Meteor.publish('Redisc.Posts', function( tags, page ){
     root: '',
     $or: [
       { _rights: 'public' },
-      { owner: { $in: usr.profile.groups || [] } }
+      { owner: { $in: usr && usr.profile.groups || [] } }
     ] };
   if( tags.length > 0 ) qry.tags= { $in: tags };
   
@@ -54,7 +54,7 @@ Meteor.publish('Redisc.Post', function(_id){
   
   // make shure user is logged in
   // replace with an scl and later with share model
-  if( !this.userId ) return null;
+  // if( !this.userId ) return null;
   var usr = Meteor.users.findOne({ _id: this.userId });
   
   return Atoms.find({
